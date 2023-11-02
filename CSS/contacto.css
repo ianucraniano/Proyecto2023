@@ -5,7 +5,7 @@
     padding-bottom: 20px;  
     background-color: #a4be7b; 
     padding-left: 30px; 
-font-family: 'Gabarito', sans-serif;
+
     
 }
 
@@ -17,4 +17,8 @@ label{
 .letra{
     color: white;
 
+}
+
+footer{
+    font-family: 'Bebas Neue', sans-serif;
 }

@@ -12,6 +12,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet"> 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="./CSS/login.css">
+
 </head>
 <body>
  
@@ -28,25 +30,30 @@
 
    
    
-  <section class="container ">
-   <div class="row justify-content-center">
-    <div class="col-6 formulario">
-        
-        <form>
-        <div class="mb-3">
-          <label for="usuario" class="form-label">Usuario</label>
-          <input type="text" class="form-control" id="usuario" name="usuario" aria-describedby="emailHelp">
-          
+ <section>
+     
+<div class="container">
+    <div class="row justify-content-center pt-4 mt-5">
+        <div class="col-md-4 formulario">
+            <form action="" class="mt-5">
+            <div class="form-group text-center titulo">
+                <h1 class="text-black"><u>Iniciar sesión</u></h1>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="">
+                <label class="labeltexto" for="floatingInput">Ingrese su usuario</label>
+              </div>
+              <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="">
+                <label class="labeltexto" for="floatingPassword">Ingrese su contraseña</label>
+              </div>
+              <a href="/buttons/43" type="submit" class=" btn btn41-43 btn-43">
+                Ingresar</a>
+        </form>
         </div>
-        <div class="mb-3">
-          <label for="pass" class="form-label">Contraseña</label>
-          <input type="password" class="form-control" id="pass" name="pass">
-        </div>
-        
-        <button type="submit" class="btn btn-primary" name="ingresar">Ingresar</button>
-      </form>
     </div>
-   </div>
+</div>
+
 
 
 
