@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https: //fonts.googleapis.com/css2? family= Roboto+Condensed:wght@700 & family= Roboto+Slab & display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">    
-    <link rel="stylesheet" href="./CSS/estilo.css">
+    
 
 </head>
 <body>
@@ -15,28 +15,33 @@
 <header>
 
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-success border-bottom border-body" >
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Museo Sancris</a>
+<img src="./imagenes/museo-britanico.png" alt="Bootstrap" width="30" height="24">
+    <a class="navbar-brand " href="" href="https://www.flaticon.es/iconos-gratis/museo" title="museo iconos">&nbsp;  MuseoSancris</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse nav justify-content-end" id="navbarSupportedContent">
-      <ul class="navbar-nav">
+    <div class="collapse navbar-collapse nav justify-content-end text-primary" id="navbarSupportedContent">
+      <ul class="navbar-nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Início</a>
+          <a class="nav-link " aria-current="page" href="index.php">El museo</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Museo</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">exhibición</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Proyectos</a>
+          <a class="nav-link" href="visita.php">Visitas</a>
         </li><li class="nav-item">
-          
-      <a class="nav-link" href="login.php">Ingresar</a>
+        <li class="nav-item">
+          <a class="nav-link" href="colecciones.php">Colecciones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="conservacion.php">Conservación</a>
+        </li>
+      
+
+        
+        
+        <li><a class="nav-link" href="login.php">Ingresar</a></li>
+      
         </li>        
       </ul>
       

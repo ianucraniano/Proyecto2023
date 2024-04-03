@@ -1,6 +1,6 @@
 .contacto{
     background-color: rgba(0, 0, 0, 0.205);
-    height: 90%; 
+    height: 80%; 
     padding-top: 30px;
     padding-bottom: 20px;  
     background-color: #a4be7b; 
@@ -19,6 +19,4 @@ label{
 
 }
 
-footer{
-    font-family: 'Bebas Neue', sans-serif;
-}
+

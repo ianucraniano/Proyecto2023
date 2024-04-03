@@ -7,13 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validacion Datos Formulario</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/estilo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet"> 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-<link rel="stylesheet" href="./CSS/login.css">
-
+<link rel="stylesheet" href="./CSS/estilo.css">
+<link rel="stylesheet" href="./CSS/style.css">
 </head>
 <body>
  
@@ -56,13 +55,10 @@
 
 
 
-
   </section>
 
-  <?php
-    include('footer.php');
-  ?>
-   
+
+
    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
