@@ -1,77 +1,106 @@
+
+<?php
+// Conexion a la Base de Datos Biblioteca 
+session_start();
+require_once "conexion.php";
+
+if(!isset($_SESSION['dniadmin'])){
+    header("Location:index.php");
+}
+
+
+
+$sql= "SELECT piezas.numeroInventario,piezas.especie,piezas.estadoConservacion, donante.nombre,donante.apellido,piezas.fechaIngreso,piezas.clasificacion
+FROM piezas, donante
+WHERE (piezas.Donante_idDonante1=donante.idDonante)";
+
+
+$result=mysqli_query($conex,$sql);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tabla menu especies</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
 
 
 </head>
 <body>
-    
+    <?php include ("header.php") ;?>
 
 <section>
-
-<div class="container text-center ">
-        <div class="text-center mt-5 mb-3"><h3>Menu de especies</h3></div>
-        
-        <table class="table">
-            <div class="row">
-               
-
-           
-                
-                    
-                
-                </div>
-            </div>
-
-            <thead class="table-dark">
-                <tr>
-                <th scope="col">Nro de inventario</th>
+<div class="text-center mt-5 mb-3"><h3>Menu de especies</h3></div>
+<table class="table table-success table-striped">
+<thead class="table-dark">
+<tr class="table-primary">
+<th scope="col">Nro de inventario</th>
                 <th scope="col">Especie</th>
                 <th scope="col">Estado</th>
                 <th scope="col">Donante</th>
                 <th scope="col">FechaIngreso</th>               
                 <th scope="col">Clasificación</th>
-                
-                </tr>
-            </thead>
-        
+                <th scope="col">Acciones</th>
+
+</tr>
+</thead>
+
+
+           <?php
+
+               if (mysqli_num_rows($result)>0){
+            ?>
+
             <tbody>
 
-        
-        
-                <tr>
-                    
-                    <th scope="row"><?php echo $fila["nroinventario"]; ?>
-                    </th>
-                        <td><?php echo $fila["nombre"]; ?></td>
-                        <td><?php echo $fila["estado"]; ?></td>
-                        <td><?php echo $fila["donante"]; ?></td>
-                        <td><?php echo $fila["fecha"]; ?></td>
-                        <td><?php echo $fila["clasificacion"]; ?></td>
-                        <td><a class="me-1 btn btn-outline-success btn-sm " href="editarespecie.php?id=<?php echo $fila ['num'];?>">editar</a>
-                        <a class="me-1 btn btn-outline-danger btn-sm" href="form_eliminar.php?id=<?php echo $fila ['idusuario'];?>">eliminar</a>
-                        </td>
+            <?php
 
-                </tr>
+                While ($fila=mysqli_fetch_array($result)){
+    
+            ?>
+
+
+        
+        
+<tr>
+    
+    <th scope="row"><?php echo $fila["numeroInventario"]; ?>
+    </th>
+        <td><?php echo $fila["nombre"]; ?></td>
+        <td><?php echo $fila["estado"]; ?></td>
+        <td><?php echo $fila["donante"]; ?></td>
+        <td><?php echo $fila["fecha"]; ?></td>
+        <td><?php echo $fila["clasificacion"]; ?></td>
+        
+        <td><a class="me-1 btn btn-success btn-sm " href="editarespecie.php?id=<?php echo $fila ['num'];?>">Editar</a>
+        <a class="me-1 btn btn-danger btn-sm" href="eliminarespecie.php?id=<?php echo $fila ['idusuario'];?>">Eliminar</a>
+        </td>
+
+</tr>
+
+<?php
+}
+?>   
                 
 
-               
-            
-            </tbody>
 
+</tbody>
 
+</table>
 
-    </table>
-</div>
+<?php
+	     }else{
 
-
+          echo "</table></div>";
+          echo "<div class='container text-center lead my-3 py-3'><div class='alert alert-danger my-5 py-4'><p><em>No existen especies! </em><a href='index.php' class='text-primary lead ms-2'>Volver</a></p></div></div>";
+         }
+	   ?>  
 
 </section>
+
 
 
 

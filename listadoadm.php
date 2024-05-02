@@ -1,3 +1,32 @@
+<?php
+// Conexion a la Base de Datos Biblioteca 
+session_start();
+require_once "conexion.php";
+if(!isset($_SESSION['dniadmin'])){
+    header("Location:index.php");
+}
+
+
+
+$sql="SELECT usuarios.* FROM usuarios ORDER BY idusuarios";
+
+
+$result=mysqli_query($conex,$sql);
+
+
+    
+
+
+
+
+
+
+
+  
+
+ //die($sql);
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,36 +38,48 @@
 
 
 </head>
+<?php
+
+include("header.php");
+?>
+
 <body>
     
 
 <section>
-
-<div class="container text-center ">
         <div class="text-center mt-5 mb-3"><h3>Listado de usuarios</h3></div>
+        <table class="table table-success table-striped">
+       <thead class="table-dark">
+        <tr class="table-primary">
         
-        <table class="table">
-            <div class="row">
                
 
-                <div class="col-3">
-                
-                    <div class="btn btn-primary btn-sm " > <a class="text-decoration-none text-white" href="agregar.php">Agregar</a></div>
-                
-                </div>
             </div>
 
             <thead class="table-dark">
-                <tr>
+               
                 <th scope="col">DNI</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Apellido</th>
                 <th scope="col">Email</th>
                 <th scope="col">Acciones</th>
-                </tr>
+            </tr>
             </thead>
-        
+
+            <?php
+               if (mysqli_num_rows($result)>0){
+            ?>
+
             <tbody>
+
+            <?php
+
+                While ($fila=mysqli_fetch_array($result)){
+    
+            ?>
+        
+        
+          
 
         
         
@@ -49,14 +90,19 @@
                         <td><?php echo $fila["nombre"]; ?></td>
                         <td><?php echo $fila["apellido"]; ?></td>
                         <td><?php echo $fila["email"]; ?></td>
-                        <td><a class="me-1 btn btn-outline-success btn-sm " href="form-editar.php?id=<?php echo $fila ['idusuario'];?>">editar</a>
-                        <a class="me-1 btn btn-outline-danger btn-sm" href="form_eliminar.php?id=<?php echo $fila ['idusuario'];?>">eliminar</a>
-                        </td>
+                        <td><a class="me-1 btn btn-outline-success btn-sm " href="form_editar.php?id=<?php echo $fila ['idusuarios'];?>">Editar</a>
+                        <a class="me-1 btn btn-outline-danger btn-sm" href="form_eliminar.php?id=<?php echo $fila ['idusuarios'];?>">Eliminar</a>
+                  
+                  
+                  
+                    </td>
 
                 </tr>
                 
-
-               
+                <?php
+            }
+            ?>   
+                
             
             </tbody>
 
@@ -71,7 +117,13 @@
 
 
 
+<?php
+	     }else{
 
+          echo "</table></div>";
+          echo "<div class='container text-center lead my-3 py-3'><div class='alert alert-danger my-5 py-4'><p><em>No existen Socios! </em><a href='index.php' class='text-primary lead ms-2'>Volver</a></p></div></div>";
+         }
+	   ?>  
 
 
 

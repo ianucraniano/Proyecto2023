@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">  -->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,6 +36,8 @@ include("header.php");
     
 }
 .imagen{
+  background-image: url(./imagenes/museo.webp);
+  background-size: 100%;
   height: 600px;
 }
 p{
@@ -43,23 +46,53 @@ p{
   font-weight: <weight>;
   font-style: normal;
 }
+.texto{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(0,0,0,0.50);
+position: relative;
+top: 200px;
+}
+.texto h1{
+  color: white;
+}
+
+.center{
+  margin: 0;
+  height: 100vhv;
+  display: grid;
+  place-items:center;
+}
+
 </style>
 
-<img src="./imagenes/museo.webp" class="imagen" alt="...">
+<div class="imagen">
+<div class="texto">
+  <h1>Conservacion de todas las especies</h1>
+</div>
+</div>
+
+<!--<img src="./imagenes/museo.webp" class="imagen" alt="...">-->
 
 <h2 class="titulo1">Especies amenazadas</h2>
 <h3 class="titulo2">Conservación de especies amenazadas</h3>
-<p>Compartimos con ustedes actividades que realizamos en el marco de distintos proyectos relacionados a la fauna amenazada de extinción.</p>
-<p>
-El museo también es parte de la delegación santafesina del Programa de Conservación de los Murciélagos de Argentina.</p>
+<div class="center">
+
+  <p>Compartimos con ustedes actividades que realizamos en el marco de distintos proyectos relacionados a la fauna amenazada de extinción.</p>
+  <p>
+  El museo también es parte de la delegación santafesina del Programa de Conservación de los Murciélagos de Argentina.</p>
+</div>
 <pre></pre>
-<div class="card mb-3" style="max-width: 1000px;">
-  <div class="row g-0">
-    <div class="col-md-4">
+<div class="card mb-3 " style="max-width: 1000px;">
+<div class="card mb-3  " style="max-width: 1000px;">
+  <div class="row g-0 ">
+    <div class="col-md-4 ">
       <img src="./imagenes/aguilas.webp" class="img-fluid rounded-start" alt="...">
+    
     </div>
     <div class="col-md-8">
-      <div class="card-body">
+      <div class="card-body ">
         <h5 class="card-title">
 
         LAS ÁGUILAS CORONADAS ESTÁN DECLINANDO EN SANTA FE

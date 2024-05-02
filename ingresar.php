@@ -11,60 +11,63 @@ session_start();
 
 $error = "";
 
-//echo $_POST['dni']. " ".$_POST['clave']." ".$_POST['perfil'];
-
+//echo $_POST['dni']. " ".$_POST['clave']." ".$_POST['tipo_usuario'];
 //die();
 
-if(!empty(trim($_POST['dni']))&& !empty(trim($_POST['clave'])) && !empty(trim($_POST['perfil']))){
 
-  
+if(!empty(trim($_POST['dni']))&& !empty($_POST['clave']) && !empty($_POST['tipo_usuario'])){
+
+  //
 	        
-	
+  $perfil = $_POST['tipo_usuario'];
 		$dni =  $_POST['dni'];
         $clave = $_POST['clave'];
-        $perfil = $_POST['perfil'];
+       
 
-     $sql="SELECT dni,nombre,apellido,clave,tipo_usuario FROM usuario WHERE (dni='$dni') and (clave='$clave') and (tipo_usuario='$perfil')";
+     $sql="SELECT dni,clave,tipo_usuario FROM usuarios WHERE (dni='$dni') and (tipo_usuario='$perfil')";
 
      $result=mysqli_query($conex,$sql);
 
       //die($sql);
 
+ 
       if (mysqli_num_rows($result)==1){
-       
         $fila=mysqli_fetch_array($result);
-        if($fila['tipo_usuario']=="cliente"){
-          
-        $_SESSION['dnicli']=$dni;
+        if(password_verify($clave, $fila['clave'])){
         
-        $_SESSION['nombrecli']=$fila['nombre'];
-        $_SESSION['apellidocli']=$fila['apellido'];
-        $_SESSION['tipousu']=$fila['tipo_usuario'];
+        if($fila["tipo_usuario"]=="administrador"){
 
+          $_SESSION['dniadmin']=$dni;
+          $_SESSION['nombreadmin']=$fila['nombre'];
+          $_SESSION['apellidoadmin']=$fila['apellido'];
+          $_SESSION['tipoUsuario']=$fila['tipo_usuario'];
+  
+          header("Location:pagAdmin.php");
+        
 
-     header("Location:pagina.php");
+      } elseif($fila['tipo_usuario']=="gerente"){
+          
+        $_SESSION['dnigerente']=$dni;
+        
+        $_SESSION['nombregerente']=$fila['nombre'];
+        $_SESSION['apellidogerente']=$fila['apellido'];
+        $_SESSION['tipoUsuario']=$fila['tipo_usuario'];
 
-      } elseif($fila[tipo_usuario]=="administrador"){
-        $_SESSION['dniadmin']=$dni;
-        $_SESSION['nombreadmin']=$fila['nombre'];
-        $_SESSION['apellidoadmin']=$fila['apellido'];
-        $_SESSION['tipousu']=$fila['tipo_usuario'];
-
-        header("Location:paginaadmin.php");
-
+        header("Location:.php");
       }
+    }
 
     }else{
         $error.="Datos incorrectos";
-        header("Location:form_ingresar.php?mensaje=".$error);
+        header("Location:login.php?mensaje=".$error);
 
     }
-  
+      
   
 }else{
 
   $error.="Faltan datos";
-  header("Location:form_ingresar.php?mensaje=".$error);
+  header("Location:login.php?mensaje=".$error);
 
 }
 

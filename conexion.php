@@ -2,7 +2,7 @@
 $servidor="localhost";
 $usuario="root";
 $password="";
-$bd="bdmuseociudad";
+$bd="bdmuseosancris";
 
 $conex = mysqli_connect($servidor,$usuario,$password,$bd);
 

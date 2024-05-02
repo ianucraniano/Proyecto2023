@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -6,13 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Museo de San Cristobal - Inicio</title>
     <link href="https: //fonts.googleapis.com/css2? family= Roboto+Condensed:wght@700 & family= Roboto+Slab & display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
-
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">  -->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./CSS/estilo.css">
     <link rel="stylesheet" href="./CSS/contacto.css">
     <link rel="stylesheet" href="./CSS/app.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -329,25 +333,25 @@
     <div class="carousel-item active" data-bs-interval="10000">
       <img src="./imagenes/educacion.webp" class="d-block w-100 " alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>26 de Enero</h5>
-        <p>Día Mundial de la Educación Ambiental</p>
+        <h5 class="text-light">26 de Enero</h5>
+        <p class="text-light">Día Mundial de la Educación Ambiental</p>
       </div>
     </div>
     <div class="carousel-item" data-bs-interval="2000">
       <img src="./imagenes/rio.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>14 de Marzo</h5>
-        <p>
+        <h5 class="text-light">14 de Marzo</h5>
+        <p class="text-light">
 Día Internacional de Acción contra las Represas y en defensa de los Ríos, el Agua y la Vida</p>
       </div>
     </div>
     <div class="carousel-item">
       <img src="./imagenes/animal.webp" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>29 de Abril
+        <h5 class="text-light">29 de Abril
 
 </h5>
-        <p>Día del Animal</p>
+        <p class="text-light">Día del Animal</p>
       </div>
     </div>
   </div>
@@ -367,7 +371,7 @@ Día Internacional de Acción contra las Represas y en defensa de los Ríos, el 
 
 <footer>
 
-<div class="contacto">
+<div class="contacto flex">
   <div>
 
     <h2><u>Contacto</u></h2>
@@ -377,10 +381,11 @@ Día Internacional de Acción contra las Represas y en defensa de los Ríos, el 
     <p><strong><u>Telefono</u></strong></p>
     <p>+54 3408-678965</p>
   </div>
+
   <div class="form-contacto">
 
     <form action="">
-    <div class="mb-3">
+    <div class="mb-2">
   <label for="exampleFormControlInput1" class="form-label"><u>Nombre</u></label>
   <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="escriba su nombre completo">
 </div>

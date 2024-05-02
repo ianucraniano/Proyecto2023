@@ -23,18 +23,14 @@ function ValidacionDatos() {
 		$var_bool=FALSE;
 	}
 	
-	if(!is_numeric($_POST['edad']) || !filter_var($_POST['edad'], FILTER_VALIDATE_INT)){
-		$error.="Error edad ";
-		$var_bool=FALSE;
-	}
 	
 	if(!is_string($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
 		$error.="Error Email ";
 		$var_bool=FALSE;
 	}
 	
-	if(strlen($_POST['pass'])<8){
-		$error.="Error Password ";
+	if(strlen($_POST['clave'])<8){
+		$error.="Error contraseña ";
 		$var_bool=FALSE;
 	}
 	
