@@ -10,7 +10,10 @@
 
 </head>
 <body>
+<?php 
+    include ("header.php") ;
     
+    ?>
 
  
 <section>
@@ -20,7 +23,7 @@
        
         <form class="row g-3" action="eliminar.php" method="post">
 
-                <input type="hidden" class="form-control" name="id" id="id" value="<?php echo $fila['id'];?>">
+                <input type="hidden" class="form-control" name="idPiezas" id="id" value="<?php echo $fila['idPiezas'];?>">
                 
     
 
@@ -58,19 +61,14 @@
   <div class="col-sm-6 mb-3">
   <label for="tipo" class="form-label">* Clasificación</label>
   <select class="form-control" name="tipo" id="tipo" disabled>
-    <option value="1" <?php if ($fila['especie'] == 1) echo "selected"; ?>>zoología-vertebrados</option>
-    <option value="2" <?php if ($fila['especie'] == 2) echo "selected"; ?>>zoologÍa-invertebrados</option>
-    <option value="3" <?php if ($fila['especie'] == 3) echo "selected"; ?>>Botánica-algas</option>
-    <option value="4" <?php if ($fila['especie'] == 4) echo "selected"; ?>>Botánica-Briófitos</option>
-    <option value="5" <?php if ($fila['especie'] == 5) echo "selected"; ?>>Botánica-Pteridófitos</option>
-    <option value="6" <?php if ($fila['especie'] == 6) echo "selected"; ?>>Botánica-gimnospermas</option>
-    <option value="7" <?php if ($fila['especie'] == 7) echo "selected"; ?>>Botánica-angiospermas</option>
-    <option value="8" <?php if ($fila['especie'] == 8) echo "selected"; ?>>Paleontología</option>
-     <option value="9" <?php if ($fila['especie'] == 9) echo "selected"; ?>>Arqueología</option>
-   <option value="10" <?php if ($fila['especie'] == 10) echo "selected"; ?>>Osteología</option>
-  <option value="11" <?php if ($fila['especie'] == 11) echo "selected"; ?>>Geología</option>
- <option value="12" <?php if ($fila['especie'] == 12) echo "selected"; ?>>Ictiología</option>
-  <option value="13" <?php if ($fila['especie'] == 13) echo "selected"; ?>>Oología</option>
+     <option value="1" <?php if ($fila['especie'] == 1) echo "selected"; ?>>zoología</option>
+     <option value="3" <?php if ($fila['especie'] == 2) echo "selected"; ?>>Botánica</option>
+     <option value="8" <?php if ($fila['especie'] == 3) echo "selected"; ?>>Paleontología</option>
+     <option value="9" <?php if ($fila['especie'] == 4) echo "selected"; ?>>Arqueología</option>
+     <option value="10" <?php if ($fila['especie'] == 5) echo "selected"; ?>>Osteología</option>
+     <option value="11" <?php if ($fila['especie'] == 6) echo "selected"; ?>>Geología</option>
+     <option value="12" <?php if ($fila['especie'] == 7) echo "selected"; ?>>Ictiología</option>
+     <option value="13" <?php if ($fila['especie'] == 8) echo "selected"; ?>>Oología</option>
   </select>
 </div> 
 

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['dniadmin'])){
+if(!isset($_SESSION['dnigerente'])){
   header("Location:index.php");
 }
 
@@ -32,8 +32,8 @@ if(!isset($_SESSION['dniadmin'])){
 <br>
 <div class="card text-center col-sm-12 mb-3" >
   <div class="card-body ">
-    <h5 class="card-title">Acceso exclusivo para administrador!</h5>
-    <h5 class="card-title">Bienvenido/a sr/a administrador!</h5>
+    <h5 class="card-title">Acceso exclusivo para gerente!</h5>
+    <h5 class="card-title">Bienvenido/a sr/a gerente!</h5>
    
    
   </div>

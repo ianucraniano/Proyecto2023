@@ -32,9 +32,9 @@ if(!empty(trim($_POST['dni']))&& !empty($_POST['clave']) && !empty($_POST['tipo_
 
  
       if (mysqli_num_rows($result)==1){
+       
         $fila=mysqli_fetch_array($result);
-        if(password_verify($clave, $fila['clave'])){
-        
+        if(password_verify($clave, $fila['clave'])){    
         if($fila["tipo_usuario"]=="administrador"){
 
           $_SESSION['dniadmin']=$dni;
@@ -53,7 +53,7 @@ if(!empty(trim($_POST['dni']))&& !empty($_POST['clave']) && !empty($_POST['tipo_
         $_SESSION['apellidogerente']=$fila['apellido'];
         $_SESSION['tipoUsuario']=$fila['tipo_usuario'];
 
-        header("Location:.php");
+        header("Location:pagGerente.php");
       }
     }
 

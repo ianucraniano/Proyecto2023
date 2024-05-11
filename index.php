@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./CSS/estilo.css">
     <link rel="stylesheet" href="./CSS/contacto.css">
     <link rel="stylesheet" href="./CSS/app.css">
+    <link rel="stylesheet" href="./CSS/nav.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">

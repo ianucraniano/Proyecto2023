@@ -4,18 +4,21 @@
 session_start();
 require_once "conexion.php";
 
-if(!isset($_SESSION['dniadmin'])){
+if(!isset($_SESSION['dniadmin'])&&!isset($_SESSION['dnigerente'])){
     header("Location:index.php");
 }
 
 
 
-$sql= "SELECT piezas.numeroInventario,piezas.especie,piezas.estadoConservacion, donante.nombre,donante.apellido,piezas.fechaIngreso,piezas.clasificacion
+$sql= "SELECT piezas.idPiezas,piezas.numeroInventario,piezas.especie,piezas.estadoConservacion, donante.nombre,donante.apellido,piezas.fechaIngreso,piezas.clasificacion
 FROM piezas, donante
 WHERE (piezas.Donante_idDonante1=donante.idDonante)";
 
 
 $result=mysqli_query($conex,$sql);
+
+
+
 
 ?>
 <!DOCTYPE html>
@@ -23,17 +26,21 @@ $result=mysqli_query($conex,$sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla menu especies</title>
+    <title></title>
 
-    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-
+  <!-- <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="../CSS/nav.css">
 
 </head>
 <body>
-    <?php include ("header.php") ;?>
+
+    <?php 
+    include ("header.php") ;
+    
+    ?>
 
 <section>
-<div class="text-center mt-5 mb-3"><h3>Menu de especies</h3></div>
+<div class="text-center mt-5 mb-3"><h3>Menu de piezas</h3></div>
 <table class="table table-success table-striped">
 <thead class="table-dark">
 <tr class="table-primary">
@@ -69,14 +76,14 @@ $result=mysqli_query($conex,$sql);
     
     <th scope="row"><?php echo $fila["numeroInventario"]; ?>
     </th>
-        <td><?php echo $fila["nombre"]; ?></td>
-        <td><?php echo $fila["estado"]; ?></td>
-        <td><?php echo $fila["donante"]; ?></td>
-        <td><?php echo $fila["fecha"]; ?></td>
+        <td><?php echo $fila["especie"]; ?></td>
+        <td><?php echo $fila["estadoConservacion"]; ?></td>
+        <td><?php echo $fila["nombre"]." ".$fila["apellido"]; ?></td>
+        <td><?php echo $fila["fechaIngreso"]; ?></td>
         <td><?php echo $fila["clasificacion"]; ?></td>
         
-        <td><a class="me-1 btn btn-success btn-sm " href="editarespecie.php?id=<?php echo $fila ['num'];?>">Editar</a>
-        <a class="me-1 btn btn-danger btn-sm" href="eliminarespecie.php?id=<?php echo $fila ['idusuario'];?>">Eliminar</a>
+        <td><a class="me-1 btn btn-success btn-sm " href="form_editarp.php?idPiezas=<?php echo $fila ['idPiezas'];?>">Editar</a>
+        <a class="me-1 btn btn-danger btn-sm" href="form_eliminarp.php?idPiezas=<?php echo $fila ['idPiezas'];?>">Eliminar</a>
         </td>
 
 </tr>
