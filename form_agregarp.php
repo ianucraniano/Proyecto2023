@@ -31,7 +31,7 @@ include('header.php');
   <div class="text-center mt-5 mb-2"><h2>Agregar pieza</h2></div>	
   <div class="text-secondary"><p><small>Datos Obligatorios</small></p></div>
   	
-  <form class="row g-3" action="insertar_datos.php" method="post">
+  <form class="row g-3" action="insertar_pieza.php" method="post">
   
   <div class="col-sm-6">
     <label for="nombre" class="form-label">Nro inventario</label>
@@ -58,8 +58,8 @@ include('header.php');
 
 
   <div class="col-sm-6 mb-3">
-  <label for="tipo" class="form-label">Clasificación</label>
-    <select class="form-control" name="tipo_usuario" id="tipo_usuario" required>
+  <label for="clasificacion" class="form-label">Clasificación</label>
+    <select class="form-control" name="clasificacion" id="clasificacion" required>
       <option selected disabled="">Selecciona una clasificación</option>
       <option value="">Zoología</option>
       <option value="">Botánica</option>
@@ -92,7 +92,7 @@ if (isset($_GET["mensaje"])){
     
   }else{
     
-   echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>Acceso autorizado!</strong><a href='ingresar.php' class='text-primary ms-3'>Volver al Inicio</a></div></div>";  
+   echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>Acceso autorizado!</strong><a href='.php' class='text-primary ms-3'>Volver al Inicio</a></div></div>";  
   
   }  
 } 
