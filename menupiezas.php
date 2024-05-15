@@ -42,9 +42,19 @@ $result=mysqli_query($conex,$sql);
 <section>
 <div class="text-center mt-5 mb-3"><h3>Menu de piezas</h3></div>
 <table class="table table-success table-striped">
-<thead class="table-dark">
-<tr class="table-primary">
-<th scope="col">Nro de inventario</th>
+
+
+
+  
+      <div class="col-6">
+     <a class="btn btn-primary btn-sm mb-2" href="form_agregarp.php" role="button">Agregar</a>
+      </div>
+    
+
+
+    <thead class="table-dark">
+    <tr class="table-primary">
+    <th scope="col">Nro de inventario</th>
                 <th scope="col">Especie</th>
                 <th scope="col">Estado</th>
                 <th scope="col">Donante</th>

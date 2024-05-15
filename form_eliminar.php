@@ -31,7 +31,7 @@ include("header.php");
        
         <form class="row g-3" action="eliminar.php" method="post">
 
-                <input type="hidden" class="form-control" name="idusuario" id="idusuario" value="<?php echo $fila['idusuario'];?>">
+                <input type="hidden" class="form-control" name="idusuario" id="idusuario" value="<?php echo $fila['idusuarios'];?>">
                 
                 <div class="col-sm-6">
                 <label for="nombre" class="form-label">* Nombre</label>
