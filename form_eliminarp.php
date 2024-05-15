@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,11 +28,10 @@
 <section>
  
  <div class="container mt-2 mb-5">
- <div class="text-center my-5 text-primary"><h2>Eliminar Especie</h2></div>	
+ <div class="text-center my-5 text-primary"><h2>Eliminar Pieza</h2></div>	
        
         <form class="row g-3" action="eliminar.php" method="post">
-
-                <input type="hidden" class="form-control" name="idPiezas" id="id" value="<?php echo $fila['idPiezas'];?>">
+        <input type="hidden" class="form-control" name="idPiezas" id="id" value="<?php echo $fila['idPiezas'];?>">
                 
     
 
