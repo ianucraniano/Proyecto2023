@@ -25,6 +25,7 @@ nav  {
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
+    
 }
 .nav-link {
   font-family: "Cabin", sans-serif;
@@ -34,6 +35,12 @@ nav  {
   font-variation-settings:
     "wdth" 100;
 
+}
+
+ul li a:hover{
+  background-color: green;
+  transition: .5s all;
+  border-radius: 5px;
 }
 </style>      
           
@@ -50,7 +57,7 @@ nav  {
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class=" navbar-collapse  nav-tabs" id="navbarSupportedContent">
+    <div class=" navbar-collapse  " id="navbarSupportedContent">
 
 <?php
 

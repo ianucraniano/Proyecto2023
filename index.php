@@ -12,14 +12,13 @@
     <link rel="stylesheet" href="./CSS/estilo.css">
     <link rel="stylesheet" href="./CSS/contacto.css">
     <link rel="stylesheet" href="./CSS/app.css">
-    <link rel="stylesheet" href="./CSS/nav.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+  
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
 
@@ -28,8 +27,14 @@
 
     include("header.php");
     ?>
+
+    <div class="fondo img-fluid">
+      <h1>Museo de la ciudad de San Cristobal</h1>
+      
+
+    </div>
     
-    <div id="carouselExampleIndicators" class="carousel slide carousel-fade">
+    <!-- <div id="carouselExampleIndicators" class="carousel slide carousel-fade">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -54,9 +59,13 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
+</div> -->
+
+<div class="flex justify-content-center text-center p-4">
+  <h2>Visita nuestras redes sociales</h2>
 </div>
 
-<div class="wrapper">
+<div class="wrapper p-2">
         <div class="icon facebook">
             <div class="tooltip">Facebook</div>
             <span><i class="fab fa-facebook-f"></i></span>
@@ -87,6 +96,28 @@
 <section class= " principal">
 
 <style>
+  body{
+    background-color: rgb(210, 255, 200);
+
+  }
+  .fondo{
+  background: url("./imagenes/imagen.jpg") ;
+  opacity: 0.8;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 400px;
+}
+.fondo h1{
+  color: #fff ;
+  font-family: "Cabin", sans-serif;
+  background-color: black;
+  opacity: 0.9;
+  display: grid;
+  place-items: center;
+  position: relative;
+  top:140px;
+}
   .presentacion{
     background-color: rgb(210, 255, 200);
   }
@@ -116,19 +147,20 @@
 
 <div class= "presentacion">
   <br>
-  <h1 class="bienvenido">¡Bienvenidos al museo de San Cristobal!</h1>
+  <h2 class="bienvenido">¡Bienvenidos al museo de San Cristobal!</h2>
   <p class=" container-fluid">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam error inventore voluptatum quae ea vel nostrum temporibus minima, quisquam iusto? Veritatis sequi fuga consectetur, rerum necessitatibus eum iusto dolorum voluptatum?
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestias fugiat libero fuga pariatur, eaque perspiciatis dolore totam ipsum debitis cupiditate beatae, voluptatum modi eligendi error placeat nam. Recusandae, sint?
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam modi dicta porro! Autem repudiandae sunt reprehenderit accusamus laboriosam hic quasi ducimus, soluta a, ipsum quaerat ratione, dolorem quo minima quibusdam?
   </p>
   
 </div>
-<div >
 
-  <h2 class="coleccion bienvenido">ANIMALES EN PELIGRO DE EXTINCIÓN </h2>
+<div class="container" >
+
+  <h2 class="coleccion bienvenido ">ANIMALES EN PELIGRO DE EXTINCIÓN </h2>
   <div class="row p-3">
-  <div class="col-4 ">
-    <div class="">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4  ">
+    
   <div class="card shadow" style="width: 18rem;">
   <img src="./imagenes/chimpamce.avif" class="card-img-top" alt="...">
   <div class="card-body">
@@ -155,10 +187,10 @@
   </div>
 </div>
   </div>
+
 </div>
 </div>
-</div>
-  <div class="col-4">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4">
     <div class="">
 <div class="card shadow" style="width: 18rem;">
   <img src="./imagenes/tigre.avif" class="card-img-top" alt="...">
@@ -192,7 +224,7 @@
 </div>
 </div>
 
-  <div class="col-4">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4">
     <div class="">
 <div class="card shadow" style="width: 18rem;">
   <img src="./imagenes/ballena.avif" class="card-img-top" alt="...">
@@ -223,7 +255,7 @@
 </div>
 </div>
 </div>
-<div class="col-4 g-3">
+<div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4">
     <div class="">
   <div class="card shadow" style="width: 18rem;">
   <img src="./imagenes/lemur.avif" class="card-img-top" alt="...">
@@ -254,7 +286,7 @@
 </div>
 </div>
 </div>
-  <div class="col-4 g-3">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4">
     <div class="">
 <div class="card shadow" style="width: 18rem;">
   <img src="./imagenes/vaquitamarina.avif" class="card-img-top" alt="...">
@@ -287,7 +319,7 @@
 </div>
 </div>
 </div>
-  <div class="col-4 g-3">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4">
     <div class="">
 <div class="card shadow" style="width: 18rem;">
   <img src="./imagenes/rinoceronte.avif" class="card-img-top" alt="...">

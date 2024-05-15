@@ -82,10 +82,10 @@ include("header.php");
     <h3>Colección ¿que vamos a ver?</h3>
     
         <a class="btn" href="listado.php">Listado de especies</a>
-     
+     <!--col-12 col-sm-6 col-md-4 col-lg-4 mb-4-->
 <section>
 <div class="row p-3">
-  <div class="col-3">
+  <div class="col-3 col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
     <div class="">
 <div class="card mb-3 shadow p-3 mb-5 bg-white rounded" style="width: 14rem;">
   <img src="./imagenes/zoologia.jpg" class="card-img-top" alt="...">
@@ -100,7 +100,7 @@ include("header.php");
 </div>
 </div>
 </div>
-<div class="col-3">
+<div class="col-3 col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
     <div class="">
 <div class="card  mb-3  shadow p-3 mb-5 bg-white rounded" style="width: 14rem;">
   <img src="./imagenes/botanica.jpg" class="card-img-top" alt="...">
@@ -116,7 +116,7 @@ include("header.php");
 </div>
 </div>
 </div>
-<div class="col-3">
+<div class="col-3 col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
     <div class="">
 <div class="card  mb-3  shadow p-3 mb-5 bg-white rounded" style="width: 14rem;">
   <img src="./imagenes/paleontologia.jpg" class="card-img-top" alt="...">
@@ -127,7 +127,7 @@ include("header.php");
 </div>
 </div>
 </div>
-<div class="col-3">
+<div class="col-3 col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
     <div class="">
 <div class="card  mb-3  shadow p-3 mb-5 bg-white rounded" style="width: 14rem;">
   <img src="./imagenes/arqueologia.webp" class="card-img-top" alt="...">
@@ -140,7 +140,7 @@ include("header.php");
 </div>
 </div>
 <div class="row p-3">
-  <div class="col-3">
+  <div class="col-3 col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
     <div class="">
 <div class="card  mb-3  shadow p-3 mb-5 bg-white rounded" style="width: 14rem;">
   <img src="./imagenes/osteologia.jpg" class="card-img-top" alt="...">
@@ -152,7 +152,7 @@ include("header.php");
 </div>
 </div>
 </div>
-<div class="col-3">
+<div class="col-3 col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
     <div class="">
 <div class="card  mb-3 shadow p-3 mb-5 bg-white rounded" style="width: 14rem;">
   <img src="./imagenes/geologia.jpg" class="card-img-top" alt="...">
@@ -163,7 +163,7 @@ include("header.php");
 </div>
 </div>
 </div>
-<div class="col-3">
+<div class="col-3 col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
     <div class="  mb-3">
 <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 14rem;">
   <img src="./imagenes/ictiologia.jpg" class="card-img-top" alt="...">
@@ -174,7 +174,7 @@ include("header.php");
 </div>
 </div>
 </div>
-<div class="col-3">
+<div class="col-3 col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
     <div class="  mb-3">
 <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 14rem;">
   <img src="./imagenes/oologia.jpg" class="card-img-top" alt="...">

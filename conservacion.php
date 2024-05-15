@@ -24,11 +24,11 @@ include("header.php");
     font-family: 'Merriweather', serif;
     display: flex;
     justify-content: center;
-    padding: 40px;
+    padding: 20px;
 }
 .titulo2{
     background-color: #a4be7b;
-    padding: 10px;
+    padding: 25px;
     display: flex;
     justify-content: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -38,7 +38,10 @@ include("header.php");
 .imagen{
   background-image: url(./imagenes/museo.webp);
   background-size: 100%;
-  height: 600px;
+  background-repeat: no-repeat;
+  background-cover: cover;
+  height: 400px;
+  opacity: 0.7;
 }
 p{
   font-family: "Dosis", sans-serif;
@@ -52,7 +55,7 @@ p{
   text-align: center;
   background-color: rgba(0,0,0,0.50);
 position: relative;
-top: 200px;
+top: 100px;
 }
 .texto h1{
   color: white;
@@ -77,7 +80,7 @@ top: 200px;
 
 <h2 class="titulo1">Especies amenazadas</h2>
 <h3 class="titulo2">Conservación de especies amenazadas</h3>
-<div class="center">
+<div class="center container">
 
   <p>Compartimos con ustedes actividades que realizamos en el marco de distintos proyectos relacionados a la fauna amenazada de extinción.</p>
   <p>

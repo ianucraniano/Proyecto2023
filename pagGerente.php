@@ -32,7 +32,7 @@ if(!isset($_SESSION['dnigerente'])){
 <br>
 <div class="card text-center col-sm-12 mb-3" >
   <div class="card-body ">
-    <h5 class="card-title">Acceso exclusivo para gerente!</h5>
+    <h1 class="card-title">Acceso exclusivo para gerente!</h1>
     <h5 class="card-title">Bienvenido/a sr/a gerente!</h5>
    
    
