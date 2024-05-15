@@ -7,12 +7,12 @@
   border: solid rgba(255, 255, 255, .2);
   backdrop-filter: blur(20px);
   
-
+height: 29rem;
 width: 500px;
 z-index: 2;
   border-radius: 15px;
   box-shadow: 0 10px 15px black;
-
+  font-family: "Nunito Sans", sans-serif;
 
 }
 
@@ -21,6 +21,10 @@ z-index: 2;
   justify-content: center;
   justify-items: center;
    margin-top: 20px;
+   width: 10rem;
+   height: 3rem;
+   
+   
 }
 
 .titulo h1{
