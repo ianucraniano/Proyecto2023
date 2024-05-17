@@ -29,10 +29,7 @@ function ValidacionDatos() {
 		$var_bool=FALSE;
 	}
 	
-	if(strlen($_POST['clave'])<8){
-		$error.="Error contraseña ";
-		$var_bool=FALSE;
-	}
+	
 	
 	
 

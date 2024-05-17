@@ -52,8 +52,8 @@ include('header.php');
     <input type="date" class="form-control" name="fechaIngreso" id="fechaIngreso" placeholder="Ingresa fecha de ingreso" required>
   </div>
   <div class="col-sm-6 mb-3">
-    <label for="dni" class="form-label">Donante</label>
-    <input type="text" class="form-control" name="donante" id="donante" placeholder="Ingresa el donante" required>
+    <label for="nombre" class="form-label">Donante</label>
+    <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingresa el donante" required>
   </div>
 
 

@@ -14,8 +14,8 @@ function Validacion() {
 	}
 	
 
-	if(!is_string($_POST['donante']) || !preg_match("/^[a-zA-Z ]+$/", $_POST['donante'])){
-		$error.="Error donante";
+	if(!is_string($_POST['nombre']) || !preg_match("/^[a-zA-Z ]+$/", $_POST['nombre'])){
+		$error.="Error";
 		$var_bool=FALSE;
 	}
 	

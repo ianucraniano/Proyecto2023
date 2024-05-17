@@ -39,7 +39,7 @@ $error = "";
 
        $result=mysqli_query($conex,$sql);
 
-     die($sql);
+     //die($sql);
 
        if ($result){
           

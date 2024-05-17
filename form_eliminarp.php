@@ -55,7 +55,7 @@ session_start();
   
     <div class="col-sm-6 mb-3">
     <label for="donante" class="form-label">* Donante</label>
-    <input type="text" class="form-control" name="donante" id="donante" placeholder="Ingresa tu Correo Electrónico" value="<?php echo $fila['email']; ?>" disabled>
+    <input type="text" class="form-control" name="donante" id="donante" placeholder="Ingresa tu Correo Electrónico" value="<?php echo $fila['nombre']." ".$fila['apellido']; ?>" disabled>
   </div>
 
   <div class="col-sm-6 mb-3">

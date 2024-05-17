@@ -15,7 +15,7 @@
 $error = "";
 
 if(!empty(trim($_POST['numeroInventario'])) && !empty(trim($_POST['especie'])) && 
-   !empty(trim($_POST['estadoConservacion'])) && !empty(trim($_POST['fechaIngreso'])) && !empty(trim($_POST['donante']))&& !empty(trim($_POST['clasificacion']))){
+   !empty(trim($_POST['estadoConservacion'])) && !empty(trim($_POST['fechaIngreso'])) && !empty(trim($_POST['nombre']))&& !empty(trim($_POST['clasificacion']))){
 	
 
 	if (Validacion()){
@@ -27,7 +27,8 @@ if(!empty(trim($_POST['numeroInventario'])) && !empty(trim($_POST['especie'])) &
 		$donante=$_POST['nombre'].$_POST['apellido'];
         $clasificacion=$_POST['clasificacion'];
             
-        $sql="INSERT INTO piezas,donante(piezas.numeroInventario,piezas.especie,piezas.estadoConservacio,piezas.fechaIngreso,donante.nombre,donante.apellido,piezas.clasificacion) VALUES('$num','$especie','$estado','$fecha','$donante','$clasificacion')";
+        $sql="INSERT INTO piezas(numeroInventario,especie,estadoConservacio,fechaIngreso,clasificacion) VALUES('$num','$especie','$estado','$fecha','$clasificacion')";
+		$sql="INSERT INTO donante(nombre,apellido) VALUES('$donante')";
 
         $result=mysqli_query($conex,$sql);
 

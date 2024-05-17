@@ -1,7 +1,33 @@
 <?php
 session_start();
+require_once "conexion.php";
 
 
+if (!isset($_GET['msje'])){
+
+
+
+ $id=$_GET['idusuarios'];
+  
+
+
+
+}else{
+    
+ 
+
+ $id=$_SESSION['ids'];
+
+   
+}  
+
+$sql= "SELECT nombre,apellido,dni,email FROM usuarios WHERE idusuarios = $id" ;
+
+//die($sql);
+
+$result=mysqli_query($conex,$sql); 
+
+$fila=mysqli_fetch_assoc($result);
 
 
 ?>
@@ -30,7 +56,7 @@ include("header.php");
   <br>
    <br>
   	
-  <form class="row g-3" action="editar.php" method="post">
+  <form class="row g-3" action="editar.php" method="POST">
   
   <div class="col-sm-6">
     <label for="nombre" class="form-label">* Nombre</label>
@@ -39,10 +65,6 @@ include("header.php");
   <div class="col-sm-6 mb-3">
     <label for="apellido" class="form-label">* Apellido</label>
     <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Ingresa tu Apellido" value="<?php echo $fila['apellido']; ?>" required>
-  </div>
-  <div class="col-sm-6 mb-3">
-    <label for="telefono" class="form-label">* Telefono</label>
-    <input type="text" class="form-control" name="telefono" id="telefono" placeholder="Ingresa tu telefono" value="<?php echo $fila['telefono']; ?>" required>
   </div>
    <div class="col-sm-6 mb-3">
     <label for="dni" class="form-label">* DNI</label>
@@ -54,21 +76,8 @@ include("header.php");
     <input type="text" class="form-control" name="email" id="email" placeholder="Ingresa tu Correo Electrónico" value="<?php echo $fila['email']; ?>" required>
   </div>
 
- <div class="col-sm-6 mb-3">
-    <label for="clave" class="form-label">* Clave</label>
-    <input type="password" class="form-control" name="clave" id="clave" placeholder="Ingresa una clave de 8 caracteres como mínimo" value="<?php 
-    echo $fila['clave'];?>" required>
-  </div>
- 
-  <div class="col-sm-6 mb-3">
-  <label for="tipo_usuario" class="form-label">* Tipo de Usuario</label>
-  <select class="form-control" name="tipo_usuario" id="tipo_usuario" required>
-    <option value="administrador" <?php if ($fila['tipo_usuario'] == "administrador") echo "selected"; ?>>Administrador</option>
-    <option value="gerente" <?php if ($fila['tipo_usuario'] == "gerente") echo "selected"; ?>>Gerentes</option>
-  </select>
-</div>
 
-  <div class="col-sm-6 mb-3">
+
   
 
 </div>
@@ -84,6 +93,26 @@ include("header.php");
 
 
 </section>
+
+
+<?php
+    
+    // Uso de GET para mostrar Mensaje resultante de la operacion de Actualizacion
+
+    if (isset($_GET["msje"])){
+
+       if($_GET["msje"]!="ok"){
+
+         echo "<div class='text-center mt-4 mb-5'><div class='alert alert-danger' role='alert'><strong>".$_GET["msje"]."</strong><a href='listadoadm.php' </a></div>"; 
+         
+       }else{
+
+               
+         echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>"."Actualización Exitosa!"."</strong><a href='listadoadm.php' </a></div>";  
+       
+       }  
+  } 
+  ?> 
 
 
 
