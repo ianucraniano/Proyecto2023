@@ -38,7 +38,7 @@ nav  {
 }
 
 ul li a:hover{
-  background-color: green;
+  background-color: #1ed138;
   transition: .5s all;
   border-radius: 5px;
 }

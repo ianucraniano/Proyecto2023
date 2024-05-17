@@ -29,7 +29,7 @@
     ?>
 
     <div class="fondo img-fluid">
-      <h1>Museo de la ciudad de San Cristobal</h1>
+      <h1 class="presentacion-pagina">Museo de la ciudad de San Cristobal</h1>
       
 
     </div>
@@ -101,18 +101,16 @@
 
   }
   .fondo{
-  background: url("./imagenes/imagen.jpg") ;
-  opacity: 0.8;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./imagenes/imagen.jpg");;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
   height: 400px;
 }
-.fondo h1{
-  color: #fff ;
+.presentacion-pagina{
+  color: white ;
   font-family: "Cabin", sans-serif;
-  background-color: black;
-  opacity: 0.9;
   display: grid;
   place-items: center;
   position: relative;
@@ -140,7 +138,9 @@
   font-weight: <weight>;
   font-style: normal;
   }
-
+.carrusel{
+  height: 400px;
+}
   
 
 </style>
@@ -356,47 +356,44 @@
 
 </section>
 
-<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active" data-bs-interval="10000">
-      <img src="./imagenes/educacion.webp" class="d-block w-100 " alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5 class="text-light">26 de Enero</h5>
-        <p class="text-light">Día Mundial de la Educación Ambiental</p>
-      </div>
-    </div>
-    <div class="carousel-item" data-bs-interval="2000">
-      <img src="./imagenes/rio.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5 class="text-light">14 de Marzo</h5>
-        <p class="text-light">
-Día Internacional de Acción contra las Represas y en defensa de los Ríos, el Agua y la Vida</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="./imagenes/animal.webp" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5 class="text-light">29 de Abril
 
-</h5>
-        <p class="text-light">Día del Animal</p>
-      </div>
+
+ 
+
+<section class=" container mb-5 p-4 margin-left-4">
+
+<div class="text-center p-4">
+  <h2>Coordina una visita aqui!</h2>
+</div>
+
+<div class="card-group">
+  <div class="card">
+    <img src="./imagenes/aguara.webp" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Ubicacion</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+  <div class="card">
+    <img src="./imagenes/animal.webp" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Horarios de visita</h5>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="./imagenes/aguilas.webp" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Punto de encuentro</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
 </div>
+</section>
+
 
 
 

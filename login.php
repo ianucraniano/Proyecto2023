@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 <link rel="stylesheet" href="./CSS/style.css">
 
@@ -37,7 +38,7 @@
         <div class="col-md-4 formulario">
             <form action="ingresar.php" method="post" class="mt-5">
             <div class="form-group text-center titulo">
-                <h1 class="text-black"><u>Iniciar sesión</u></h1>
+                <h1 class="text-black">Iniciar sesión</h1>
             </div>
             <label for="tipo" class="form-label"> Tipo de usuario</label>
             <div class="form-floating mb-3">      
@@ -88,7 +89,10 @@
   ?> 
 
    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<?php
 
+include("footer.php");
+?>
 </body>
 
 </html>
