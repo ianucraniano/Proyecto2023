@@ -24,7 +24,7 @@ if(!empty(trim($_POST['dni']))&& !empty($_POST['clave']) && !empty($_POST['tipo_
         $clave = $_POST['clave'];
        
 
-     $sql="SELECT dni,clave,tipo_usuario FROM usuarios WHERE (dni='$dni') and (tipo_usuario='$perfil')";
+     $sql="SELECT idusuarios,dni,clave,tipo_usuario FROM usuarios WHERE (dni='$dni') and (tipo_usuario='$perfil')";
 
      $result=mysqli_query($conex,$sql);
 
@@ -41,6 +41,7 @@ if(!empty(trim($_POST['dni']))&& !empty($_POST['clave']) && !empty($_POST['tipo_
           $_SESSION['nombreadmin']=$fila['nombre'];
           $_SESSION['apellidoadmin']=$fila['apellido'];
           $_SESSION['tipoUsuario']=$fila['tipo_usuario'];
+          $_SESSION['idusuario']=$fila['idusuarios'];
   
           header("Location:pagAdmin.php");
         

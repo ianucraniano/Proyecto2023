@@ -8,10 +8,10 @@ function Validacion() {
 
 	// Validar el nombre, apellido, dni, edad, email, clave
 
-	if(!is_numeric($_POST['numeroInventario']) || !preg_match("/^([0-9])*$/", $_POST['numeroInventario'])){
-		$error.="Error  ";
-		$var_bool=FALSE;
-	}
+	// if(!is_numeric($_POST['numeroInventario']) || !preg_match("/^([0-9])*$/", $_POST['numeroInventario'])){
+	// 	$error.="Error  ";
+	// 	$var_bool=FALSE;
+	// }
 	
 
 	if(!is_string($_POST['nombre']) || !preg_match("/^[a-zA-Z ]+$/", $_POST['nombre'])){

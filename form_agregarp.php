@@ -37,10 +37,12 @@ include('header.php');
     <label for="nombre" class="form-label">Nro inventario</label>
     <input type="text" class="form-control" name="numeroInventario" id="numeroInventario" placeholder="Ingresa nro de inventario" required>
   </div>
+
   <div class="col-sm-6 mb-3">
     <label for="especie" class="form-label">Especie</label>
     <input type="text" class="form-control" name="especie" id="especie" placeholder="Ingresa una especie" required>
   </div>
+
   <div class="col-sm-6 mb-3">
     <label for="estadoConservacion" class="form-label">Estado de conservación</label>
     <input type="text" class="form-control" name="estadoConservacion" id="estadoConservacion" placeholder="Ingresa su estado" required>
@@ -51,25 +53,38 @@ include('header.php');
     <label for="fechaIngreso" class="form-label">Fecha de ingreso</label>
     <input type="date" class="form-control" name="fechaIngreso" id="fechaIngreso" placeholder="Ingresa fecha de ingreso" required>
   </div>
+
   <div class="col-sm-6 mb-3">
     <label for="nombre" class="form-label">Donante</label>
     <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingresa el donante" required>
   </div>
 
 
+    
   <div class="col-sm-6 mb-3">
   <label for="clasificacion" class="form-label">Clasificación</label>
     <select class="form-control" name="clasificacion" id="clasificacion" required>
       <option selected disabled="">Selecciona una clasificación</option>
-      <option value="">Zoología</option>
-      <option value="">Botánica</option>
-      <option value="">Paleontología</option>
-      <option value="">Arqueología</option>
-      <option value="">Osteología</option>
-      <option value="">Geología</option>
-      <option value="">Ictiología</option>
-      <option value="">Oología</option>
+      <option value="zoologia">Zoología</option>
+      <option value="botanica">Botánica</option>
+      <option value="paleontologia">Paleontología</option>
+      <option value="arqueologia">Arqueología</option>
+      <option value="osteologia">Osteología</option>
+      <option value="geologia">Geología</option>
+      <option value="ictiologia">Ictiología</option>
+      <option value="oologia">Oología</option>
     </select>
+  </div>
+
+    <div class=" col-sm-6 mt-2 mb-5 row g-2">
+    <label for="nombre" class="form-label">Observacion</label>
+    <textarea name="observacion" id="observacion"> </textarea>
+    </div>
+
+    <div class="col-sm-6 mb-3">
+    <label for="cantidadpiezas" class="form-label">Cantidad de piezas</label>
+    <input type="text" class="form-control" name="cantidadpiezas" id="cantidadpiezas" placeholder="Ingresa nro de pieza" required>
+  </div>
 
   <div class="col-12 mt-5 text-center">
         <button type="submit" class="btn btn-primary btn-lg" name="guardar" id="enviar">Agregar</button>
@@ -79,7 +94,7 @@ include('header.php');
   </form>
 
 
-
+</div>
 
 
 <?php
