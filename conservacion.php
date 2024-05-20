@@ -36,12 +36,12 @@ include("header.php");
     
 }
 .imagen{
-  background-image: url(./imagenes/museo.webp);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./imagenes/museo.webp");
   background-size: 100%;
   background-repeat: no-repeat;
   background-cover: cover;
   height: 400px;
-  opacity: 0.7;
+  
 }
 p{
   font-family: "Dosis", sans-serif;
@@ -53,7 +53,7 @@ p{
   display: flex;
   justify-content: center;
   text-align: center;
-  background-color: rgba(0,0,0,0.50);
+ 
 position: relative;
 top: 100px;
 }
@@ -87,6 +87,7 @@ top: 100px;
   El museo también es parte de la delegación santafesina del Programa de Conservación de los Murciélagos de Argentina.</p>
 </div>
 <pre></pre>
+<div class="container">
 <div class="card mb-3 " style="max-width: 1000px;">
 <div class="card mb-3  " style="max-width: 1000px;">
   <div class="row g-0 ">
@@ -199,11 +200,11 @@ SE REGISTRA UNA NUEVA ESPECIE DE MURCIÉLAGO EN ENTRE RÍOS</h5>
         <p class="card-text">
        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur maxime sed molestias, incidunt nisi facilis porro cum quisquam accusantium id rem distinctio totam beatae tenetur nobis nemo magni fugit praesentium? </p>
         
-      </div>
-    </div>
-  </div>
+       </div>
+     </div>
+   </div>
+ </div>
 </div>
-
 
 
 <?php

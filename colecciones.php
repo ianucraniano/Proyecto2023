@@ -83,7 +83,7 @@ include("header.php");
     
         <a class="btn" href="listado.php">Listado de especies</a>
      <!--col-12 col-sm-6 col-md-4 col-lg-4 mb-4-->
-<section>
+<section class="container">
 <div class="row p-3">
   <div class="col-3 col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
     <div class="">

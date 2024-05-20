@@ -31,22 +31,22 @@
 
    
    
- <section>
+<section>
      
-<div class="container">
-    <div class="row justify-content-center pt-4 mt-5">
-        <div class="col-md-4 formulario">
-            <form action="ingresar.php" method="post" class="mt-5">
-            <div class="form-group text-center titulo">
+  <div class="container">
+      <div class="row justify-content-center pt-4 mt-5">
+          <div class="col-md-4 formulario">
+              <form action="ingresar.php" method="post" class="mt-5">
+               <div class="form-group text-center titulo">
                 <h1 class="text-black">Iniciar sesión</h1>
-            </div>
-            <label for="tipo" class="form-label"> Tipo de usuario</label>
-            <div class="form-floating mb-3">      
-         <select class="form-control" name="tipo_usuario" id="tipo_usuario" required>
-         <option selected disabled="">Selecciona un rol</option>
+               </div>
+              <label for="tipo" class="form-label"> Tipo de usuario</label>
+             <div class="form-floating mb-3">      
+            <select class="form-control" name="tipo_usuario" id="tipo_usuario" required>
+            <option selected disabled="">Selecciona un rol</option>
            <option value="administrador">Administrador</option>
            <option value="gerente">Gerente</option>
-         </select>
+           </select>
         </div>
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" name="dni" id="dni" placeholder="">
@@ -59,15 +59,15 @@
               <div class="col-12 text-center">
   <button type="submit" class=" btn-sm btn btn-outline-light" name="btn_ingresar" id="btn_ingresar">Ingresar</button>
 
+            </div>
+         </form>
+       </div>
+     </div>
   </div>
-        </form>
-        </div>
-    </div>
-</div>
 
 
 
-  </section>
+</section>
 
   
   <?php

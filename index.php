@@ -101,7 +101,7 @@
 
   }
   .fondo{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./imagenes/imagen.jpg");;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./imagenes/imagen.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -360,14 +360,14 @@
 
  
 
-<section class=" container mb-5 p-4 margin-left-4">
+<section class="container mb-5 p-4 ">
 
 <div class="text-center p-4">
   <h2>Coordina una visita aqui!</h2>
 </div>
 
-<div class="card-group">
-  <div class="card">
+<div class="card-group ">
+  <div class="card ">
     <img src="./imagenes/aguara.webp" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Ubicacion</h5>
