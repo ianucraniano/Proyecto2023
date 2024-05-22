@@ -3,12 +3,14 @@ session_start();
 require_once "conexion.php";
 
 
+
 if (!isset($_GET['msje'])){
 
 
+$id=$_GET['idusuarios'];
 
- $id=$_GET['idusuarios'];
-  
+
+
 
 
 

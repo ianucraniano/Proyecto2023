@@ -2,12 +2,10 @@
 
 require_once "conexion.php";
 
-$id=$_POST["id"];
+$id=$_POST["idusuarios"];
 
-/* En la Base de Datos en Vista de Relaciones de la Tabla ficha, aplicar 
-el atributo ON Cascade Delete para la relacion entre ficha y socios */
 
-$sql="DELETE from usuarios where id=$id";
+$sql="DELETE from usuarios where idusuarios=$id";
 
 //die($sql);
 

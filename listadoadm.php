@@ -90,8 +90,8 @@ include("header.php");
                         <td><?php echo $fila["nombre"]; ?></td>
                         <td><?php echo $fila["apellido"]; ?></td>
                         <td><?php echo $fila["email"]; ?></td>
-                        <td><a class="me-1 btn btn-outline-success btn-sm " href="form_editar.php?id=<?php echo $fila ['idusuarios'];?>">Editar</a>
-                        <a class="me-1 btn btn-outline-danger btn-sm" href="form_eliminar.php?id=<?php echo $fila ['idusuarios'];?>">Eliminar</a>
+                        <td><a class="me-1 btn btn-outline-success btn-sm " href="form_editar.php?idusuarios=<?php echo $fila ['idusuarios'];?>">Editar</a>
+                        <a class="me-1 btn btn-outline-danger btn-sm" href="form_eliminar.php?idusuarios=<?php echo $fila ['idusuarios'];?>">Eliminar</a>
                   
                   
                   

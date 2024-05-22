@@ -1,7 +1,17 @@
 <?php
 session_start();
 
+require_once "conexion.php";
 
+
+ $id=$_GET["idusuarios"];
+
+
+ $sql= "SELECT nombre,apellido,dni,email FROM usuarios WHERE idusuarios = $id";
+
+ $result=mysqli_query($conex,$sql);
+
+ $fila=mysqli_fetch_array($result);
 
 
 ?>
@@ -31,7 +41,7 @@ include("header.php");
        
         <form class="row g-3" action="eliminar.php" method="post">
 
-                <input type="hidden" class="form-control" name="idusuario" id="idusuario" value="<?php echo $fila['idusuarios'];?>">
+                <input type="hidden" class="form-control" name="idusuarios" id="idusuarios" value="<?php echo $fila['idusuarios'];?>">
                 
                 <div class="col-sm-6">
                 <label for="nombre" class="form-label">* Nombre</label>
@@ -43,10 +53,6 @@ include("header.php");
                 <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Ingresa tu Apellido" value="<?php echo $fila['apellido'];?>" disabled>
                 </div>
 
-                <div class="col-sm-6 mb-3">
-                <label for="telefono" class="form-label">* Telefono</label>
-                <input type="text" class="form-control" name="telefono" id="telefono" placeholder="Ingresa tu telefono" value="<?php echo $fila['telefono'];?>" disabled>
-                </div>
 
                 <div class="col-sm-6 mb-3">
                 <label for="dni" class="form-label">* DNI</label>
@@ -54,25 +60,17 @@ include("header.php");
                 </div>
 
                 <div class="col-sm-6 mb-3">
-                <label for="fecha" class="form-label">* Fecha de alta</label>
-                <input type="date" class="form-control" name="fecha" id="fecha" placeholder="Ingresa tu fecha de nacimiento" value="<?php echo $fila['fecha_alta'];?>" disabled>
-                </div>
-
-                <div class="col-sm-6 mb-3">
                 <label for="email" class="form-label">* Email</label>
                 <input type="email" class="form-control" name="email" id="email" placeholder="Ingresa tu Correo Electrónico" value="<?php echo $fila['email'];?>" disabled>
                 </div>
 
-                <div class="col-sm-6 mb-3" hidden>
-                <label for="pass" class="form-label">* Clave</label>
-                <input type="text" class="form-control" name="pass" id="pass" placeholder="Ingresa una clave de 8 caracteres como mínimo" value="<?php echo $fila['clave']; ?>" disabled>
-                </div>    
+            
 
                 <div class="col-12 text-center">
                     <div> <h5> ¿Estas seguro que quieres eliminar este usuario?</h5>
                         <br>
                 <button type="submit" class="btn btn-primary btn-lg" name="btn_editar" id="editar">Confirmar</button>
-                <a class="btn btn-danger btn-lg ms-2" href="listado.php" role="button">Cancelar</a>
+                <a class="btn btn-danger btn-lg ms-2" href="listadoadm.php" role="button">Cancelar</a>
                 </div>
         
         </form>

@@ -12,7 +12,7 @@
 
    // Guarda el id enviado por parámetro en URL, desde listado.php, y lo evalúa con $_GET
  
-   $id=$_GET['idPiezas'];
+  $id=$_GET['idPiezas'];
    
 
 
