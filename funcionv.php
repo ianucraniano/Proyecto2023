@@ -14,7 +14,7 @@ function Validacion() {
 	// }
 	
 
-	if(!is_string($_POST['nombre']) || !preg_match("/^[a-zA-Z ]+$/", $_POST['nombre'])){
+	if(!is_string($_POST['especie']) || !preg_match("/^[a-zA-Z ]+$/", $_POST['especie'])){
 		$error.="Error";
 		$var_bool=FALSE;
 	}

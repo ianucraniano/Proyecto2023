@@ -38,6 +38,7 @@ if(!empty(trim($_POST['dni']))&& !empty($_POST['clave']) && !empty($_POST['tipo_
         if($fila["tipo_usuario"]=="administrador"){
 
           $_SESSION['dniadmin']=$dni;
+
           $_SESSION['nombreadmin']=$fila['nombre'];
           $_SESSION['apellidoadmin']=$fila['apellido'];
           $_SESSION['tipoUsuario']=$fila['tipo_usuario'];
@@ -53,6 +54,7 @@ if(!empty(trim($_POST['dni']))&& !empty($_POST['clave']) && !empty($_POST['tipo_
         $_SESSION['nombregerente']=$fila['nombre'];
         $_SESSION['apellidogerente']=$fila['apellido'];
         $_SESSION['tipoUsuario']=$fila['tipo_usuario'];
+        $_SESSION['idusuario']=$fila['idusuarios'];
 
         header("Location:pagGerente.php");
       }

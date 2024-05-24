@@ -47,7 +47,7 @@ $error = "";
           header("Location:form_editarp.php?mnje=ok");
 
       }else{ 
-          $error.="error en la insercion";
+          $error.=" error en la insercion";
           header("Location:form_editarp.php?msje=ok".$error);
       }
   

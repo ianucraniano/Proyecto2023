@@ -19,6 +19,8 @@ $error = "";
 
  $_SESSION['ids']=$id;
 
+//echo $_POST['nombre'].$_POST['apellido'].$_POST['dni'].$_POST['email'];
+
  if(!empty(trim($_POST['nombre'])) && !empty(trim($_POST['apellido'])) && !empty(trim($_POST['dni'])) && !empty(trim($_POST['email']))){
 
 	if (ValidacionDatos()){

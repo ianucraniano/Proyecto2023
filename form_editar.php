@@ -12,8 +12,6 @@ $id=$_GET['idusuarios'];
 
 
 
-
-
 }else{
     
  
@@ -58,7 +56,8 @@ include("header.php");
   <br>
    <br>
   	
-  <form class="row g-3" action="editar.php" method="POST">
+  <form class="row g-3" action="editar.php" method="post">
+  <input type="hidden" class="form-control" name="idusuarios" id="idusuarios" placeholder="" value="<?php echo $fila['idusuarios']; ?>" required>
   
   <div class="col-sm-6">
     <label for="nombre" class="form-label">* Nombre</label>
