@@ -10,7 +10,7 @@ if(!isset($_SESSION['dniadmin'])&&!isset($_SESSION['dnigerente'])){
 
 
 
-$sql= "SELECT piezas.idPiezas,piezas.numeroInventario,piezas.especie,piezas.estadoConservacion, donante.nombre,donante.apellido,piezas.fechaIngreso,piezas.clasificacion
+$sql= "SELECT piezas.idPiezas,piezas.numeroInventario,piezas.especie,piezas.estadoConservacion, donante.nombreyape,piezas.fechaIngreso,piezas.clasificacion
 FROM piezas, donante
 WHERE (piezas.Donante_idDonante1=donante.idDonante)";
 
@@ -88,7 +88,7 @@ $result=mysqli_query($conex,$sql);
     </th>
         <td><?php echo $fila["especie"]; ?></td>
         <td><?php echo $fila["estadoConservacion"]; ?></td>
-        <td><?php echo $fila["nombre"]." ".$fila["apellido"]; ?></td>
+        <td><?php echo $fila["nombreyape"]?></td>
         <td><?php echo $fila["fechaIngreso"]; ?></td>
         <td><?php echo $fila["clasificacion"]; ?></td>
         

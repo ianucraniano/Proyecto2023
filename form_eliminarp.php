@@ -7,7 +7,7 @@ require_once "conexion.php";
 $id=$_GET["idPiezas"];
 
 
-$sql= "SELECT piezas.idPiezas,piezas.numeroInventario,piezas.especie,piezas.estadoConservacion, donante.nombre,donante.apellido,piezas.fechaIngreso,piezas.clasificacion,piezas.observacion
+$sql= "SELECT piezas.idPiezas,piezas.numeroInventario,piezas.especie,piezas.estadoConservacion, donante.nombreyape,piezas.fechaIngreso,piezas.clasificacion,piezas.observacion
 FROM piezas, donante
 WHERE (piezas.Donante_idDonante1=donante.idDonante) and idPiezas = $id"; 
 
@@ -43,7 +43,7 @@ $fila=mysqli_fetch_array($result);
  <div class="container mt-2 mb-5">
  <div class="text-center my-5 text-primary"><h2>Eliminar Pieza</h2></div>	
        
-        <form class="row g-3" action="eliminar.php" method="post">
+        <form class="row g-3" action="eliminarp.php" method="post">
         <input type="hidden" class="form-control" name="idPiezas" id="idPiezas" value="<?php echo $fila['idPiezas'];?>">
                 
     
@@ -68,7 +68,7 @@ $fila=mysqli_fetch_array($result);
   
     <div class="col-sm-6 mb-3">
     <label for="donante" class="form-label">* Donante</label>
-    <input type="text" class="form-control" name="donante" id="donante" placeholder="Ingresa tu Correo Electrónico" value="<?php echo $fila['nombre']." ".$fila['apellido']; ?>" disabled>
+    <input type="text" class="form-control" name="donante" id="donante" placeholder="Ingresa nombre del donante" value="<?php echo $fila['nombreyape'] ?>" disabled>
   </div>
 
 
@@ -93,7 +93,7 @@ $fila=mysqli_fetch_array($result);
                 <div class="col-12 text-center">
                     <div> <h5> ¿Estas seguro que quieres eliminar esta especie?</h5>
                         <br>
-                <button type="submit" class="btn btn-primary btn-lg" name="btn_editar" id="editar">Confirmar</button>
+                <button type="submit" class="btn btn-primary btn-lg" name="btn_eliminar" id="eliminar">Confirmar</button>
                 <a class="btn btn-danger btn-lg ms-2" href="menupiezas.php" role="button">Cancelar</a>
                 </div>
         

@@ -1,4 +1,12 @@
-<?php session_start(); ?>
+<?php 
+session_start();
+
+if(!isset($_SESSION['dniadmin'])&&!isset($_SESSION['dnigerente'])){
+  header("Location:index.php");
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>

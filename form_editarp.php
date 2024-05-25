@@ -25,7 +25,7 @@
 
     
  }  
- $sql= "SELECT piezas.idPiezas,piezas.numeroInventario,piezas.especie,piezas.estadoConservacion, donante.nombre,donante.apellido,piezas.fechaIngreso,piezas.clasificacion
+ $sql= "SELECT piezas.idPiezas,piezas.numeroInventario,piezas.especie,piezas.estadoConservacion, donante.nombreyape,piezas.fechaIngreso,piezas.clasificacion
 FROM piezas, donante
 WHERE (piezas.Donante_idDonante1=donante.idDonante) and idPiezas = $id" ;
 

@@ -30,25 +30,25 @@ $error = "";
     $estado=$_POST['estadoConservacion'];
     $fecha=$_POST['fechaIngreso'];
     $clasificacion=$_POST['clasificacion'];
-    $donante=$_POST['nombre'].$_POST['apellido'];
+    $donante=$_POST['donante'];
     
   
 
    
-       $sql="UPDATE piezas,donante SET numeroInventario='$num',especie=$especie,estadoConsevacion='$estado',fechaIngreso='$fecha' WHERE (piezas.Donante_idDonante1=donante.idDonante) and idPiezas=$id"; 
+       $sql="UPDATE piezas,donante SET numeroInventario='$num',especie=$especie,estadoConsevacion='$estado',fechaIngreso='$fecha' nombreyape='$donante' WHERE (piezas.Donante_idDonante1=donante.idDonante) and idPiezas=$id"; 
 
        $result=mysqli_query($conex,$sql);
 
-     //die($sql);
+     die($sql);
 
        if ($result){
           
          
-          header("Location:form_editarp.php?mnje=ok");
+          header("Location:form_editarp.php?msje=ok");
 
       }else{ 
           $error.=" error en la insercion";
-          header("Location:form_editarp.php?msje=ok".$error);
+          header("Location:form_editarp.php?msje=".$error);
       }
   
       

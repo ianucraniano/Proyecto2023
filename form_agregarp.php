@@ -39,7 +39,7 @@ include('header.php');
   </div>
 
   <div class="col-sm-6 mb-3">
-    <label for="especie" class="form-label">Especie</label>
+    <label for="especie" class="form-label">Nombre de pieza</label>
     <input type="text" class="form-control" name="especie" id="especie" placeholder="Ingresa una especie" required>
   </div>
 
