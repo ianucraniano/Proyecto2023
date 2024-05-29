@@ -8,7 +8,8 @@ if(!isset($_SESSION['dniadmin'])){
 
 
 
-$sql="SELECT usuarios.* FROM usuarios ORDER BY idusuarios";
+
+$sql="SELECT usuarios.* FROM usuarios ";
 
 
 $result=mysqli_query($conex,$sql);
@@ -32,7 +33,7 @@ $result=mysqli_query($conex,$sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Listado de usuarios</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
@@ -43,12 +44,15 @@ $result=mysqli_query($conex,$sql);
 include("header.php");
 ?>
 
+
+
 <body>
     
 
 <section>
-        <div class="text-center mt-5 mb-3"><h3>Listado de usuarios</h3></div>
-        <table class="table table-success table-striped">
+        <div class="text-center mt-5 mb-3"><h1>Listado de usuarios</h1>
+        
+        <table class="table table-success table-striped container">
        <thead class="table-dark">
         <tr class="table-primary">
            
@@ -85,13 +89,20 @@ include("header.php");
         
                 <tr>
                     
+                    
                     <th scope="row"><?php echo $fila["dni"]; ?>
                     </th>
                         <td><?php echo $fila["nombre"]; ?></td>
                         <td><?php echo $fila["apellido"]; ?></td>
                         <td><?php echo $fila["email"]; ?></td>
-                        <td><a class="me-1 btn btn-outline-success btn-sm " href="form_editar.php?idusuarios=<?php echo $fila ['idusuarios'];?>">Editar</a>
-                        <a class="me-1 btn btn-outline-danger btn-sm" href="form_eliminar.php?idusuarios=<?php echo $fila ['idusuarios'];?>">Eliminar</a>
+                        <td><a class="me-1 btn btn-outline-success btn-sm " title="Editar" href="form_editar.php?idusuarios=<?php echo $fila ['idusuarios'];?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+</svg></a>
+                        <a class="me-1 btn btn-outline-danger btn-sm" title="Eliminar" href="form_eliminar.php?idusuarios=<?php echo $fila ['idusuarios'];?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+  <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5"/>
+</svg></a>
+                      
                   
                   
                   
@@ -121,7 +132,7 @@ include("header.php");
 	     }else{
 
           echo "</table></div>";
-          echo "<div class='container text-center lead my-3 py-3'><div class='alert alert-danger my-5 py-4'><p><em>No existen Socios! </em><a href='index.php' class='text-primary lead ms-2'>Volver</a></p></div></div>";
+          echo "<div class='container text-center lead my-3 py-3'><div class='alert alert-danger my-5 py-4'><p><em>No existen usuarios! </em><a href='index.php' class='text-primary lead ms-2'>Volver</a></p></div></div>";
          }
 	   ?>  
 
