@@ -8,11 +8,11 @@ if(!isset($_SESSION['dniadmin'])&&!isset($_SESSION['dnigerente'])){
     header("Location:index.php");
 }
 
-
+//$id = $_GET['idPiezas'];
 
 $sql= "SELECT piezas.idPiezas,piezas.numeroInventario,piezas.especie,piezas.estadoConservacion, donante.nombre,donante.apellido,piezas.fechaIngreso,piezas.clasificacion
 FROM piezas, donante
-WHERE (piezas.Donante_idDonante1=donante.idDonante)";
+WHERE (piezas.Donante_idDonante1=donante.idDonante) ";
 
 
 $result=mysqli_query($conex,$sql);
@@ -54,6 +54,7 @@ $result=mysqli_query($conex,$sql);
 
     <thead class="table-dark">
     <tr class="table-primary">
+    <th scope="col"></th>
     <th scope="col">Nro de inventario</th>
                 <th scope="col">Especie</th>
                 <th scope="col">Estado</th>
@@ -84,6 +85,8 @@ $result=mysqli_query($conex,$sql);
         
 <tr>
     
+    <th scope="row"><?php echo $fila["idPiezas"]; ?>
+    </th>
     <th scope="row"><?php echo $fila["numeroInventario"]; ?>
     </th>
         <td><?php echo $fila["especie"]; ?></td>
