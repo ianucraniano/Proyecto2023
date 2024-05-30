@@ -7,8 +7,13 @@ $id=$_POST["idPiezas"];
 /* En la Base de Datos en Vista de Relaciones de la Tabla ficha, aplicar 
 el atributo ON Cascade Delete para la relacion entre ficha y socios */
 
+
 $sql="DELETE from piezas, donante
-WHERE (piezas.Donante_idDonante1=donante.idDonante) and idPiezas = $id";
+WHERE (piezas.Donante_idDonante1=donante.idDonante) and piezas.idPiezas = $id";
+
+
+
+
 
 //die($sql);
 

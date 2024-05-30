@@ -110,7 +110,7 @@ include("header.php");
        }else{
 
                
-         echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>"."Actualización Exitosa!"."</strong><a href='listadoadm.php' </a></div>";  
+         echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>"."Actualización Exitosa!"."</strong><a href='listadoadm.php' class='text-primary ms-3'>Volver al Listado</a></div>";  
        
        }  
   } 

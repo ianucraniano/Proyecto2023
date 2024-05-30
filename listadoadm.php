@@ -8,7 +8,7 @@ if(!isset($_SESSION['dniadmin'])){
 
 
 
-$sql="SELECT usuarios.* FROM usuarios ORDER BY idusuarios";
+$sql="SELECT usuarios.* FROM usuarios";
 
 
 $result=mysqli_query($conex,$sql);
@@ -62,6 +62,7 @@ include("header.php");
                 <th scope="col">Nombre</th>
                 <th scope="col">Apellido</th>
                 <th scope="col">Email</th>
+                <th scope="col">Tipo de usuario</th>
                 <th scope="col">Acciones</th>
             </tr>
             </thead>
@@ -90,6 +91,7 @@ include("header.php");
                         <td><?php echo $fila["nombre"]; ?></td>
                         <td><?php echo $fila["apellido"]; ?></td>
                         <td><?php echo $fila["email"]; ?></td>
+                        <td><?php echo $fila["tipo_usuario"]; ?></td>
                         <td><a class="me-1 btn btn-outline-success btn-sm " href="form_editar.php?idusuarios=<?php echo $fila ['idusuarios'];?>">Editar</a>
                         <a class="me-1 btn btn-outline-danger btn-sm" href="form_eliminar.php?idusuarios=<?php echo $fila ['idusuarios'];?>">Eliminar</a>
                   

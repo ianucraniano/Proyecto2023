@@ -89,7 +89,7 @@ $fila=mysqli_fetch_assoc($result);
   
     <div class="col-sm-6 mb-3">
     <label for="donante" class="form-label">* Donante</label>
-    <input type="text" class="form-control" name="donante" id="donante" placeholder="Ingresa tu Correo Electrónico" value="<?php echo $fila['nombre']." ".$fila['apellido']; ?>" required>
+    <input type="text" class="form-control" name="donante" id="donante" placeholder="Ingresa nombre del donante" value="<?php echo $fila['nombreyape'] ?>" required>
   </div>
   <div class="col-sm-6 mb-3">
   <label for="clasificacion" class="form-label">* Clasificación</label>
@@ -119,7 +119,6 @@ $fila=mysqli_fetch_assoc($result);
   
   </form>
 
-
 </section>
 
 
@@ -132,12 +131,12 @@ $fila=mysqli_fetch_assoc($result);
 
        if($_GET["msje"]!="ok"){
 
-         echo "<div class='text-center mt-4 mb-5'><div class='alert alert-danger' role='alert'><strong>".$_GET["msje"]."</strong><a href='menupiezas.php' </a></div>"; 
+         echo "<div class='text-center mt-4 mb-5'><div class='alert alert-danger' role='alert'><strong>".$_GET["msje"]."</strong><a href='menupiezas.php'</a></div>"; 
          
        }else{
 
                
-         echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>"."Actualización Exitosa!"."</strong><a href='menupiezas.php' </a></div>";  
+         echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>"."Actualización Exitosa!"."</strong><a href='menupiezas.php' class='text-primary ms-3'>Volver al Menu</a></div>";  
        
        }  
   } 

@@ -48,9 +48,10 @@ $error = "";
        if ($result){
           
          
-          header("Location:form_editar.php?msje=ok");
+          header("Location:listadoadm.php?msje=ok");
 
       }else{ 
+        
           $error.=" error en la insercion";
           header("Location:form_editar.php?msje=".$error);
       }

@@ -92,7 +92,7 @@ if (isset($_GET["mensaje"])){
     
   }else{
     
-   echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>Acceso autorizado!</strong><a href='ingresar.php' class='text-primary ms-3'>Volver al Inicio</a></div></div>";  
+   echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>Acceso autorizado!</strong><a href='listadoadm.php' class='text-primary ms-3'>Volver al Inicio</a></div></div>";  
   
   }  
 } 
