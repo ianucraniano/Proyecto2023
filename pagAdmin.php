@@ -43,8 +43,8 @@ if(!isset($_SESSION['dniadmin'])){
 <div class="card text-center col-sm-12 mb-3" >
   <div class="card-body container ">
     
-    <h1 class="card-title">Acceso exclusivo para administrador! <strong class="text-warning"><?php echo $_SESSION['nombreadmin'] ." ".$_SESSION['apellidoadmin'] ?></strong></h1>
-    <h5 class="card-title">Bienvenido/a sr/a <strong class="text-primary"> <?php echo $_SESSION['tipoUsuario'] ?> </strong></h5>
+    <h1 class="card-title">Acceso exclusivo para administrador! </h1>
+    <h2 class="card-title">Bienvenido/a sr/a <strong class="text-warning"><?php echo $_SESSION['nombreadmin'] ." ".$_SESSION['apellidoadmin'] ?></strong></h2>
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae quod odit repellendus error. Quas, id adipisci unde quis architecto officiis quidem ut, corporis voluptates maiores modi sunt harum mollitia nobis?</p>
     <img class="p-4 imagen" src="./imagenes/admin.jpg" alt="">
    
