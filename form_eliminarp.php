@@ -7,7 +7,7 @@ require_once "conexion.php";
 $id=$_GET["idPiezas"];
 
 
-$sql= "SELECT piezas.idPiezas,piezas.numeroInventario,piezas.especie,piezas.estadoConservacion, donante.nombreyape,piezas.fechaIngreso,piezas.clasificacion,piezas.observacion
+$sql= "SELECT donante.idDonante,piezas.idPiezas,piezas.numeroInventario,piezas.especie,piezas.estadoConservacion,donante.nombreyape,piezas.fechaIngreso,piezas.clasificacion,piezas.observacion
 FROM piezas, donante
 WHERE (piezas.Donante_idDonante1=donante.idDonante) and idPiezas = $id"; 
 
@@ -46,7 +46,7 @@ $fila=mysqli_fetch_array($result);
         <form class="row g-3" action="eliminarp.php" method="post">
         <input type="hidden" class="form-control" name="idPiezas" id="idPiezas" value="<?php echo $fila['idPiezas'];?>">
                 
-    
+        <input type="hidden" class="form-control" name="idDonante" id="idDonante" value="<?php echo $fila['idDonante'];?>">
 
 
                 <div class="col-sm-6">

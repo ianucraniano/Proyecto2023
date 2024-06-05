@@ -5,6 +5,8 @@
  session_start();
 
  require_once "conexion.php";
+ 
+ require_once "funcionv.php";
 
  /* Si no existe mensaje resultante de actualización (Porque aún no hizo actualizacion) */
 
@@ -65,7 +67,7 @@ $fila=mysqli_fetch_assoc($result);
   <br>
    <br>
   	
-  <form class="row g-3" action="editarp.php" method="POST">
+  <form class="row g-3" action="editarp.php" method="post">
 
 
   <input type="hidden" class="form-control" name="idPiezas" id="idPiezas" placeholder="" value="<?php echo $fila['idPiezas']; ?>" required>

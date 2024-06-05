@@ -6,8 +6,6 @@ require_once "conexion.php";
 
 //Funcion de Validacion de Datos
 
-require_once "funcionv.php";
-
 
 $error = "";
 
@@ -19,12 +17,17 @@ $error = "";
 
  $_SESSION['ids']=$id;
 
+
 // echo $_SESSION['ids'].$_POST['idPiezas'];
 // die();
 
+//echo $_POST['numeroInventario']." ".$_POST['especie']." ".$_POST['estadoConservacion']." ".$_POST['fechaIngreso']." ".$_POST['clasificacion']." ".$_POST['donante'];
+
  if(!empty(trim($_POST['numeroInventario'])) && !empty(trim($_POST['especie'])) && !empty(trim($_POST['estadoConservacion'])) && !empty(trim($_POST['fechaIngreso'])) && !empty(trim($_POST['clasificacion'])) && !empty(trim($_POST['donante']))){
 
-	if (Validacion()){
+
+	
+    
      
     $num=$_POST['numeroInventario'];      
     $especie=$_POST['especie'];     
@@ -32,31 +35,33 @@ $error = "";
     $fecha=$_POST['fechaIngreso'];
     $clasificacion=$_POST['clasificacion'];
     $donante=$_POST['donante'];
-    
-  
+
+
+ 
 
    
-       $sql="UPDATE piezas,donante SET piezas.numeroInventario='$num',piezas.especie='$especie',piezas.estadoConsevacion='$estado',piezas.fechaIngreso='$fecha', donante.nombreyape='$donante' WHERE (piezas.Donante_idDonante1=donante.idDonante) and piezas.idPiezas=$id"; 
+       $sql="UPDATE piezas,donante SET piezas.numeroInventario='$num',piezas.especie='$especie',piezas.estadoConservacion='$estado',piezas.fechaIngreso='$fecha', donante.nombreyape='$donante' WHERE (piezas.Donante_idDonante1=donante.idDonante) and piezas.idPiezas=$id"; 
 
        $result=mysqli_query($conex,$sql);
 
-    //die($sql);
+       //die($sql);
 
-       if ($result){
+
+
+      if ($result){
           
          
-          header("Location:menupiezas.php?msje=ok");
+          header("Location:form_editarp.php?msje=ok");
 
-      }else{ 
-          $error.=" Error en la insercion";
-         header("Location:form_editarp.php?msje=".$error);
-      }
-  
-      
+      }else{
+        
+      $error.=" error en la insercion";
+      header("Location:form_editarp.php?msje=".$error);
+
     }
       
-}
-        // Se arma la sentencia SQL de Actualización
+
+}       // Se arma la sentencia SQL de Actualización
         
       
         // Ejecuta la sentencia

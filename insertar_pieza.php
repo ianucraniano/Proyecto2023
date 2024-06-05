@@ -29,10 +29,7 @@ if(!empty(trim($_POST['numeroInventario'])) && !empty(trim($_POST['especie'])) &
 		$especie = $_POST['especie'];
 		$estado = $_POST['estadoConservacion'];
         $fecha=$_POST['fechaIngreso'];
-		
-		$donante=$_POST['nombreyape'];
-	
-
+		$donante=$_POST['nombre'];
         $clasificacion=$_POST['clasificacion'];
 		$obs=$_POST['observacion'];
 		$cantidadp=$_POST['cantidadpiezas'];
