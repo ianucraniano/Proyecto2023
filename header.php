@@ -68,9 +68,7 @@ ul li a:hover{
            <li class="nav-item">
             <a class="nav-link  text-light" aria-current="page" href="index.php">El museo</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="visita.php">Visitas</a>
-          </li>
+         
           
           <li class="nav-item">
             <a class="nav-link text-light" href="colecciones.php">Colecciones</a>
@@ -84,7 +82,7 @@ ul li a:hover{
 
     <ul class='navbar-nav ms-auto'>
         <li class="nav-item"> 
-            <a class=" nav-link text-light " href="login.php"> Ingresar</a>     
+            <a class=" nav-link text-light " title="Ingresar" href="login.php"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);transform: ;msFilter:;"><path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"></path></svg> </a>     
         </li> 
       </ul>           
       
@@ -103,7 +101,7 @@ ul li a:hover{
           <a class="nav-link text-light" href="pagAdmin.php">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="listadoadm.php">Listado Usuarios</a>
+          <a class="nav-link text-light" href="listadoadm.php">Listado usuarios</a>
         </li>
         <li class="nav-item">
         <a class="nav-link text-light" href="form_agregar.php">Agrega usuario</a>
@@ -112,7 +110,7 @@ ul li a:hover{
         <a class="nav-link text-light" href="menupiezas.php">Piezas</a>
       </li>
         <li class="nav-item">
-        <a class="nav-link text-light" href="salir.php">Salir</a>
+        <a class="nav-link text-light" href="salir.php"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);transform: ;msFilter:;"><path d="M19.002 3h-14c-1.103 0-2 .897-2 2v4h2V5h14v14h-14v-4h-2v4c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.898-2-2-2z"></path><path d="m11 16 5-4-5-4v3.001H3v2h8z"></path></svg> Salir</a>
       </li>
       </ul>
       <?php

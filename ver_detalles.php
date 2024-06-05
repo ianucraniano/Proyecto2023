@@ -2,8 +2,8 @@
 require_once "conexion.php";
 
 // Verificar si se ha pasado el parámetro 'id'
-if (isset($_GET['idPiezas'])) {
-    $id = $_GET['idPiezas'];
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
 
     // Consulta para obtener los detalles de la pieza
     $sql = "SELECT piezas.*, donante.nombre, donante.apellido 
@@ -36,7 +36,7 @@ if (isset($_GET['idPiezas'])) {
 
     foreach ($tables as $clasificacion => $table) {
         if ($row['clasificacion'] == $clasificacion) {
-            $sqlAdditional = "SELECT * FROM $table WHERE Piezas_idPiezas = ?";
+            $sqlAdditional = "SELECT * FROM $table WHERE Piezas_idPiezas = $id";
             $stmtAdditional = $conn->prepare($sqlAdditional);
             $stmtAdditional->bind_param('i', $id);
             $stmtAdditional->execute();

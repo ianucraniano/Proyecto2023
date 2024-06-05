@@ -116,7 +116,19 @@
 .carrusel{
   height: 400px;
 }
-  
+.card-icon {
+            position: absolute;
+            top: -1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+            border-radius: 50%;
+            padding: 0.5rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+        .card-body {
+            padding-top: 2.5rem;
+        }
 
 </style>
 
@@ -553,39 +565,57 @@
   </div>
 </section> -->
 
- <section class=" container mb-5 p-4 margin-left-4">
 
-<div class="text-center p-4">
-  <h2>Coordina una visita aqui!</h2>
-</div>
+<div class="container mt-5">
+<div class="section-title text-center p-4">
+            <h2>Bienvenidos al Museo</h2>
+            <p>Descubre nuestras colecciones, horarios y ubicación</p>
+        </div>
+        <div class="row">
+            <!-- Carta de Horarios de Visita -->
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-icon">
+                        <i class="fas fa-clock fa-2x"></i>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Horarios de Visita</h5>
+                        <p class="card-text">Lunes - Viernes: 9 AM - 5 PM</p>
+                        <p class="card-text">Sábado - Domingo: 10 AM - 6 PM</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Carta de Ubicación -->
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-icon">
+                        <i class="fas fa-map-marker-alt fa-2x"></i>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Ubicación</h5>
+                        <p class="card-text">123 Calle del Museo, San Cristobal, Argentina</p>
+                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam sequi reprehenderit reiciendis, magni expedita ipsum veritatis recusandae nisi.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- Otra Carta a Elección -->
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-icon">
+                        <i class="fas fa-ticket-alt fa-2x"></i>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Entradas</h5>
+                        <p class="card-text">Adultos: $10</p>
+                        <p class="card-text">Niños: $5</p>
+                        <p class="card-text">Estudiantes: $8</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div class="card-group">
-  <div class="card">
-    <img src="./imagenes/aguara.webp" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Ubicacion</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img src="./imagenes/animal.webp" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Horarios de visita</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img src="./imagenes/aguilas.webp" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Punto de encuentro</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-</div>
-</section> -->
 
 
 
@@ -710,8 +740,9 @@
 
 
 
-
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> 
-    <script src="./js/navbar.js"></script>
+    
   </body>
 </html>
