@@ -17,6 +17,15 @@ WHERE (piezas.Donante_idDonante1=donante.idDonante)";
 
 $result=mysqli_query($conex,$sql);
 
+if(!empty($_POST["num"])){
+  
+    $clave=$_POST["num"];
+    $sql1="SELECT  *
+    FROM piezas, donante
+    WHERE (piezas.Donante_idDonante1=donante.idDonante) and numeroInventario like '%$clave%' ";
+   $result=mysqli_query($conex,$sql1); 
+    
+}
 
 
 
@@ -41,13 +50,23 @@ $result=mysqli_query($conex,$sql);
 
 <section>
 <div class="text-center mt-5 mb-3"><h3>Menu de piezas</h3></div>
+
+
+<div class="container-fluid col-4 p-2">
+    <form class="d-flex" role="buscar" action="menupiezas.php" method="post">
+      <input class="form-control me-2" type="search" placeholder="Buscar..." name="num" id="num" aria-label="Search">
+     
+      <button class="btn btn-outline-primary m-2"  type="submit">Buscar</button>
+    </form>
+  
+  </div>
 <table class="table table-success table-striped">
 
 
 
-  
+ 
       <div class="col-6">
-     <a class="btn btn-primary btn-sm mb-2" href="form_agregarp.php" role="button">Agregar</a>
+     <a class="btn btn-outline-primary justify-content-md mb-2" href="form_agregarp.php" role="button">Agregar</a>
       </div>
     
 

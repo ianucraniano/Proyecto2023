@@ -14,7 +14,15 @@ $sql="SELECT usuarios.* FROM usuarios";
 $result=mysqli_query($conex,$sql);
 
 
+if(!empty($_POST["dniusu"])){
+  
+    $clave=$_POST["dniusu"];
+    $sql1="SELECT  *
+    FROM usuarios
+    WHERE dni like '%$clave%'  ORDER BY idusuarios";
+   $result=mysqli_query($conex,$sql1); 
     
+}
 
 
 
@@ -48,11 +56,18 @@ include("header.php");
 
 <section>
         <div class="text-center mt-5 mb-3"><h3>Listado de usuarios</h3></div>
+       
+  <div class="container-fluid col-4 p-4">
+    <form class="d-flex" role="buscar" action="listadoadm.php" method="post">
+      <input class="form-control me-2" type="search" placeholder="Buscar..." name="dniusu" id="dniusu" aria-label="Search">
+      <button class="btn btn-outline-success"  type="submit">Buscar</button>
+    </form>
+  </div>
+
         <table class="table table-success table-striped">
        <thead class="table-dark">
         <tr class="table-primary">
-           
-               
+        
 
             </div>
 

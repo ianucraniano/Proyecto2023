@@ -66,7 +66,7 @@ ul li a:hover{
         <ul class="nav justify-content-center ">
           
            <li class="nav-item">
-            <a class="nav-link  text-light" aria-current="page" href="index.php">El museo</a>
+            <a class="nav-link  text-light"  href="index.php">El museo</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-light" href="visita.php">Visitas</a>
