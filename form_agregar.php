@@ -72,13 +72,13 @@ include('header.php');
       <option value="gerente">Gerente</option>
     </select>
 
-  <div class="col-12 mt-5 text-center">
-        <button type="submit" class="btn btn-primary btn-lg" name="guardar" id="enviar">Agregar</button>
-        <button type="reset" class="btn btn-danger btn-lg" name="cancelar" id="cancelar">Cancelar</button>
-  </div>
-  
+    <div class="mt-5 text-center justify-content-center">
+          <button type="submit" class="btn btn-primary btn-lg" name="guardar" id="enviar">Agregar</button>
+          <button type="reset" class="btn btn-danger btn-lg" name="cancelar" id="cancelar">Cancelar</button>
+    </div>
+    
   </form>
-
+  
 
 </section>
 
@@ -92,7 +92,11 @@ if (isset($_GET["mensaje"])){
     
   }else{
     
+<<<<<<< HEAD
    echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>Acceso autorizado!</strong><a href='listadoadm.php' class='text-primary ms-3'>Volver al Inicio</a></div></div>";  
+=======
+   echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>Usuario agregado correctamente!</strong><a href='ingresar.php' class='text-primary ms-3'>Volver al Inicio</a></div></div>";  
+>>>>>>> f6d516e2f6cfe603d0f72e721da770e592b27d21
   
   }  
 } 
