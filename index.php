@@ -76,7 +76,7 @@
 
   }
   .fondo{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./imagenes/imagen.jpg");;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./imagenes/imagen.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -566,9 +566,9 @@
 </section> -->
 
 
-<div class="container mt-5">
-<div class="section-title text-center p-4">
-            <h2>Bienvenidos al Museo</h2>
+<div class="container mt-5 p-5">
+<div class="section-title text-center p-4 ">
+            <h2>Coordina una visita!</h2>
             <p>Descubre nuestras colecciones, horarios y ubicación</p>
         </div>
         <div class="row">
@@ -578,7 +578,7 @@
                     <div class="card-icon">
                         <i class="fas fa-clock fa-2x"></i>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body shadow">
                         <h5 class="card-title">Horarios de Visita</h5>
                         <p class="card-text">Lunes - Viernes: 9 AM - 5 PM</p>
                         <p class="card-text">Sábado - Domingo: 10 AM - 6 PM</p>
@@ -591,7 +591,7 @@
                     <div class="card-icon">
                         <i class="fas fa-map-marker-alt fa-2x"></i>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body shadow">
                         <h5 class="card-title">Ubicación</h5>
                         <p class="card-text">123 Calle del Museo, San Cristobal, Argentina</p>
                         <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam sequi reprehenderit reiciendis, magni expedita ipsum veritatis recusandae nisi.</p>
@@ -605,7 +605,7 @@
                     <div class="card-icon">
                         <i class="fas fa-ticket-alt fa-2x"></i>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body shadow">
                         <h5 class="card-title">Entradas</h5>
                         <p class="card-text">Adultos: $10</p>
                         <p class="card-text">Niños: $5</p>

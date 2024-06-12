@@ -36,12 +36,13 @@ include("header.php");
     
 }
 .imagen{
-  background-image: url(./imagenes/museo.webp);
+  background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./imagenes/museo.webp);
   background-size: 100%;
   background-repeat: no-repeat;
   background-cover: cover;
+  background-attachment: fixed;
   height: 400px;
-  opacity: 0.7;
+  
 }
 p{
   font-family: "Dosis", sans-serif;
@@ -53,7 +54,7 @@ p{
   display: flex;
   justify-content: center;
   text-align: center;
-  background-color: rgba(0,0,0,0.50);
+
 position: relative;
 top: 100px;
 }
@@ -80,15 +81,15 @@ top: 100px;
 
 <h2 class="titulo1">Especies amenazadas</h2>
 <h3 class="titulo2">Conservación de especies amenazadas</h3>
-<div class="center container">
+<div class="text-center container">
 
   <p>Compartimos con ustedes actividades que realizamos en el marco de distintos proyectos relacionados a la fauna amenazada de extinción.</p>
   <p>
   El museo también es parte de la delegación santafesina del Programa de Conservación de los Murciélagos de Argentina.</p>
-</div>
-<pre></pre>
-<div class="card mb-3 " style="max-width: 1000px;">
-<div class="card mb-3  " style="max-width: 1000px;">
+
+
+<div class="card mb-3 " style="max-width: 800px;">
+<div class="card mb-3  " style="max-width: 800px;">
   <div class="row g-0 ">
     <div class="col-md-4 ">
       <img src="./imagenes/aguilas.webp" class="img-fluid rounded-start" alt="...">
@@ -203,7 +204,7 @@ SE REGISTRA UNA NUEVA ESPECIE DE MURCIÉLAGO EN ENTRE RÍOS</h5>
     </div>
   </div>
 </div>
-
+</div>      
 
 
 <?php

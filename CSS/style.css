@@ -1,8 +1,9 @@
 body{
-    background-image: url(../imagenes/imgmuseo.jpg); 
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../imagenes/backmuseo.webp); 
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     
    
   }
