@@ -5,6 +5,8 @@
  session_start();
 
  require_once "conexion.php";
+ 
+ require_once "funcionv.php";
 
  /* Si no existe mensaje resultante de actualización (Porque aún no hizo actualizacion) */
 
@@ -25,7 +27,7 @@
 
     
  }  
- $sql= "SELECT piezas.idPiezas,piezas.numeroInventario,piezas.especie,piezas.estadoConservacion, donante.nombre,donante.apellido,piezas.fechaIngreso,piezas.clasificacion
+ $sql= "SELECT piezas.idPiezas,piezas.numeroInventario,piezas.especie,piezas.estadoConservacion, donante.nombreyape,piezas.fechaIngreso,piezas.clasificacion
 FROM piezas, donante
 WHERE (piezas.Donante_idDonante1=donante.idDonante) and idPiezas = $id" ;
 
@@ -65,7 +67,7 @@ $fila=mysqli_fetch_assoc($result);
   <br>
    <br>
   	
-  <form class="row g-3" action="editarp.php" method="POST">
+  <form class="row g-3" action="editarp.php" method="post">
 
 
   <input type="hidden" class="form-control" name="idPiezas" id="idPiezas" placeholder="" value="<?php echo $fila['idPiezas']; ?>" required>
@@ -89,7 +91,7 @@ $fila=mysqli_fetch_assoc($result);
   
     <div class="col-sm-6 mb-3">
     <label for="donante" class="form-label">* Donante</label>
-    <input type="text" class="form-control" name="donante" id="donante" placeholder="Ingresa tu Correo Electrónico" value="<?php echo $fila['nombre']." ".$fila['apellido']; ?>" required>
+    <input type="text" class="form-control" name="donante" id="donante" placeholder="Ingresa nombre del donante" value="<?php echo $fila['nombreyape'] ?>" required>
   </div>
   <div class="col-sm-6 mb-3">
   <label for="clasificacion" class="form-label">* Clasificación</label>
@@ -119,7 +121,6 @@ $fila=mysqli_fetch_assoc($result);
   
   </form>
 
-
 </section>
 
 
@@ -132,12 +133,12 @@ $fila=mysqli_fetch_assoc($result);
 
        if($_GET["msje"]!="ok"){
 
-         echo "<div class='text-center mt-4 mb-5'><div class='alert alert-danger' role='alert'><strong>".$_GET["msje"]."</strong><a href='menupiezas.php' </a></div>"; 
+         echo "<div class='text-center mt-4 mb-5'><div class='alert alert-danger' role='alert'><strong>".$_GET["msje"]."</strong><a href='menupiezas.php'</a></div>"; 
          
        }else{
 
                
-         echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>"."Actualización Exitosa!"."</strong><a href='menupiezas.php' </a></div>";  
+         echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>"."Actualización Exitosa!"."</strong><a href='menupiezas.php' class='text-primary ms-3'>Volver al Menu</a></div>";  
        
        }  
   } 

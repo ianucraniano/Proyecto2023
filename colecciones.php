@@ -81,7 +81,7 @@ include("header.php");
 
     <h3>Colección ¿que vamos a ver?</h3>
     
-        <a class="btn" href="listado.php">Listado de especies</a>
+        
      <!--col-12 col-sm-6 col-md-4 col-lg-4 mb-4-->
 <section>
 <div class="row p-3">

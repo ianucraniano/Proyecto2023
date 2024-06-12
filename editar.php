@@ -19,6 +19,10 @@ $error = "";
 
  $_SESSION['ids']=$id;
 
+
+// echo $_SESSION['ids'].$_POST['idusuarios'];
+// die();
+
 //echo $_POST['nombre'].$_POST['apellido'].$_POST['dni'].$_POST['email'];
 
  if(!empty(trim($_POST['nombre'])) && !empty(trim($_POST['apellido'])) && !empty(trim($_POST['dni'])) && !empty(trim($_POST['email']))){
@@ -34,21 +38,22 @@ $error = "";
 
    
   
-       $sql="UPDATE usuarios SET nombre='$nombre',apellido='$apellido',dni='$dni',email='$email' WHERE idusuarios=$id"; 
+       $sql="UPDATE usuarios SET nombre='$nombre',apellido='$apellido',dni='$dni',email='$email' WHERE idusuarios= $id"; 
 
        $result=mysqli_query($conex,$sql);
 
-     // die($sql);
+      //die($sql);
     
 
        if ($result){
           
          
-          header("Location:form_editar.php?mnje=ok");
+          header("Location:listadoadm.php?msje=ok");
 
       }else{ 
-          $error.="error en la insercion";
-          header("Location:form_editar.php?msje=ok".$error);
+        
+          $error.=" error en la insercion";
+          header("Location:form_editar.php?msje=".$error);
       }
   
       

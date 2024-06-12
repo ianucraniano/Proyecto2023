@@ -21,7 +21,7 @@ $id=$_GET['idusuarios'];
    
 }  
 
-$sql= "SELECT nombre,apellido,dni,email FROM usuarios WHERE idusuarios = $id" ;
+$sql= "SELECT idusuarios,nombre,apellido,dni,email FROM usuarios WHERE idusuarios = $id" ;
 
 //die($sql);
 
@@ -57,6 +57,7 @@ include("header.php");
    <br>
   	
   <form class="row g-3" action="editar.php" method="post">
+
   <input type="hidden" class="form-control" name="idusuarios" id="idusuarios" placeholder="" value="<?php echo $fila['idusuarios']; ?>" required>
   
   <div class="col-sm-6">
@@ -109,7 +110,7 @@ include("header.php");
        }else{
 
                
-         echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>"."Actualización Exitosa!"."</strong><a href='listadoadm.php' </a></div>";  
+         echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>"."Actualización Exitosa!"."</strong><a href='listadoadm.php' class='text-primary ms-3'>Volver al Listado</a></div>";  
        
        }  
   } 

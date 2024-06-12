@@ -29,16 +29,13 @@ if(!empty(trim($_POST['numeroInventario'])) && !empty(trim($_POST['especie'])) &
 		$especie = $_POST['especie'];
 		$estado = $_POST['estadoConservacion'];
         $fecha=$_POST['fechaIngreso'];
-		
-		$donante_n=$_POST['nombre'];
-		$donante_a='perez';
-
+		$donante=$_POST['nombre'];
         $clasificacion=$_POST['clasificacion'];
 		$obs=$_POST['observacion'];
 		$cantidadp=$_POST['cantidadpiezas'];
             
         
-		$sql="INSERT INTO donante(nombre,apellido) VALUES('$donante_n','$donante_a')";
+		$sql="INSERT INTO donante(nombreyape) VALUES('$donante')";
 
         $result=mysqli_query($conex,$sql);
 

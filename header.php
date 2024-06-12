@@ -80,7 +80,7 @@ transition: .5s all;
         <ul class="nav justify-content-center ">
           
            <li class="nav-item">
-            <a class="nav-link  text-light" aria-current="page" href="index.php">El museo</a>
+            <a class="nav-link  text-light"  href="index.php">El museo</a>
           </li>
          
           
@@ -108,10 +108,20 @@ transition: .5s all;
         
           ?>
           <ul class="navbar-nav ms-auto">
+
+          <li class="nav-item">
+          <a class="nav-link" href="pagAdmin.php"> <?php echo "Admin: ". $_SESSION['nombreadmin'], " ", $_SESSION['apellidoadmin'] ?></a>
+        </li>	
+
           
+<<<<<<< HEAD
           <li class="nav-item">
             <a class="nav-link text-light" href="#">Admin: <strong class="text-warning"><?php echo $_SESSION['nombreadmin'] ." ".$_SESSION['apellidoadmin'] ?></strong></a>
           </li>
+=======
+
+         
+>>>>>>> de0065f9a8df5eb3354eedfa25c2f72115205cb8
       
         <li class="nav-item">
           <a class="nav-link text-light" href="pagAdmin.php">Inicio</a>

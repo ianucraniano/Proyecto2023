@@ -10,13 +10,22 @@ if(!isset($_SESSION['dniadmin'])&&!isset($_SESSION['dnigerente'])){
 
 //$id = $_GET['idPiezas'];
 
-$sql= "SELECT piezas.idPiezas,piezas.numeroInventario,piezas.especie,piezas.estadoConservacion, donante.nombre,donante.apellido,piezas.fechaIngreso,piezas.clasificacion
+$sql= "SELECT piezas.idPiezas,piezas.numeroInventario,piezas.especie,piezas.estadoConservacion, donante.nombreyape,piezas.fechaIngreso,piezas.clasificacion
 FROM piezas, donante
 WHERE (piezas.Donante_idDonante1=donante.idDonante) ";
 
 
 $result=mysqli_query($conex,$sql);
 
+if(!empty($_POST["num"])){
+  
+    $clave=$_POST["num"];
+    $sql1="SELECT  *
+    FROM piezas, donante
+    WHERE (piezas.Donante_idDonante1=donante.idDonante) and numeroInventario like '%$clave%' ";
+   $result=mysqli_query($conex,$sql1); 
+    
+}
 
 
 
@@ -40,15 +49,35 @@ $result=mysqli_query($conex,$sql);
     ?>
 
 <section>
-<div class="text-center mt-5 mb-3"><h1>Menu de piezas</h1></div>
-<table class="table table-success table-striped container">
 
 
 
-  
-      <div class="text-center p-3">
-     <a class="btn btn-primary btn-sm mb-2" href="form_agregarp.php" role="button">Agregar</a>
-      </div>
+
+<table class="table table-success table-striped">
+
+
+
+    <div class="text-center mt-5 mb-3"><h1>Menu de piezas</h1></div>
+    <table class="table table-success table-striped container">
+        
+        
+              </div>
+            <div class="container col-3 p-1">
+                <form class="d-flex" role="buscar" action="menupiezas.php" method="post">
+                  <input class="form-control me-2" type="search" placeholder="Buscar..." name="num" id="num" aria-label="Search">
+                 <div class="col-6">
+
+                     <button class="btn btn-outline-primary m-2"  type="submit">Buscar</button>
+                 </div>
+                </form>
+              
+              </div>
+        
+        
+        <div class="text-center p-3">
+            <a class="btn btn-primary btn-sm mb-2" href="form_agregarp.php" role="button">Agregar</a>
+            
+      
     
 
 
@@ -91,7 +120,7 @@ $result=mysqli_query($conex,$sql);
     </th>
         <td><?php echo $fila["especie"]; ?></td>
         <td><?php echo $fila["estadoConservacion"]; ?></td>
-        <td><?php echo $fila["nombre"]." ".$fila["apellido"]; ?></td>
+        <td><?php echo $fila["nombreyape"]?></td>
         <td><?php echo $fila["fechaIngreso"]; ?></td>
         <td><?php echo $fila["clasificacion"]; ?></td>
                 

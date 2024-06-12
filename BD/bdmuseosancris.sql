@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-05-2024 a las 01:04:02
+-- Tiempo de generación: 30-05-2024 a las 22:33:22
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 7.4.29
 
@@ -29,9 +29,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `arqueologia` (
   `idArqueologia` int(11) NOT NULL,
-  `IntegridadHistorica` varchar(255) DEFAULT NULL,
-  `estetica` varchar(255) DEFAULT NULL,
-  `material` varchar(255) DEFAULT NULL,
+  `IntegridadHistorica` varchar(255) NOT NULL,
+  `estetica` varchar(255) NOT NULL,
+  `material` varchar(255) NOT NULL,
   `observacion` longtext DEFAULT NULL,
   `Piezas_idPiezas` int(11) NOT NULL,
   `Piezas_Donante_idDonante` int(11) NOT NULL
@@ -45,13 +45,13 @@ CREATE TABLE `arqueologia` (
 
 CREATE TABLE `botanica` (
   `idBotanica` int(11) NOT NULL,
-  `clasificacion` varchar(255) DEFAULT NULL,
-  `reino` varchar(255) DEFAULT NULL,
-  `division` varchar(255) DEFAULT NULL,
-  `clase` varchar(255) DEFAULT NULL,
-  `orden` varchar(255) DEFAULT NULL,
-  `familia` varchar(255) DEFAULT NULL,
-  `especie` varchar(255) DEFAULT NULL,
+  `clasificacion` varchar(255) NOT NULL,
+  `reino` varchar(255) NOT NULL,
+  `division` varchar(255) NOT NULL,
+  `clase` varchar(255) NOT NULL,
+  `orden` varchar(255) NOT NULL,
+  `familia` varchar(255) NOT NULL,
+  `especie` varchar(255) NOT NULL,
   `observacion` longtext DEFAULT NULL,
   `Piezas_idPiezas` int(11) NOT NULL,
   `Piezas_Donante_idDonante` int(11) NOT NULL
@@ -65,8 +65,7 @@ CREATE TABLE `botanica` (
 
 CREATE TABLE `donante` (
   `idDonante` int(11) NOT NULL,
-  `nombre` varchar(255) NOT NULL,
-  `apellido` varchar(255) NOT NULL,
+  `nombreyape` varchar(255) NOT NULL,
   `fecha` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -74,13 +73,14 @@ CREATE TABLE `donante` (
 -- Volcado de datos para la tabla `donante`
 --
 
-INSERT INTO `donante` (`idDonante`, `nombre`, `apellido`, `fecha`) VALUES
-(1, 'Carlos', 'Verita', '2024-03-12'),
-(2, 'Bar', 'Simson', '2024-02-08'),
-(3, 'dario perez', 'perez', '0000-00-00'),
-(4, 'dario perez', 'perez', '0000-00-00'),
-(5, 'dario perez', 'perez', '0000-00-00'),
-(6, 'dario', 'perez', '0000-00-00');
+INSERT INTO `donante` (`idDonante`, `nombreyape`, `fecha`) VALUES
+(1, 'Carlos', '2024-03-12'),
+(2, 'Bar', '2024-02-08'),
+(3, 'dario perez', '0000-00-00'),
+(4, 'dario perez', '0000-00-00'),
+(5, 'dario perez', '0000-00-00'),
+(6, 'dario', '0000-00-00'),
+(7, '', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -90,7 +90,7 @@ INSERT INTO `donante` (`idDonante`, `nombre`, `apellido`, `fecha`) VALUES
 
 CREATE TABLE `geologia` (
   `idGeologia` int(11) NOT NULL,
-  `tipo` varchar(255) DEFAULT NULL,
+  `tipo` varchar(255) NOT NULL,
   `observacion` longtext DEFAULT NULL,
   `Piezas_idPiezas` int(11) NOT NULL,
   `Piezas_Donante_idDonante` int(11) NOT NULL
@@ -104,8 +104,8 @@ CREATE TABLE `geologia` (
 
 CREATE TABLE `icteologia` (
   `idIcteologia` int(11) NOT NULL,
-  `especie` varchar(255) DEFAULT NULL,
-  `clasificacion` varchar(255) DEFAULT NULL,
+  `especie` varchar(255) NOT NULL,
+  `clasificacion` varchar(255) NOT NULL,
   `observacion` longtext DEFAULT NULL,
   `Piezas_idPiezas` int(11) NOT NULL,
   `Piezas_Donante_idDonante` int(11) NOT NULL
@@ -119,9 +119,9 @@ CREATE TABLE `icteologia` (
 
 CREATE TABLE `oologia` (
   `idOologia` int(11) NOT NULL,
-  `clasificacion` varchar(255) DEFAULT NULL,
-  `tipo` varchar(255) DEFAULT NULL,
-  `especie` varchar(255) DEFAULT NULL,
+  `clasificacion` varchar(255) NOT NULL,
+  `tipo` varchar(255) NOT NULL,
+  `especie` varchar(255) NOT NULL,
   `observacion` longtext DEFAULT NULL,
   `Piezas_idPiezas` int(11) NOT NULL,
   `Piezas_Donante_idDonante` int(11) NOT NULL
@@ -135,8 +135,8 @@ CREATE TABLE `oologia` (
 
 CREATE TABLE `osteologia` (
   `idOsteologia` int(11) NOT NULL,
-  `especie` varchar(255) DEFAULT NULL,
-  `clasificacion` varchar(255) DEFAULT NULL,
+  `especie` varchar(255) NOT NULL,
+  `clasificacion` varchar(255) NOT NULL,
   `observacion` longtext DEFAULT NULL,
   `Piezas_idPiezas` int(11) NOT NULL,
   `Piezas_Donante_idDonante` int(11) NOT NULL
@@ -150,9 +150,8 @@ CREATE TABLE `osteologia` (
 
 CREATE TABLE `palenteologia` (
   `idPalenteologia` int(11) NOT NULL,
-  `especie` varchar(255) DEFAULT NULL,
-  `era` varchar(255) DEFAULT NULL,
-  `periodo` varchar(255) DEFAULT NULL,
+  `era` varchar(255) NOT NULL,
+  `periodo` varchar(255) NOT NULL,
   `observacion` longtext DEFAULT NULL,
   `Piezas_idPiezas` int(11) NOT NULL,
   `Piezas_Donante_idDonante` int(11) NOT NULL
@@ -184,7 +183,8 @@ CREATE TABLE `piezas` (
 INSERT INTO `piezas` (`idPiezas`, `numeroInventario`, `especie`, `estadoConservacion`, `fechaIngreso`, `Cantidad_piezas`, `clasificacion`, `observacion`, `usuarios_idusuarios`, `Donante_idDonante1`) VALUES
 (2, '1', 'Tiranosaurio rex', 'Lorem ipsum', '2024-04-09', 12, 'Palenteologia', 'Lorem ipsum', 1, 1),
 (3, 'abc', 'mamifero', 'bueno', '2024-05-20', 5, 'zoologia', NULL, 1, 1),
-(4, '5', 'Pingüino emperador', 'casi amenazado', '2024-05-17', 12, 'oologia', ' ', 3, 6);
+(4, '5', 'Pingüino emperador', 'casi amenazado', '2024-05-17', 12, 'oologia', ' ', 3, 6),
+(7, '6', 'Era mesozoica', 'bien', '2024-05-11', 4, 'paleontologia', ' ', 3, 7);
 
 -- --------------------------------------------------------
 
@@ -194,13 +194,13 @@ INSERT INTO `piezas` (`idPiezas`, `numeroInventario`, `especie`, `estadoConserva
 
 CREATE TABLE `usuarios` (
   `idusuarios` int(11) NOT NULL,
-  `nombre` varchar(250) DEFAULT NULL,
-  `apellido` varchar(250) DEFAULT NULL,
-  `telefono` varchar(15) DEFAULT NULL,
-  `dni` varchar(8) DEFAULT NULL,
+  `nombre` varchar(250) NOT NULL,
+  `apellido` varchar(250) NOT NULL,
+  `telefono` varchar(15) NOT NULL,
+  `dni` varchar(8) NOT NULL,
   `fecha_alta` date DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
-  `clave` varchar(255) DEFAULT NULL,
+  `clave` varchar(255) NOT NULL,
   `tipo_usuario` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -209,9 +209,10 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`idusuarios`, `nombre`, `apellido`, `telefono`, `dni`, `fecha_alta`, `email`, `clave`, `tipo_usuario`) VALUES
-(1, 'nail', 'rak', '34086745673', '43234069', '2024-04-26', 'nail@gmail.com', '$2y$10$ot4aoV90PLzuCXY/F7yPVOG1wTvNl.sP.45tqF2bROLr/ikN', 'administrador'),
+(1, 'jesica', 'perez', '34086745673', '41652357', '2024-04-26', 'jesicA@gmail.com', '$2y$10$ot4aoV90PLzuCXY/F7yPVOG1wTvNl.sP.45tqF2bROLr/ikN', 'administrador'),
 (3, 'maria', 'espindola', '3408674512', '43234068', '2024-04-11', 'maria@gmail.com', '$2y$10$fKumtnDyuakeY0.ByosyR.ha0eKh55dsmIFCZgoKKJA5x1DQ7VWuK', 'administrador'),
-(4, 'marcelo', 'perez', '3408671209', '41652312', '2024-04-04', 'marcelo@gmail.com', '$2y$10$ckM5KROq7WvcnDeuGYxbAuZE2/BKGBT7dH3XysNqy1DFucY.GlORy', 'gerente');
+(6, 'nail', 'rak', '3408671209', '43234069', '2024-05-02', 'nail@gmail.com', '$2y$10$4x0ls5LmjlF4WVmskbseoO4Ko3vQLZkHsxi13ES1tdbrEgXKXXnJu', 'administrador'),
+(7, 'manuel', 'paz', '3408674523', '41652356', '2024-05-16', 'manuel@gmail.com', '$2y$10$6GtTPZN.7nq36nlS.u1HYOXqwsqtYqrNOQfb1xbUpqwbK.6SjFpf.', 'gerente');
 
 -- --------------------------------------------------------
 
@@ -221,14 +222,14 @@ INSERT INTO `usuarios` (`idusuarios`, `nombre`, `apellido`, `telefono`, `dni`, `
 
 CREATE TABLE `zoologia` (
   `idZoologia` int(11) NOT NULL,
-  `clasificacion` varchar(255) DEFAULT NULL,
-  `reino` varchar(255) DEFAULT NULL,
-  `division` varchar(255) DEFAULT NULL,
-  `phylum` varchar(255) DEFAULT NULL,
-  `Clase` varchar(255) DEFAULT NULL,
-  `Orden` varchar(255) DEFAULT NULL,
-  `Familia` varchar(255) DEFAULT NULL,
-  `Especie` varchar(255) DEFAULT NULL,
+  `clasificacion` varchar(255) NOT NULL,
+  `reino` varchar(255) NOT NULL,
+  `division` varchar(255) NOT NULL,
+  `phylum` varchar(255) NOT NULL,
+  `Clase` varchar(255) NOT NULL,
+  `Orden` varchar(255) NOT NULL,
+  `familia` varchar(255) NOT NULL,
+  `especie` varchar(255) NOT NULL,
   `observacion` longtext DEFAULT NULL,
   `Piezas_idPiezas` int(11) NOT NULL,
   `Piezas_Donante_idDonante` int(11) NOT NULL
@@ -277,7 +278,6 @@ ALTER TABLE `icteologia`
 --
 ALTER TABLE `oologia`
   ADD PRIMARY KEY (`idOologia`),
-  ADD UNIQUE KEY `clasificacion_UNIQUE` (`clasificacion`),
   ADD KEY `fk_Oologia_Piezas1_idx` (`Piezas_idPiezas`,`Piezas_Donante_idDonante`);
 
 --
@@ -335,7 +335,7 @@ ALTER TABLE `botanica`
 -- AUTO_INCREMENT de la tabla `donante`
 --
 ALTER TABLE `donante`
-  MODIFY `idDonante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idDonante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `geologia`
@@ -371,13 +371,13 @@ ALTER TABLE `palenteologia`
 -- AUTO_INCREMENT de la tabla `piezas`
 --
 ALTER TABLE `piezas`
-  MODIFY `idPiezas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idPiezas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idusuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idusuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `zoologia`

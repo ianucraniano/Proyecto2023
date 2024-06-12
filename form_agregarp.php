@@ -39,8 +39,8 @@ include('header.php');
   </div>
 
   <div class="col-sm-6 mb-3">
-    <label for="especie" class="form-label">Especie</label>
-    <input type="text" class="form-control" name="especie" id="especie" placeholder="Ingresa una especie" required>
+    <label for="especie" class="form-label">Nombre de pieza</label>
+    <input type="text" class="form-control" name="especie" id="especie" placeholder="Ingresa un nombre" required>
   </div>
 
   <div class="col-sm-6 mb-3">
@@ -107,7 +107,7 @@ if (isset($_GET["mensaje"])){
     
   }else{
     
-   echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>Acceso autorizado!</strong><a href='.php' class='text-primary ms-3'>Volver al Inicio</a></div></div>";  
+   echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>Acceso autorizado!</strong><a href='menupiezas.php' class='text-primary ms-3'>Volver al Inicio</a></div></div>";  
   
   }  
 } 

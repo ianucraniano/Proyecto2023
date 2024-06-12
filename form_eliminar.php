@@ -7,7 +7,7 @@ require_once "conexion.php";
  $id=$_GET["idusuarios"];
 
 
- $sql= "SELECT nombre,apellido,dni,email FROM usuarios WHERE idusuarios = $id";
+ $sql= "SELECT idusuarios,nombre,apellido,dni,email FROM usuarios WHERE idusuarios = $id";
 
  $result=mysqli_query($conex,$sql);
 
@@ -69,7 +69,7 @@ include("header.php");
                 <div class="col-12 text-center">
                     <div> <h5> ¿Estas seguro que quieres eliminar este usuario?</h5>
                         <br>
-                <button type="submit" class="btn btn-primary btn-lg" name="btn_editar" id="editar">Confirmar</button>
+                <button type="submit" class="btn btn-primary btn-lg" name="btn_eliminar" id="eliminar">Confirmar</button>
                 <a class="btn btn-danger btn-lg ms-2" href="listadoadm.php" role="button">Cancelar</a>
                 </div>
         
