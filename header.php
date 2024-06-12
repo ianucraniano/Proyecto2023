@@ -94,13 +94,13 @@ ul li a:hover{
         
           ?>
           <ul class="navbar-nav ms-auto">
-<<<<<<< HEAD
+
           <li class="nav-item">
           <a class="nav-link" href="pagAdmin.php"> <?php echo "Admin: ". $_SESSION['nombreadmin'], " ", $_SESSION['apellidoadmin'] ?></a>
         </li>	
-=======
+
           
->>>>>>> f6d516e2f6cfe603d0f72e721da770e592b27d21
+
          
       
         <li class="nav-item">

@@ -49,36 +49,35 @@ if(!empty($_POST["num"])){
     ?>
 
 <section>
-<<<<<<< HEAD
-<div class="text-center mt-5 mb-3"><h3>Menu de piezas</h3></div>
 
 
-<div class="container-fluid col-4 p-2">
-    <form class="d-flex" role="buscar" action="menupiezas.php" method="post">
-      <input class="form-control me-2" type="search" placeholder="Buscar..." name="num" id="num" aria-label="Search">
-     
-      <button class="btn btn-outline-primary m-2"  type="submit">Buscar</button>
-    </form>
-  
-  </div>
+
+
 <table class="table table-success table-striped">
 
 
 
- 
-      <div class="col-6">
-     <a class="btn btn-outline-primary justify-content-md mb-2" href="form_agregarp.php" role="button">Agregar</a>
-=======
-<div class="text-center mt-5 mb-3"><h1>Menu de piezas</h1></div>
-<table class="table table-success table-striped container">
+    <div class="text-center mt-5 mb-3"><h1>Menu de piezas</h1></div>
+    <table class="table table-success table-striped container">
+        
+        
+              </div>
+            <div class="container col-3 p-1">
+                <form class="d-flex" role="buscar" action="menupiezas.php" method="post">
+                  <input class="form-control me-2" type="search" placeholder="Buscar..." name="num" id="num" aria-label="Search">
+                 <div class="col-6">
 
-
-
-  
-      <div class="text-center p-3">
-     <a class="btn btn-primary btn-sm mb-2" href="form_agregarp.php" role="button">Agregar</a>
->>>>>>> f6d516e2f6cfe603d0f72e721da770e592b27d21
-      </div>
+                     <button class="btn btn-outline-primary m-2"  type="submit">Buscar</button>
+                 </div>
+                </form>
+              
+              </div>
+        
+        
+        <div class="text-center p-3">
+            <a class="btn btn-primary btn-sm mb-2" href="form_agregarp.php" role="button">Agregar</a>
+            
+      
     
 
 

@@ -18,9 +18,10 @@ function ValidacionDatos() {
 		$var_bool=FALSE;
 	}
 
-	if(preg_match("/[a-zA-Z]/",$_POST['dni']) || strlen($_POST['dni'])<>8){
-		$error.="Error DNI ";
-		$var_bool=FALSE;
+	
+	if (!preg_match("/^[0-9]{8}$/", $_POST['dni']) || strlen($_POST['dni']) != 8) {
+		$error.= "Error DNI ";
+		$var_bool = FALSE;
 	}
 	
 	

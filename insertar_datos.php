@@ -38,13 +38,15 @@ if(!empty(trim($_POST['nombre'])) && !empty(trim($_POST['apellido'])) &&
 
         
 			//codigo 1062 duplicado
-            if(mysqli_errno($conex)==1062){
-				$error.="Error, DNI duplicado";
-				header("location:index.php?mensaje=".$error);
-			}else{
-            $error.="Error en la Inserción de datos ";
-            header("Location:index.php?mensaje=".$error);
-        }
+     
+		if(mysqli_errno($conex) == 1062) {
+			$error.= "Error, DNI duplicado";
+			header("Location:form_agregar.php?mensaje=".$error);
+		} else {
+			$error.= "Error en la inserción de datos";
+			header("Location:form_agregar.php?mensaje=".$error);
+		}
+		
      
      }
 	
