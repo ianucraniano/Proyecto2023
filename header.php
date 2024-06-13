@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https: //fonts.googleapis.com/css2? family= Roboto+Condensed:wght@700 & family= Roboto+Slab & display=swap" rel="stylesheet">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">     -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">    
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -109,19 +109,16 @@ transition: .5s all;
           ?>
           <ul class="navbar-nav ms-auto">
 
-          <li class="nav-item">
-          <a class="nav-link" href="pagAdmin.php"> <?php echo "Admin: ". $_SESSION['nombreadmin'], " ", $_SESSION['apellidoadmin'] ?></a>
-        </li>	
-
+        
           
-<<<<<<< HEAD
+
           <li class="nav-item">
             <a class="nav-link text-light" href="#">Admin: <strong class="text-warning"><?php echo $_SESSION['nombreadmin'] ." ".$_SESSION['apellidoadmin'] ?></strong></a>
           </li>
-=======
+
 
          
->>>>>>> de0065f9a8df5eb3354eedfa25c2f72115205cb8
+
       
         <li class="nav-item">
           <a class="nav-link text-light" href="pagAdmin.php">Inicio</a>

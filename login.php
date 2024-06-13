@@ -38,9 +38,9 @@
         <div class="col-md-4 formulario">
             <form action="ingresar.php" method="post" class="mt-5">
             <div class="form-group text-center titulo">
-                <h1 class="text-black">Iniciar sesión</h1>
+                <h1 class="text-white">Iniciar sesión</h1>
             </div>
-            <label for="tipo" class="form-label"> Tipo de usuario</label>
+            <label for="tipo" class="form-label text-white"> Tipo de usuario</label>
             <div class="form-floating mb-3">      
          <select class="form-control" name="tipo_usuario" id="tipo_usuario" required>
          <option selected disabled="">Selecciona un rol</option>

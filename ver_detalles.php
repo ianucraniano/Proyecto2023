@@ -1,5 +1,5 @@
 <?php 
-require_once "conexion.php";
+/*require_once "conexion.php";
 
 // Verificar si se ha pasado el parámetro 'id'
 if (isset($_GET['idPiezas'])) {
@@ -73,7 +73,7 @@ if (isset($_GET['idPiezas'])) {
 <?php
 } else {
     echo "No se ha proporcionado un ID válido.";
-}
+}*/
 
 
 ?>

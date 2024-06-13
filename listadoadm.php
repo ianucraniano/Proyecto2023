@@ -62,6 +62,7 @@ include("header.php");
     
 
 <section>
+    
 
         <div class="text-center mt-5 mb-3"><h3>Listado de usuarios</h3></div>
        
@@ -71,7 +72,7 @@ include("header.php");
       <button class="btn btn-outline-success"  type="submit">Buscar</button>
     </form>
   </div>
-
+  <div role="alert" class="alert p-4 mt-3 text-center"></div>
         <table class="table table-success table-striped">
 
         <div class="text-center mt-5 mb-3"><h1>Listado de usuarios</h1>

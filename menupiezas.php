@@ -23,7 +23,7 @@ if(!empty($_POST["num"])){
     $sql1="SELECT  *
     FROM piezas, donante
     WHERE (piezas.Donante_idDonante1=donante.idDonante) and numeroInventario like '%$clave%' ";
-   $result=mysqli_query($conex,$sql1); 
+   $resultado=mysqli_query($conex,$sql1); 
     
 }
 
@@ -37,8 +37,8 @@ if(!empty($_POST["num"])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
 
-  <!-- <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css"> -->
-<link rel="stylesheet" href="../CSS/nav.css">
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css"> 
+
 
 </head>
 <body>
@@ -134,7 +134,7 @@ if(!empty($_POST["num"])){
             </svg></a>
         <button class="btn btn-info view-details" title="Ver detalles" data-id="<?php echo $fila['idPiezas']; ?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
               <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/></svg></button>
-        <!-- <a class="me-1 btn btn-primary btn-sm" title="Ver detalles" href=".php?idPiezas=<?php echo $fila ['idPiezas'];?>"></a> -->
+       
         </td>
 
 </tr>
@@ -171,7 +171,7 @@ if(!empty($_POST["num"])){
 	     }else{
 
           echo "</table></div>";
-          echo "<div class='container text-center lead my-3 py-3'><div class='alert alert-danger my-5 py-4'><p><em>No existen especies! </em><a href='index.php' class='text-primary lead ms-2'>Volver</a></p></div></div>";
+          echo "<div class='container text-center lead my-3 py-3'><div class='alert alert-danger my-5 py-4'><p><em>No existen especies! </em><a href='pagAdmin.php' class='text-primary lead ms-2'>Volver</a></p></div></div>";
          }
 	   ?>  
 
