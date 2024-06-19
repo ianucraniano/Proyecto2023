@@ -60,16 +60,6 @@ $error = "";
     }
       
 }
-        // Se arma la sentencia SQL de Actualización
-         
-      
-        // Ejecuta la sentencia
-
-       
-
-        //die($sql);
-
-        // Evalúa si se realizó la actualización de algun dato
 
 
 ?>

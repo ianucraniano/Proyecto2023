@@ -34,7 +34,9 @@ if(!empty(trim($_POST['dni']))&& !empty($_POST['clave']) && !empty($_POST['tipo_
       if (mysqli_num_rows($result)==1){
        
         $fila=mysqli_fetch_array($result);
+       
         if(password_verify($clave, $fila['clave'])){    
+          //die("entro");
         if($fila["tipo_usuario"]=="administrador"){
 
           $_SESSION['dniadmin']=$dni;

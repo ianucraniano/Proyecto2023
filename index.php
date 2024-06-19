@@ -15,19 +15,19 @@ if(!isset($_SESSION['dniadmin'])&&!isset($_SESSION['dnigerente'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Museo de San Cristobal - Inicio</title>
     <link href="https: //fonts.googleapis.com/css2? family= Roboto+Condensed:wght@700 & family= Roboto+Slab & display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">  
-    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./CSS/estilo.css">
-    <link rel="stylesheet" href="./CSS/contacto.css">
-    <link rel="stylesheet" href="./CSS/app.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-  
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">  
+      <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" href="./CSS/estilo.css">
+      <link rel="stylesheet" href="./CSS/contacto.css">
+      <link rel="stylesheet" href="./CSS/app.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
   </head>
 
     <body>
@@ -353,226 +353,7 @@ if(!isset($_SESSION['dniadmin'])&&!isset($_SESSION['dnigerente'])){
 
 
 
- <!--
-// v0 by Vercel.
-// https://v0.dev/t/De2OYXcbXWk
--->
-<!-- 
-<section class="w-full py-12 md:py-24 lg:py-32">
-  <div class="container grid grid-cols-1 md:grid-cols-3 gap-6 px-4 md:px-6">
-    <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative" data-v0-t="card">
-      <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-white dark:bg-gray-950 rounded-full p-4 shadow-lg">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="h-6 w-6 text-primary"
-        >
-          <circle cx="12" cy="12" r="10"></circle>
-          <polyline points="12 6 12 12 16 14"></polyline>
-        </svg>
-      </div>
-      <div class="flex flex-col space-y-1.5 p-6">
-        <div class="p-6 space-y-4 pt-10">
-          <div class="flex items-center justify-between">
-            <span>Lunes - Viernes</span>
-            <span>9:00 AM - 6:00 PM</span>
-          </div>
-          <div class="flex items-center justify-between">
-            <span>Sábados</span>
-            <span>10:00 AM - 4:00 PM</span>
-          </div>
-          <div class="flex items-center justify-between">
-            <span>Domingos</span>
-            <span>Cerrado</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative" data-v0-t="card">
-      <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-white dark:bg-gray-950 rounded-full p-4 shadow-lg">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="h-6 w-6 text-primary"
-        >
-          <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
-          <circle cx="12" cy="10" r="3"></circle>
-        </svg>
-      </div>
-      <div class="flex flex-col space-y-1.5 p-6">
-        <div class="p-6 space-y-4 pt-10">
-          <div class="flex items-start gap-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="mt-1 h-5 w-5 text-primary"
-            >
-              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
-              <circle cx="12" cy="10" r="3"></circle>
-            </svg>
-            <div>
-              <p>Avenida Principal #123</p>
-              <p>Ciudad, País</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="mt-1 h-5 w-5 text-primary"
-            >
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-            </svg>
-            <div>
-              <p>+1 (1</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="mt-1 h-5 w-5 text-primary"
-            >
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
-              <path d="M2 12h20"></path>
-            </svg>
-            <div>
-              <a class="underline" href="#">
-                exam
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative" data-v0-t="card">
-      <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-white dark:bg-gray-950 rounded-full p-4 shadow-lg">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="h-6 w-6 text-primary"
-        >
-          <circle cx="12" cy="12" r="10"></circle>
-          <path d="M12 16v-4"></path>
-          <path d="M12 8h.01"></path>
-        </svg>
-      </div>
-      <div class="flex flex-col space-y-1.5 p-6">
-        <div class="p-6 space-y-4 pt-10">
-          <div class="flex items-start gap-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="mt-1 h-5 w-5 text-primary"
-            >
-              <path d="M12 20h.01"></path>
-              <path d="M2 8.82a15 15 0 0 1 20 0"></path>
-              <path d="M5 12.859a10 10 0 0 1 14 0"></path>
-              <path d="M8.5 16.429a5 5 0 0 1 7 0"></path>
-            </svg>
-            <div>
-              <p>Wifi gratuito</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="mt-1 h-5 w-5 text-primary"
-            >
-              <path d="M9 9a3 3 0 1 1 6 0"></path>
-              <path d="M12 12v3"></path>
-              <path d="M11 15h2"></path>
-              <path d="M19 9a7 7 0 1 0-13.6 2.3C6.4 14.4 8 19 8 19h8s1.6-4.6 2.6-7.7c.3-.8.4-1.5.4-2.3"></path>
-              <path d="M12 19v3"></path>
-            </svg>
-            <div>
-              <p>Es</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="mt-1 h-5 w-5 text-primary"
-            >
-              <path d="M10 2v2"></path>
-              <path d="M14 2v2"></path>
-              <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"></path>
-              <path d="M6 2v2"></path>
-            </svg>
-            <div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-
+ 
 
 <div class="container mt-5 p-5">
 <div class="section-title text-center p-4 ">
