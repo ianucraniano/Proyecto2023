@@ -87,7 +87,8 @@ include("header.php");
   <div class="col-12 text-center">
 
   <button type="submit" class="btn btn-primary btn-lg" name="enviar" id="enviar">Actualizar datos</button>
-  <button type="button" href="listadoadmin.php" class="btn btn-danger btn-lg" name="cancelar" id="cancelar">Cancelar</button>
+  <a class="btn btn-danger btn-lg" href="listadoadm.php">Cancelar</a>
+  
   
   </div>
   

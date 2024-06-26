@@ -44,17 +44,13 @@ $error = "";
 
       //die($sql);
     
-
-       if ($result){
-          
-         
-          header("Location:listadoadm.php?msje=ok");
-
-      }else{ 
-        
-          $error.=" error en la insercion";
-          header("Location:form_editar.php?msje=".$error);
-      }
+      if ($result) {
+        header("Location: listadoadm.php?mensaje=Usuario editado correctamente&tipo=success");
+        exit();
+    } else {
+        header("Location: listadoadm.php?mensaje=Error al editar el usuario&tipo=error");
+        exit();
+    }
   
       
     }

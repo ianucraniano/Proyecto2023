@@ -12,7 +12,7 @@ if(!isset($_SESSION['dniadmin'])){
 $sql="SELECT usuarios.* FROM usuarios";
 
 
-$sql="SELECT usuarios.* FROM usuarios ";
+
 
 
 
@@ -171,7 +171,28 @@ include("header.php");
 
 
 
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+    function showAlert(message, type) {
+        Swal.fire({
+            title: type === 'success' ? '¡Éxito!' : '¡Error!',
+            text: message,
+            icon: type,
+            timer: 3000,
+            showConfirmButton: false
+        }).then(() => {
+            window.location.href = 'listadoadm.php';
+        });
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('mensaje')) {
+                const mensaje = urlParams.get('mensaje');
+                const tipo = urlParams.get('tipo');
+                showAlert(mensaje, tipo);
+            }
+        });
+</script>   
 </body>
 </html>
