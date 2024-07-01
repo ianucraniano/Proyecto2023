@@ -51,12 +51,13 @@ $error = "";
       if ($result){
           
          
-          header("Location:form_editarp.php?msje=ok");
+        header("Location: menupiezas.php?mensaje=Pieza editada correctamente&tipo=success");
+        exit();
 
       }else{
         
-      $error.=" error en la insercion";
-      header("Location:form_editarp.php?msje=".$error);
+        header("Location: menupiezas.php?mensaje=Error al editar la pieza&tipo=error");
+        exit();
 
     }
       

@@ -39,13 +39,13 @@ if(!empty(trim($_POST['nombre'])) && !empty(trim($_POST['apellido'])) &&
         
 			//codigo 1062 duplicado
      
-		if(mysqli_errno($conex) == 1062) {
-			$error.= "Error, DNI duplicado";
-			header("Location:form_agregar.php?mensaje=".$error);
-		} else {
-			$error.= "Error en la inserción de datos";
-			header("Location:form_agregar.php?mensaje=".$error);
-		}
+		// if(mysqli_errno($conex) == 1062) {
+		// 	header("Location: listadoadm.php?mensaje=Error DNI duplicado&tipo=error");
+		// 	exit();
+		// } else {
+		// 	 header("Location: listadoadm.php?mensaje=Usuario agregado &tipo=succes");
+		// 	exit();
+		// }
 		
      
      }
@@ -53,11 +53,12 @@ if(!empty(trim($_POST['nombre'])) && !empty(trim($_POST['apellido'])) &&
 	 if ($result){
 			
            
-		header("Location:form_agregar.php?mensaje=ok");
+		header("Location: listadoadm.php?mensaje=Usuario agregado&tipo=success");
+        exit();
 
 	}else{ 
-		$error.="<br> Error en la insercion de usuario";
-		header("Location:form_agregar.php?mensaje=".$error);
+		header("Location: listadoadm.php?mensaje=Error al insertar usuario &tipo=error");
+			exit();
 	}
 	
 }

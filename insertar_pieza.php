@@ -57,11 +57,13 @@ if(!empty(trim($_POST['numeroInventario'])) && !empty(trim($_POST['especie'])) &
 	 if ($result){
 			
            
-		header("Location:form_agregarp.php?mensaje=ok");
+		header("Location: menupiezas.php?mensaje=Pieza agregada correctamente&tipo=success");
+        exit();
+
 
 	}else{ 
-		$error.="<br> Error en la insercion";
-		header("Location:form_agregarp.php?mensaje=".$error);
+		header("Location: menupiezas.php?mensaje=Error al agregar pieza&tipo=error");
+        exit();
 	}
 	
 }
