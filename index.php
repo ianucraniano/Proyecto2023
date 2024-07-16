@@ -1,9 +1,9 @@
 <?php 
 session_start();
 
-if(!isset($_SESSION['dniadmin'])&&!isset($_SESSION['dnigerente'])){
-  header("Location:index.php");
-}
+//if(!isset($_SESSION['dniadmin'])&&!isset($_SESSION['dnigerente'])){
+  //header("Location:index.php");
+//}
 
 
 ?>

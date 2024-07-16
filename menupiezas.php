@@ -148,24 +148,26 @@ if(!empty($_POST["num"])){
 </tbody>
 
 </table>
+<!-- Modal -->
 <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="detailsModalLabel">Detalles de la Especie</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <!-- Aquí se cargarán los detalles de la especie -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="detailsModalLabel">Detalles de la Pieza</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Aquí se cargarán los detalles -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+
 
 <?php
 	     }else{
@@ -184,21 +186,34 @@ if(!empty($_POST["num"])){
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
     <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Selecciona todos los botones con la clase 'view-details'
-    var buttons = document.querySelectorAll('.view-details');
-    
-    // Añade un evento de clic a cada botón
-    buttons.forEach(function(button) {
-        button.addEventListener('click', function() {
-            // Obtiene el ID de los datos del atributo data-id
-            var id = this.getAttribute('data-id');
+ document.addEventListener('DOMContentLoaded', function() {
+            // Selecciona todos los botones con la clase 'view-details'
+            let buttons = document.querySelectorAll('.view-details');
             
-            // Redirige a ver_detalles.php con el ID como parámetro
-            window.location.href = 'ver_detalles.php?id=' + id;
+            // Añade un evento de clic a cada botón
+            buttons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    // Obtiene el ID de los datos del atributo data-id
+                    let id = this.getAttribute('data-id');
+                    
+                    // Realiza una solicitud AJAX para obtener los detalles
+                    $.ajax({
+                        url: 'ver_detalles.php',
+                        method: 'GET',
+                        data: { id: id },
+                        success: function(response) {
+                            // Carga los detalles en el cuerpo del modal
+                            $('#detailsModal .modal-body').html(response);
+                            // Muestra el modal
+                            $('#detailsModal').modal('show');
+                        },
+                        error: function() {
+                            alert('Error al cargar los detalles.');
+                        }
+                    });
+                });
+            });
         });
-    });
-});
 
     function showAlert(message, type) {
         Swal.fire({

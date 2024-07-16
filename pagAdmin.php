@@ -3,7 +3,7 @@ session_start();
 
 if(!isset($_SESSION['dniadmin'])){
   
-  header("Location:index.php");
+  header("Location:login.php");
 }
 
 
