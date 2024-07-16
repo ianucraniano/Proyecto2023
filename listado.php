@@ -1,14 +1,11 @@
 
 <?php
-// Conexion a la Base de Datos Biblioteca 
-session_start();
+
+
 require_once "conexion.php";
 
-if(!isset($_SESSION['dniadmin'])&&!isset($_SESSION['dnigerente'])){
-    header("Location:index.php");
-}
 
-//$id = $_GET['idPiezas'];
+
 
 $sql= "SELECT piezas.idPiezas,piezas.numeroInventario,piezas.especie,piezas.estadoConservacion, donante.nombreyape,piezas.fechaIngreso,piezas.clasificacion
 FROM piezas, donante
@@ -17,25 +14,19 @@ WHERE (piezas.Donante_idDonante1=donante.idDonante) ";
 
 $result=mysqli_query($conex,$sql);
 
-if(!empty($_POST["num"])){
-  
-    $clave=$_POST["num"];
-    $sql1="SELECT  *
-    FROM piezas, donante
-    WHERE (piezas.Donante_idDonante1=donante.idDonante) and numeroInventario like '%$clave%' ";
-   $resultado=mysqli_query($conex,$sql1); 
-    
-}
+
 
 
 
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu piezas</title>
+    <title>Especies</title>
 
   <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css"> 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
@@ -49,6 +40,32 @@ if(!empty($_POST["num"])){
     ?>
 
 
+<style>
+        .button-33 {
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-33:hover {
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+    </style>
+
 <section>
 
 
@@ -60,26 +77,16 @@ if(!empty($_POST["num"])){
 
 
 
-    <div class="text-center mt-5 mb-3"><h1>Menu de piezas</h1></div>
+    <div class="text-center mt-5 mb-3"><h1>Especies</h1></div>
+
+    <div>
+<a href="colecciones.php" class="button-33" role="button">Volver</a>
+</div>
     <table class="table table-success table-striped container">
         
         
               </div>
-            <div class="container col-3 p-1">
-                <form class="d-flex" role="buscar" action="menupiezas.php" method="post">
-                  <input class="form-control me-2" type="search" placeholder="Buscar..." name="num" id="num" aria-label="Search">
-                 <div class="col-6">
-
-                     <button class="btn btn-outline-primary m-2"  type="submit">Buscar</button>
-                 </div>
-                </form>
-              
-              </div>
-        
-        
-        <div class="text-center p-3">
-            <a class="btn btn-primary btn-sm mb-2" href="form_agregarp.php" role="button">Agregar</a>
-            
+   
       
     
 
@@ -127,15 +134,7 @@ if(!empty($_POST["num"])){
         <td><?php echo $fila["fechaIngreso"]; ?></td>
         <td><?php echo $fila["clasificacion"]; ?></td>
                 
-        <td><a class="me-1 btn btn-success  " title="Editar" href="form_editarp.php?idPiezas=<?php echo $fila ['idPiezas'];?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-            </svg></a>
-        <a class="me-1 btn btn-danger " title="Eliminar" href="form_eliminarp.php?idPiezas=<?php echo $fila ['idPiezas'];?>">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-            <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5"/>
-            </svg></a>
-        <button class="btn btn-info view-details" title="Ver detalles" data-id="<?php echo $fila['idPiezas']; ?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
+        <td> <button class="btn btn-info view-details" title="Ver detalles" data-id="<?php echo $fila['idPiezas']; ?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
               <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/></svg></button>
        
         </td>
