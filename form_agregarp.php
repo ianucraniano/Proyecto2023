@@ -44,10 +44,16 @@ include('header.php');
   </div>
 
   <div class="col-sm-6 mb-3">
-    <label for="estadoConservacion" class="form-label">Estado de conservación</label>
-    <input type="text" class="form-control" name="estadoConservacion" id="estadoConservacion" placeholder="Ingresa su estado" required>
+  <label for="estadoConservacion" class="form-label">Estado de conservación</label>
+    <select class="form-control" name="estadoConservacion" id="estadoConservacion" >
+      <option selected disabled="">Selecciona una clasificación</option>
+      <option value="bueno">Bueno</option>
+      <option value="muybueno">Muy bueno</option>
+      <option value="excelente">Excelente</option>
+      <option value="malo">Malo</option>
+   
+    </select>
   </div>
-
 
   <div class="col-sm-6 mb-3">
     <label for="fechaIngreso" class="form-label">Fecha de ingreso</label>
@@ -88,7 +94,7 @@ include('header.php');
 
   <div class="col-12 mt-5 text-center">
         <button type="submit" class="btn btn-primary btn-lg" name="guardar" id="enviar">Agregar</button>
-        <button type="reset" class="btn btn-danger btn-lg" name="cancelar" id="cancelar">Cancelar</button>
+        <a class="btn btn-danger btn-lg" href="menupiezas.php">Cancelar</a>
   </div>
   
   </form>

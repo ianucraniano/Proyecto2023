@@ -117,7 +117,7 @@ if(!empty($_POST["num"])){
         
 <tr>
     
-    <th scope="row"><?php echo $fila["idPiezas"]; ?>
+    <th scope="row">
     </th>
     <th scope="row"><?php echo $fila["numeroInventario"]; ?>
     </th>

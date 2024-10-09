@@ -42,17 +42,47 @@ ul li a:hover{
   transition: .5s all;
   border-radius: 5px;
 }
-.login{
+/* Estilo general para el elemento .login */
+.login {
   background: rgb(30,209,56);
   background: linear-gradient(90deg, rgba(30,209,56,1) 35%, rgba(17,210,145,1) 64%, rgba(0,212,255,1) 100%);
-  border-radius:50%;
-  transition: .5s all;
+  border-radius: 50%;
+  transition: 0.5s all;
+  /* Mantenemos la relación de aspecto circular */
+  max-width: 100px; /* Tamaño máximo para evitar que crezca demasiado */
+  max-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
-ul li .login:hover{
+
+/* Estilo para el estado hover */
+ul li .login:hover {
   background: rgb(34,193,195);
-background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(245,253,45,1) 100%);
-border-radius:50%;
-transition: .5s all;
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(245,253,45,1) 100%);
+  border-radius: 50%;
+  transition: 0.5s all;
+}
+
+/* Media queries para pantallas más pequeñas */
+@media (max-width: 768px) { /* Ajusta el tamaño para pantallas medianas */
+  .login {
+    width: 25vw; /* Aumenta el tamaño relativo para pantallas medianas */
+    height: 25vw;
+    max-width: 80px; /* Tamaño máximo para pantallas medianas */
+    max-height: 80px;
+  }
+}
+
+@media (max-width: 576px) { /* Ajusta el tamaño para pantallas pequeñas */
+  .login {
+    width: 30vw; /* Aumenta el tamaño relativo para pantallas pequeñas */
+    height: 30vw;
+    max-width: 60px; /* Tamaño máximo para pantallas pequeñas */
+    max-height: 60px;
+  }
+}
 
 
 }

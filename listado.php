@@ -79,13 +79,13 @@ $result=mysqli_query($conex,$sql);
 
     <div class="text-center mt-5 mb-3"><h1>Especies</h1></div>
 
-    <div>
-<a href="colecciones.php" class="button-33" role="button">Volver</a>
-</div>
     <table class="table table-success table-striped container">
+        <div class="p-4 text-center">
+            <a href="colecciones.php" class="button-33" role="button">Volver</a>
+            </div>
         
         
-              </div>
+              
    
       
     

@@ -39,32 +39,43 @@ if(!empty(trim($_POST['nombre'])) && !empty(trim($_POST['apellido'])) &&
         
 			//codigo 1062 duplicado
      
-		// if(mysqli_errno($conex) == 1062) {
-		// 	header("Location: listadoadm.php?mensaje=Error DNI duplicado&tipo=error");
-		// 	exit();
-		// } else {
-		// 	 header("Location: listadoadm.php?mensaje=Usuario agregado &tipo=succes");
-		// 	exit();
-		// }
-		
-     
-     }
-	
-	 if ($result){
 			
-           
-		header("Location: listadoadm.php?mensaje=Usuario agregado&tipo=success");
-        exit();
+     
+			if ($result) {
+				header("Location: listadoadm.php?mensaje=Usuario agregado!&tipo=success");
+				exit;
+			} else {
+				// Verifica si el error es un DNI duplicado
+				if (mysqli_errno($conex) == 1062) {
+					$error = "Error, DNI duplicado";
+				} else {
+					$error = "Error en la inserción de datos";
+				}
+				
+				// Cierra la declaración después de manejar el error
+				
+				
+				// Redirige con el mensaje de error
+				header("Location: listadoadm.php?mensaje=Error al agregar usuario&tipo=error" . urlencode($error));
+				exit;
+			}
+			
+			// Aquí se cierra la declaración si la ejecución fue exitosa
+			
+			
+			} else {
+				$error = "";
+				header("Location: listadoadm.php?mensaje=Error en la validación de datos&tipo=error" . urlencode($error));
+				exit;
+			}
+			
+			} else {
+				$error = "";
+				header("Location: form_agregar.php?mensaje=Todos los campos son obligatorios&tipo=error" . urlencode($error));
+				exit;
+			}
+			
 
-	}else{ 
-		header("Location: listadoadm.php?mensaje=Error al insertar usuario &tipo=error");
-			exit();
-	}
-	
-}
-
-  
-
-	
+		
 
 ?>

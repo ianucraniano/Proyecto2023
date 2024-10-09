@@ -1,5 +1,9 @@
 <?php
 
+
+require_once "conexion.php";
+
+
 function Validacion() {
 
  global $error;
@@ -12,12 +16,11 @@ function Validacion() {
 	 	$error.="Error  ";
 	 	$var_bool=FALSE;
 	 }
-	
+
 
 	
 	
 
-	return $var_bool;
-}
+	}
 
 ?>
