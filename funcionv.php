@@ -1,26 +1,20 @@
 <?php
 
-
 require_once "conexion.php";
 
-
 function Validacion() {
+    global $error;
 
- global $error;
+    $var_bool = true;
 
-	$var_bool=TRUE;
+    // Validar que 'cantidadpiezas' sea numérico y solo contenga números
+    if (!is_numeric($_POST['cantidadpiezas']) || !preg_match("/^([0-9])*$/", $_POST['cantidadpiezas'])) {
+        $error .= "Error: La cantidad de piezas debe ser un número válido. ";
+        $var_bool = false;
+    }
 
-	// Validar el nombre, apellido, dni, edad, email, clave
-
- if(!is_numeric($_POST['cantidadpiezas']) || !preg_match("/^([0-9])*$/", $_POST['cantidadpiezas'])){
-	 	$error.="Error  ";
-	 	$var_bool=FALSE;
-	 }
-
-
-	
-	
-
-	}
-
+   
+    
+    return $var_bool;
+}
 ?>

@@ -8,16 +8,7 @@ function ValidacionDatos() {
 
 	// Validar el nombre, apellido, dni, edad, email, clave
 
-	if(!is_string($_POST['nombre']) || !preg_match("/^[a-zA-Z ]+$/", $_POST['nombre'])){
-		$error.="Error nombre ";
-		$var_bool=FALSE;
-	}
 	
-	if(!is_string($_POST['apellido']) || !preg_match("/^[a-zA-Z ]+$/", $_POST['apellido'])){
-		$error.=" Error apellido ";
-		$var_bool=FALSE;
-	}
-
 	
 	if (!preg_match("/^[0-9]{8}$/", $_POST['dni']) || strlen($_POST['dni']) != 8) {
 		$error.= "Error DNI ";
