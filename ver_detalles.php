@@ -14,7 +14,10 @@ function mostrarDetalles($conex, $id, $table) {
         if ($details) {
             echo "<h3>Detalles de $table</h3>";
             foreach ($details as $key => $value) {
+              if ( $key != "idBotanica" &&  $key != "idGeologia" &&  $key != "idArqueologia" && $key != "idOologia" && $key != "idZoologia" && $key != "idIctiologia" && $key != "idOsteologia" && $key != "idPalenteologia" && $key != "Piezas_idPiezas" && $key != "Piezas_Donante_idDonante"){  
+
                 echo ucfirst($key) . ": " . $value . "<br>";
+              }
             }
         } else {
             //echo "<h3>No hay detalles adicionales para $table</h3>";
@@ -47,7 +50,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
             echo "Donante: " . $piezas['nombreyape']. "<br>"."Fecha: ". $piezas['fecha']. "<br>";
 
             // Obtener y mostrar detalles de las tablas relacionadas
-            $tables = ['arqueologia', 'botanica', 'geologia', 'icteologia', 'oologia', 'palenteologia', 'zoologia'];
+            $tables = ['Arqueologia', 'Botanica', 'Geologia', 'Icteologia', 'Oologia', 'Palenteologia', 'Zoologia'];
             foreach ($tables as $table) {
                 mostrarDetalles($conex, $id, $table);
             }
