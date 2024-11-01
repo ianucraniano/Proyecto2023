@@ -94,7 +94,7 @@ include('header.php');
 
   <div class="col-12 mt-5 text-center">
         <button type="submit" class="btn btn-primary btn-lg" name="guardar" id="enviar">Agregar</button>
-        <a class="btn btn-danger btn-lg" href="menupiezas.php">Cancelar</a>
+        <a class="btn btn-danger btn-lg" href="pagAdmin.php">Cancelar</a>
   </div>
   
   </form>
