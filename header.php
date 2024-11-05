@@ -74,7 +74,7 @@ nav  {
 
       if(!isset($_SESSION["dniadmin"])&& !isset($_SESSION["dnigerente"])){
         ?>
-        <ul class="nav justify-content-center navbar-links ">
+        <ul class="nav justify-content-end navbar-links ">
           
            
          
@@ -91,15 +91,13 @@ nav  {
           <li class="nav-item">
             <a class="nav-link text-light" href="#contacto">Contacto</a>
           </li>
-  
+          <li class="nav-item "> 
+            <a class=" nav-link text-light  " title="Ingresar" href="login.php">Ingresar</a>     
+        </li> 
              
         </ul> 
 
-    <ul class='navbar-nav ms-auto navbar-links'>
-        <li class="nav-item "> 
-            <a class=" nav-link text-light  " title="Ingresar" href="login.php">Ingresar</a>     
-        </li> 
-      </ul>           
+            
       
         
       <?php
@@ -157,15 +155,20 @@ nav  {
           <li class="nav-item navbar-links">
         <a class="nav-link text-light" href="menupiezas.php">Piezas</a>
         </li>
+          <li class="nav-item navbar-links">
+          <a class="nav-link text-light" href="salir.php">Salir</a>
+        </li>
+          <li class="nav-item navbar-links">
+          <a class="nav-link text-light" href="informacion_user.php">Datos personales</a>
+        </li>
         <li class="nav-item">
-        <div class="dropdown">
-            <a class="btn btn-success dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        
+            <a class="btn btn-success " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <strong class="text-warning"><?php echo $_SESSION['nombregerente'] ." ".$_SESSION['apellidogerente'] ?></strong>
             </a>
 
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="informacion_user.php">Datos personales</a></li>
-              <li> <a class="dropdown-item text-info" href="salir.php"> Salir</a></li>
+           
+               </li>
             </ul>
           </div>
         
