@@ -7,6 +7,8 @@ session_start(); // Asume que manejas la sesión para obtener el usuario loguead
 // Verificar si el formulario fue enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Obtener los datos del formulario
+    $telefono = $_POST['userPhone'];
+    $email = $_POST['userEmail'];
     $currentPassword = $_POST['current-password'];
     $newPassword = $_POST['new-password'];
     $confirmPassword = $_POST['confirm-password'];

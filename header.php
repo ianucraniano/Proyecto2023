@@ -108,51 +108,67 @@ nav  {
       
         
           ?>
-          <ul class="navbar-nav ms-auto navbar-links">
+          <ul class="navbar-nav ms-auto ">
 
         
           
 
-          <li class="nav-item">
-            <a class="nav-link text-light" href="#">Admin: <strong class="text-warning"><?php echo $_SESSION['nombreadmin'] ." ".$_SESSION['apellidoadmin'] ?></strong></a>
-          </li>
+         
 
 
          
 
       
-        <li class="nav-item">
+        <li class="nav-item navbar-links">
           <a class="nav-link text-light" href="pagAdmin.php">Inicio</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item navbar-links">
           <a class="nav-link text-light" href="listadoadm.php">Listado usuarios</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item navbar-links">
         <a class="nav-link text-light" href="form_agregar.php">Agrega usuario</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item navbar-links">
         <a class="nav-link text-light" href="menupiezas.php">Piezas</a>
       </li>
         <li class="nav-item">
-        <a class="nav-link text-light" href="salir.php"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);transform: ;msFilter:;"><path d="M19.002 3h-14c-1.103 0-2 .897-2 2v4h2V5h14v14h-14v-4h-2v4c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.898-2-2-2z"></path><path d="m11 16 5-4-5-4v3.001H3v2h8z"></path></svg> Salir</a>
+        <div class="dropdown">
+            <a class="btn btn-success dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <strong class="text-warning"><?php echo $_SESSION['nombreadmin'] ." ".$_SESSION['apellidoadmin'] ?></strong>
+            </a>
+
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="informacion_user.php">Datos personales</a></li>
+              <li> <a class="dropdown-item text-info" href="salir.php"> Salir</a></li>
+            </ul>
+          </div>
+       
       </li>
       </ul>
       <?php
 
         }elseif(isset($_SESSION["dnigerente"])){
           ?>
-          <ul class="navbar-nav ms-auto navbar-links">
-            <li class="nav-item">
-            <a class="nav-link text-light" href="#">Gerente: <strong class="text-warning"><?php echo $_SESSION['nombregerente'] ." ".$_SESSION['apellidogerente'] ?></strong></a>
-          </li>
-            <li class="nav-item">
+          <ul class="navbar-nav ms-auto ">
+            
+            <li class="nav-item navbar-links">
             <a class="nav-link text-light" href="pagGerente.php">Inicio</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item navbar-links">
         <a class="nav-link text-light" href="menupiezas.php">Piezas</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link text-light" href="salir.php">Salir</a>
+        <div class="dropdown">
+            <a class="btn btn-success dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <strong class="text-warning"><?php echo $_SESSION['nombregerente'] ." ".$_SESSION['apellidogerente'] ?></strong>
+            </a>
+
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="informacion_user.php">Datos personales</a></li>
+              <li> <a class="dropdown-item text-info" href="salir.php"> Salir</a></li>
+            </ul>
+          </div>
+        
       </li>
       </ul>
       <?php
