@@ -53,7 +53,7 @@
 }
 
 .footer-social a:hover {
-    color: #15e047;
+    color: #1d4b28;
 }
 
 .footer-bottom {
