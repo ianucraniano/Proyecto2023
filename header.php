@@ -18,6 +18,8 @@
  
 
 nav  {
+  background: rgb(47,162,163);
+background: linear-gradient(0deg, rgba(47,162,163,1) 0%, rgba(14,190,55,1) 72%);
   position: fixed;
   font-family: "Cabin", sans-serif;
   font-optical-sizing: auto;

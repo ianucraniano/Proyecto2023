@@ -73,13 +73,13 @@ $result=mysqli_query($conex,$sql);
 
 
 
-<table class="table table-success table-striped">
+<table class="table table-striped table-hover">
 
 
 
-    <div class="text-center mt-5 mb-3"><h1>Especies</h1></div>
+    <div class="text-center mt-5 mb-3 "><h1>Especies</h1></div>
 
-    <table class="table table-success table-striped container">
+    <table class="table table-striped table-hover container">
         <div class="p-4 text-center">
             <a href="colecciones.php" class="button-33" role="button">Volver</a>
             </div>

@@ -3,7 +3,11 @@
 require 'conexion.php'; // Incluye el archivo con la conexión a la base de datos
 
 session_start();
+$id=$_GET['idusuarios'];
+$sql= "SELECT idusuarios,dni,email,telefono,clave FROM usuarios WHERE idusuarios = $id" ;
+$result=mysqli_query($conex,$sql); 
 
+$fila=mysqli_fetch_assoc($result);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -45,6 +49,7 @@ include("header.php");
         <div class="form-container">
             <h2 class="mb-4">Modificar Información del Usuario</h2>
             <form id="modifyUserForm" method="post" action="change_password.php">
+            <input type="hidden" class="form-control" name="idusuarios" id="idusuarios" placeholder="" value="<?php echo $fila['idusuarios']; ?>" required>
                 <div class="form-group">
                     <label for="userPhone">Teléfono:</label>
                     <input type="text" class="form-control" name="userPhone" id="userPhone" placeholder="+54 123 456 7890" required>

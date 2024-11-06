@@ -74,19 +74,20 @@ include("header.php");
     </form>
   </div>
   <div role="alert" class="alert p-4 mt-3 text-center"></div>
-        <table class="table table-success table-striped">
+        <table class="table table-striped table-hover shadow">
 
         <div class="text-center mt-5 mb-3"><h1>Listado de usuarios</h1>
         
-        <table class="table table-success table-striped container">
+        <table class="table table-striped table-hover container shadow">
 
-       <thead class="table-dark">
-        <tr class="table-primary">
+       <thead>
+        <tr >
         
 
             </div>
 
-            <thead class="table-dark">
+            <thead style="background: rgb(34,152,83);
+        background: linear-gradient(0deg, rgba(34,152,83,1) 42%, rgba(13,148,44,1) 72%);">
                
                 <th scope="col">DNI</th>
                 <th scope="col">Nombre</th>

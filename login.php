@@ -7,14 +7,103 @@
     <title>Iniciar sesión</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="./CSS/estilo.css">
+    
     <style>
+        /* Estilos generales login */
+        body {
+            background-color: #f2f2f2;
+        }
+        .centro {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f2f2f2;
+        }
+        .login-page {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-container {
+            display: flex;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            max-width: 800px;
+            width: 100%;
+        }
+        .login-image {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .login-form-container {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .login-title {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .login-form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .input-group {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .icon {
+            position: absolute;
+            top:13px;
+            left: 10px;
+            color: #333;
+        }
+        .login-input, .login-select {
+            width: 100%;
+            padding: 10px 10px 10px 35px;
+            border: 1px solid #229853;
+            border-radius: 10px;
+            outline: none;
+        }
+        .login-input:focus, .login-select:focus {
+            border-color: #229853;
+        }
+        .login-select {
+            appearance: none;
+            background-color: #fff;
+            cursor: pointer;
+        }
+        .login-button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #229853;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .login-button:hover {
+            background-color: #0deb69;
+        }
         .toggle-password {
             position: absolute;
             right: 15px;
@@ -26,135 +115,54 @@
 </head>
 <body>
     <?php include('header.php'); ?>
-    
-    <section>
-        <div class="container">
-            <div class="row justify-content-center pt-4 mt-5">
-                <div class="col-md-6 formulario">
-                    <form action="ingresar.php" method="post" class=" ">
-                        <div class="form-group text-center titulo">
-                            <h1 class="text-white">Iniciar sesión</h1>
+    <div class="centro">
+        <div class="login-page">
+            <div class="login-container">
+                <div class="login-image">
+                    <img src="imagenes/login.jpg" alt="Imagen de bienvenida">
+                </div>
+                <div class="login-form-container">
+                    <h2 class="login-title">Iniciar Sesión</h2>
+                    <form class="login-form" action="ingresar.php" method="post">
+                        <div class="input-group">
+                            <i class="fas fa-user icon"></i>
+                            <input type="text" placeholder="DNI" name="dni" class="login-input">
                         </div>
-                        <label for="tipo" class="form-label text-white">Tipo de usuario</label>
-                        <div class="form-floating mb-3">      
-                            <select class="form-control" name="tipo_usuario" id="tipo_usuario" required>
-                                <option selected disabled>Selecciona un rol</option>
+                        <div class="input-group">
+                            <i class="fas fa-lock icon"></i>
+                            <input type="password" placeholder="Contraseña" name="clave" id="password" class="login-input">
+                            <i class="fas fa-eye toggle-password" id="togglePassword"></i>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-user-cog icon"></i>
+                            <select class="login-select" name="tipo_usuario" id="tipo_usuario">
                                 <option value="administrador">Administrador</option>
                                 <option value="gerente">Gerente</option>
                             </select>
                         </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" name="dni" id="dni" placeholder=" ">
-                            <label class="labeltexto" for="dni">Ingrese su DNI</label>
-                        </div>
-                        <div class="form-floating mb-3 position-relative">
-                            <input type="password" class="form-control" name="clave" id="clave" placeholder=" ">
-                            <label class="labeltexto" for="clave">Ingrese su contraseña</label>
-                            <span class="toggle-password" id="togglePassword">
-                                <i class="fas fa-eye" id="icon-eye"></i>
-                            </span>
-                        </div>
-                        <a href="#" class="btn btn-link w-100" data-bs-toggle="modal" data-bs-target="#changePasswordModal">
-                            Olvidaste tu contraseña?
-                        </a>
-                        <div class="col-12 text-center">
-                            <button type="submit" class="btn btn-outline-light w-100" name="btn_ingresar" id="btn_ingresar">Ingresar</button>
-                        </div>
+                        <button type="submit" class="login-button">Ingresar</button>
                     </form>
                 </div>
             </div>
         </div>
-
-        <!-- Modal para cambiar la contraseña -->
-        <div class="modal fade" id="changePasswordModal" tabindex="-1" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="changePasswordModalLabel">Cambia tu Contraseña</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="change_password.php" method="POST">
-                            <div class="form-floating mb-3">
-                                <input type="password" class="form-control" name="current-password" id="current-password" placeholder=" ">
-                                <label for="current-password">Contraseña Actual</label>
-                                <span class="toggle-password" id="toggleCurrentPassword">
-                                    <i class="fas fa-eye" id="icon-eye-current"></i>
-                                </span>
-                            </div>
-                            <div class="form-floating mb-3 position-relative">
-                                <input type="password" class="form-control" name="new-password" id="new-password" placeholder=" ">
-                                <label for="new-password">Nueva Contraseña</label>
-                                <span class="toggle-password" id="toggleNewPassword">
-                                    <i class="fas fa-eye" id="icon-eye-new"></i>
-                                </span>
-                            </div>
-                            <div class="form-floating mb-3 position-relative">
-                                <input type="password" class="form-control" name="confirm-password" id="confirm-password" placeholder=" ">
-                                <label for="confirm-password">Confirmar Nueva Contraseña</label>
-                                <span class="toggle-password" id="toggleConfirmPassword">
-                                    <i class="fas fa-eye" id="icon-eye-confirm"></i>
-                                </span>
-                            </div>
-                            <button type="submit" class="btn btn-success">Confirmar</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <?php
-        // Mostrar mensaje resultante de la acción
-        if (isset($_GET["mensaje"])) {
-            if ($_GET["mensaje"] != "ok") {
-                echo "<div class='text-center mt-4 mb-5'><div class='alert alert-danger' role='alert'><strong>" . $_GET["mensaje"] . "</strong></div></div>"; 
-            } else {
-                echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>Acceso autorizado!</strong><a href='ingresar.php' class='text-primary ms-3'>Volver al Inicio</a></div></div>";  
-            }  
-        }
-    ?> 
-
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Funcionalidad para mostrar/ocultar la contraseña
-        document.getElementById('togglePassword').addEventListener('click', function () {
-            const passwordInput = document.getElementById('clave');
-            const icon = document.getElementById('icon-eye');
-            togglePassword(passwordInput, icon);
-        });
-
-        document.getElementById('toggleCurrentPassword').addEventListener('click', function () {
-            const currentPasswordInput = document.getElementById('current-password');
-            const iconCurrent = document.getElementById('icon-eye-current');
-            togglePassword(currentPasswordInput, iconCurrent);
-        });
-
-        document.getElementById('toggleNewPassword').addEventListener('click', function () {
-            const newPasswordInput = document.getElementById('new-password');
-            const iconNew = document.getElementById('icon-eye-new');
-            togglePassword(newPasswordInput, iconNew);
-        });
-
-        document.getElementById('toggleConfirmPassword').addEventListener('click', function () {
-            const confirmPasswordInput = document.getElementById('confirm-password');
-            const iconConfirm = document.getElementById('icon-eye-confirm');
-            togglePassword(confirmPasswordInput, iconConfirm);
-        });
-
-        function togglePassword(input, icon) {
-            if (input.type === 'password') {
-                input.type = 'text';
-                icon.classList.remove('fa-eye');
-                icon.classList.add('fa-eye-slash');
-            } else {
-                input.type = 'password';
-                icon.classList.remove('fa-eye-slash');
-                icon.classList.add('fa-eye');
-            }
-        }
-    </script>
+    </div>
 
     <?php include("footer.php"); ?>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Mostrar/ocultar contraseña
+        document.getElementById('togglePassword').addEventListener('click', function () {
+            const passwordInput = document.getElementById('password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                this.classList.remove('fa-eye');
+                this.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                this.classList.remove('fa-eye-slash');
+                this.classList.add('fa-eye');
+            }
+        });
+    </script>
 </body>
 </html>

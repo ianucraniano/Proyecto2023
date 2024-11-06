@@ -56,12 +56,12 @@ if(!empty($_POST["num"])){
 
 
 
-<table class="table table-success table-striped">
+<table class="table table-striped table-hover shadow">
 
 
 
     <div class="text-center mt-5 mb-3"><h1>Menu de piezas</h1></div>
-    <table class="table table-success table-striped container">
+    <table class="table table-striped table-hover container shadow">
         
         
               </div>
@@ -84,8 +84,9 @@ if(!empty($_POST["num"])){
     
 
 
-    <thead class="table-dark">
-    <tr class="table-primary">
+    <thead style="background: rgb(34,152,83);
+        background: linear-gradient(0deg, rgba(34,152,83,1) 42%, rgba(13,148,44,1) 72%);">
+    <tr >
     <th scope="col"></th>
     <th scope="col">Nro de inventario</th>
                 <th scope="col">Especie</th>

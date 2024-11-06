@@ -3,7 +3,11 @@
 require 'conexion.php'; // Incluye el archivo con la conexión a la base de datos
 
 session_start(); // Asume que manejas la sesión para obtener el usuario logueado
+$id=$_POST['idusuarios'];
 
+// Crea una variable de sesión llamada ids para guardar el id del socio recibido 
+
+$_SESSION['ids']=$id;
 // Verificar si el formulario fue enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Obtener los datos del formulario

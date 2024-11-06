@@ -29,6 +29,10 @@ session_start();
   <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
   <style>
     /* Sección Planifica tu Visita */
+    body{
+      background-color: #f8f9fa;
+      font-family: 'Roboto', sans-serif;
+    }
 .visit-section {
     
     background-color: #f8f9fa;
@@ -147,6 +151,28 @@ session_start();
     }
 }
 
+/* Styles for the welcome message */
+.welcome-message {
+  background: rgb(47,162,163);
+  background: linear-gradient(0deg, rgba(47,162,163,1) 0%, rgba(14,190,55,1) 72%);
+    color: #343a40;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.welcome-message p {
+    font-size: 1.1rem;
+}
+
+#greetingMessage {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
   
 
 .presentacion-pagina{
@@ -158,23 +184,104 @@ session_start();
   top:140px;
 }
   
-  .bienvenido{
- 
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    padding: 40px;
-    display: flex;
-    justify-content: center;
-    
-  }
- 
-  .coleccion{
-    color: black;
-  }
+  
+ /* Sección de Eventos */
+.event-section {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #f8f9fa;
+}
+
+.event-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.event-section p {
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+/* Grilla de Eventos */
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Tarjeta de Evento */
+.event-card {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: scale(1.02);
+}
+
+.event-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.event-card .card-content {
+    padding: 1.5rem;
+}
+
+.event-card .event-date {
+    color: #f7c35f;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.event-card h3 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.event-card p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.event-card .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem ;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #f7c35f;
+    border: none;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+    text-decoration: none;
+}
+
+.event-card .btn:hover {
+    background-color: #e0a82d;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .event-section h2 {
+        font-size: 2rem;
+    }
+
+    .event-card img {
+        height: 180px;
+    }
+}
 
   
-.carrusel{
-  height: 400px;
-}
+
 .card-icon {
             position: absolute;
             top: -1.5rem;
@@ -234,15 +341,16 @@ session_start();
 
 
 
-    <div class= "presentacion">
-      <br>
-      <h2 class="bienvenido">¡Bienvenidos al museo de San Cristobal!</h2>
-      <p class=" container-fluid">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam error inventore voluptatum quae ea vel nostrum temporibus minima, quisquam iusto? Veritatis sequi fuga consectetur, rerum necessitatibus eum iusto dolorum voluptatum?
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestias fugiat libero fuga pariatur, eaque perspiciatis dolore totam ipsum debitis cupiditate beatae, voluptatum modi eligendi error placeat nam. Recusandae, sint?
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam modi dicta porro! Autem repudiandae sunt reprehenderit accusamus laboriosam hic quasi ducimus, soluta a, ipsum quaerat ratione, dolorem quo minima quibusdam?
-      </p>
-      
+    <!-- Welcome Message -->
+<div class="container d-flex justify-content-center">
+    <div class="welcome-message">
+        <p id="greetingMessage">Bienvenido/a al Museo de San Cristóbal</p>
+        <p>
+            Descubre una diversidad de exhibiciones que capturan la historia y el patrimonio cultural de San Cristóbal.
+            Navega por nuestras colecciones y sumérgete en la experiencia de conocer nuestro museo.
+        </p>
     </div>
+</div>
 
     <div class="container" >
 
@@ -444,7 +552,48 @@ session_start();
 
 
 </section>
+<!-- Sección de Eventos -->
+<section class="event-section">
+    <div class="container" id="eventos">
+        <h2>Próximos Eventos en el Museo</h2>
+        <p>Descubre las próximas actividades, exhibiciones y talleres. ¡No te pierdas ninguna de nuestras experiencias culturales!</p>
 
+        <div class="event-grid">
+            <!-- Tarjeta de Evento 1 -->
+            <div class="event-card">
+                <img src="../imagenes/museo1.jpg" alt="Evento de Arte">
+                <div class="card-content">
+                    <span class="event-date"><i class="fas fa-calendar-alt"></i> 25 de Octubre, 2024</span>
+                    <h3>Exhibición de Arte Moderno</h3>
+                    <p>Explora las obras de renombrados artistas contemporáneos y sumérgete en una experiencia única de creatividad.</p>
+                    <a href="#" class="btn">Más Información</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta de Evento 2 -->
+            <div class="event-card">
+                <img src="../imagenes/museo2.jpg" alt="Conferencia de Historia">
+                <div class="card-content">
+                    <span class="event-date"><i class="fas fa-calendar-alt"></i> 12 de Noviembre, 2024</span>
+                    <h3>Conferencia sobre Historia Local</h3>
+                    <p>Únete a nuestros expertos en historia y descubre los fascinantes relatos de nuestra comunidad.</p>
+                    <a href="#" class="btn">Más Información</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta de Evento 3 -->
+            <div class="event-card">
+                <img src="../imagenes/museo3.jpg" alt="Taller de Fotografía">
+                <div class="card-content">
+                    <span class="event-date"><i class="fas fa-calendar-alt"></i> 18 de Diciembre, 2024</span>
+                    <h3>Taller de Fotografía</h3>
+                    <p>Aprende técnicas de fotografía en un ambiente inspirador. Abierto a todos los niveles.</p>
+                    <a href="#" class="btn">Más Información</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
  
@@ -592,6 +741,19 @@ session_start();
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> 
-    
+    <script>
+    function personalizedGreeting() {
+    const hours = new Date().getHours();
+    const greetingMessage = document.getElementById('greetingMessage');
+    if (hours < 12) {
+        greetingMessage.textContent = 'Buenos días y bienvenido/a al Museo de San Cristóbal.';
+    } else if (hours < 18) {
+        greetingMessage.textContent = 'Buenas tardes, ¡gracias por visitarnos!';
+    } else {
+        greetingMessage.textContent = 'Buenas noches, explora la historia en cada rincón.';
+    }
+}
+personalizedGreeting();
+</script>
   </body>
 </html>
