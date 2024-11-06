@@ -81,7 +81,7 @@ top: 100px;
 
 <h2 class="titulo1">Especies amenazadas</h2>
 <h3 class="titulo2">Conservación de especies amenazadas</h3>
-<div class="text-center container">
+<div class="text-center ">
 
   <p>Compartimos con ustedes actividades que realizamos en el marco de distintos proyectos relacionados a la fauna amenazada de extinción.</p>
   <p>

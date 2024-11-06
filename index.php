@@ -27,70 +27,128 @@ session_start();
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-
-  </head>
-
-    <body>
-      <?php
-
-      include("header.php");
-      ?>
-
-      <div class="fondo img-fluid">
-        <h1 class="presentacion-pagina">Museo de la ciudad de San Cristobal</h1>
-        
-
-      </div>
-      
-      
-
-  <div class="flex justify-content-center text-center p-4">
-    <h2>Visita nuestras redes sociales</h2>
-  </div>
-
-  <div class="wrapper p-2">
-          <div class="icon facebook">
-              <div class="tooltip">Facebook</div>
-              <span><i class="fab fa-facebook-f"></i></span>
-          </div>
-
-          <div class="icon twitter">
-              <div class="tooltip">Twitter</div>
-              <span><i class="fab fa-twitter"></i></span>
-          </div>
-
-          <div class="icon instagram">
-              <div class="tooltip">Instagram</div>
-              <span><i class="fab fa-instagram"></i></span>
-          </div>
-
-          <div class="icon github">
-              <div class="tooltip">Github</div>
-              <span><i class="fab fa-github"></i></span>
-          </div>
-
-          <div class="icon youtube">
-              <div class="tooltip">Youtube</div>
-              <span><i class="fab fa-youtube"></i></span>
-          </div>
-      </div>
-   
-
-<section class= " principal">
-
-<style>
-  body{
-    background-color: rgb(210, 255, 200);
-
-  }
-  .fondo{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./imagenes/imagen.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  height: 400px;
+  <style>
+    /* Sección Planifica tu Visita */
+.visit-section {
+    
+    background-color: #f8f9fa;
+    text-align: center;
+    margin-top: 10px;
 }
+
+.visit-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.visit-section p {
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+/* Tarjetas de Visita */
+.visit-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.visit-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.visit-card:hover {
+    transform: scale(1.03);
+}
+
+.visit-card .icon {
+    font-size: 2.5rem;
+    color: #0c9d2f;
+    margin-bottom: 1rem;
+}
+
+.visit-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.visit-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.visit-card .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #0c9d2f;
+    border: none;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+    text-decoration: none;
+}
+
+.visit-card .btn:hover {
+    background-color: #2d8f44;
+}
+
+/* Formulario de Contacto */
+.contact-form {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+.contact-form .btn-submit {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #0c9d2f;
+    border: none;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.contact-form .btn-submit:hover {
+    background-color: #2d8f44;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .visit-section h2 {
+        font-size: 2rem;
+    }
+}
+
+  
+
 .presentacion-pagina{
   color: white ;
   font-family: "Cabin", sans-serif;
@@ -99,11 +157,9 @@ session_start();
   position: relative;
   top:140px;
 }
-  .presentacion{
-    background-color: rgb(210, 255, 200);
-  }
+  
   .bienvenido{
-    background-color: rgb(210, 255, 200);
+ 
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding: 40px;
     display: flex;
@@ -115,12 +171,7 @@ session_start();
     color: black;
   }
 
-  footer{
-    font-family: "Exo 2", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  }
+  
 .carrusel{
   height: 400px;
 }
@@ -138,7 +189,50 @@ session_start();
             padding-top: 2.5rem;
         }
 
+
+.hero-section {
+    background-image: url("./imagenes/imagen.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 450px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+.hero-section p {
+    font-size: 1.3rem;
+}
+
 </style>
+  </head>
+
+    <body>
+      <?php
+
+      include("header.php");
+      ?>
+
+      <!-- <div class="fondo img-fluid">
+        <h1 class="presentacion-pagina">Museo de la ciudad de San Cristobal</h1>
+        
+
+      </div> -->
+  <section class="hero-section d-flex flex-column align-items-center justify-content-center">
+      <h1 id="welcomeTitle exhibiciones">¡Bienvenidos al Museo de San Cristóbal!</h1>
+      <p>Explora una colección única de historia, arte y cultura.</p>  
+  </section>
+      
+      
+
+
+<section class= " principal">
+
+
 
     <div class= "presentacion">
       <br>
@@ -355,102 +449,68 @@ session_start();
 
  
 
-<div class="container mt-5 p-5">
-<div class="section-title text-center p-4 ">
-            <h2>Coordina una visita!</h2>
-            <p>Descubre nuestras colecciones, horarios y ubicación</p>
+<section class="visit-section"></section>
+    <div class="container">
+        <h2>Planifica tu Visita</h2>
+        <p>Explora las opciones de visitas al museo y encuentra la experiencia perfecta para disfrutar de nuestra colección y actividades.</p>
+
+        <div class="visit-card-container">
+            <!-- Tarjeta Visita 1 -->
+            <div class="visit-card">
+                <div class="icon"><i class="fas fa-landmark"></i></div>
+                <h3>Visita General</h3>
+                <p>Descubre la historia del arte con una visita guiada por las principales colecciones y exhibiciones permanentes del museo.</p>
+                <a href="#" class="btn">Más Información</a>
+            </div>
+
+            <!-- Tarjeta Visita 2 -->
+            <div class="visit-card">
+                <div class="icon"><i class="fas fa-graduation-cap"></i></div>
+                <h3>Visitas Educativas</h3>
+                <p>Ofrecemos visitas guiadas para estudiantes, personalizadas para grupos escolares de todas las edades y niveles educativos.</p>
+                <a href="#" class="btn">Más Información</a>
+            </div>
+
+            <!-- Tarjeta Visita 3 -->
+            <div class="visit-card">
+                <div class="icon"><i class="fas fa-clock"></i></div>
+                <h3>Visita Nocturna</h3>
+                <p>Disfruta de una experiencia única con nuestras visitas nocturnas y descubre el museo bajo una nueva perspectiva.</p>
+                <a href="#" class="btn">Más Información</a>
+            </div>
+
+            <!-- Tarjeta Visita 4 -->
+            <div class="visit-card">
+                <div class="icon"><i class="fas fa-walking"></i></div>
+                <h3>Recorridos Temáticos</h3>
+                <p>Explora temas específicos de la historia del arte y la cultura en nuestros recorridos guiados temáticos.</p>
+                <a href="#" class="btn">Más Información</a>
+            </div>
         </div>
-        <div class="row">
-            <!-- Carta de Horarios de Visita -->
-            <div class="col-md-4">
-                <div class="card text-center">
-                    <div class="card-icon">
-                        <i class="fas fa-clock fa-2x"></i>
-                    </div>
-                    <div class="card-body shadow">
-                        <h5 class="card-title">Horarios de Visita</h5>
-                        <p class="card-text">Lunes - Viernes: 9 AM - 5 PM</p>
-                        <p class="card-text">Sábado - Domingo: 10 AM - 6 PM</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Carta de Ubicación -->
-            <div class="col-md-4">
-                <div class="card text-center">
-                    <div class="card-icon">
-                        <i class="fas fa-map-marker-alt fa-2x"></i>
-                    </div>
-                    <div class="card-body shadow">
-                        <h5 class="card-title">Ubicación</h5>
-                        <p class="card-text">123 Calle del Museo, San Cristobal, Argentina</p>
-                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam sequi reprehenderit reiciendis, magni expedita ipsum veritatis recusandae nisi.</p>
-                        
-                    </div>
-                </div>
-            </div>
-            <!-- Otra Carta a Elección -->
-            <div class="col-md-4">
-                <div class="card text-center">
-                    <div class="card-icon">
-                        <i class="fas fa-ticket-alt fa-2x"></i>
-                    </div>
-                    <div class="card-body shadow">
-                        <h5 class="card-title">Entradas</h5>
-                        <p class="card-text">Adultos: $10</p>
-                        <p class="card-text">Niños: $5</p>
-                        <p class="card-text">Estudiantes: $8</p>
-                    </div>
-                </div>
-            </div>
+
+        <!-- Formulario de Contacto -->
+        <div class="contact-form">
+            <h3 id="contacto">¿Tienes Preguntas? Contáctanos</h3>
+            <form action="#" method="POST">
+                <input type="text" name="name" placeholder="Nombre Completo" required>
+                <input type="email" name="email" placeholder="Correo Electrónico" required>
+                <textarea name="message" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                <button type="submit" class="btn-submit">Enviar Mensaje</button>
+            </form>
         </div>
     </div>
-
+</section>
 
 
 
 
 <br>
 
-<footer>
 
-<div class=" contacto row">
-  <div class="col-9 mx-auto">
-
-        <div>
-      
-          <h2><u>Contacto</u></h2>
-          <p><strong><u>Direccion</u></strong></p>
-          <p>Lisandro de la torre 1376</p>
-          <p>San Cristobal - Santa Fe - Argentina</p>
-          <p><strong><u>Telefono</u></strong></p>
-          <p>+54 3408-678965</p>
-        </div>
-  
-      <div class="form-contacto">
-    
-        <form action="">
-        <div class="mb-2 ">
-      <label for="exampleFormControlInput1" class="form-label"><u>Nombre</u></label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="escriba su nombre completo">
-    </div>
-    <div class="mb-3 ">
-      <label for="exampleFormControlInput1" class="form-label"><u>Email</u></label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-    </div>
-    <div class="mb-3 ">
-      <label for="exampleFormControlTextarea1" class="form-label"><u>Mensaje</u></label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Escriba un mensaje..."rows="3"></textarea>
-    </div>
-    <button type="button" class="btn btn-dark ">Borrar</button>
-    <button type="button" class="btn btn-light ">Enviar</button>
-        </form>
-      </div>
-  </div>
-</div>
 <hr>
 <?php include ("footer.php"); ?>
 
-</footer>
+
 
 
 
