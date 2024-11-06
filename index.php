@@ -358,8 +358,10 @@ session_start();
       <div class="row p-3">
       <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4  ">
         
-      <div class="card shadow" style="width: 18rem;">
-      <img src="./imagenes/chimpamce.avif" class="card-img-top" alt="...">
+      <div class="card shadow" style="width: 18rem; overflow: hidden;">
+      <img src="./imagenes/chimpamce.avif" class="card-img-top" alt="..." style="transition: transform 0.3s ease; transform: scale(1); width: 100%; height: 100%; object-fit: cover;" 
+       onmouseover="this.style.transform='scale(1.1)'" 
+       onmouseout="this.style.transform='scale(1)'">
       <div class="card-body">
         <h5 class="card-title">El chimpancé</h5>
     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -389,8 +391,11 @@ session_start();
     </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4">
         <div class="">
-    <div class="card shadow" style="width: 18rem;">
-      <img src="./imagenes/tigre.avif" class="card-img-top" alt="...">
+    <div class="card shadow" style="width: 18rem; overflow: hidden;">
+    <img src="./imagenes/tigre.avif" class="card-img-top" alt="..." 
+       style="transition: transform 0.3s ease; transform: scale(1); width: 100%; height: 100%; object-fit: cover;" 
+       onmouseover="this.style.transform='scale(1.1)'" 
+       onmouseout="this.style.transform='scale(1)'">
       <div class="card-body">
         <h5 class="card-title">El tigre</h5>
         
@@ -423,8 +428,10 @@ session_start();
 
       <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4">
         <div class="">
-    <div class="card shadow" style="width: 18rem;">
-      <img src="./imagenes/ballena.avif" class="card-img-top" alt="...">
+    <div class="card shadow" style="width: 18rem; overflow: hidden;">
+      <img src="./imagenes/ballena.avif" class="card-img-top" alt="..." style="transition: transform 0.3s ease; transform: scale(1); width: 100%; height: 100%; object-fit: cover;" 
+       onmouseover="this.style.transform='scale(1.1)'" 
+       onmouseout="this.style.transform='scale(1)'">
       <div class="card-body">
         <h5 class="card-title">La ballena azul</h5>
         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModaldos">
@@ -454,8 +461,10 @@ session_start();
     </div>
     <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4">
         <div class="">
-      <div class="card shadow" style="width: 18rem;">
-      <img src="./imagenes/lemur.avif" class="card-img-top" alt="...">
+      <div class="card shadow" style="width: 18rem; overflow: hidden;">
+      <img src="./imagenes/lemur.avif" class="card-img-top" alt="..." style="transition: transform 0.3s ease; transform: scale(1); width: 100%; height: 100%; object-fit: cover;" 
+       onmouseover="this.style.transform='scale(1.1)'" 
+       onmouseout="this.style.transform='scale(1)'">
       <div class="card-body">
         <h5 class="card-title">El lémur</h5>
         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModaltres">
@@ -485,8 +494,10 @@ session_start();
     </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4">
         <div class="">
-    <div class="card shadow" style="width: 18rem;">
-      <img src="./imagenes/vaquitamarina.avif" class="card-img-top" alt="...">
+    <div class="card shadow" style="width: 18rem; overflow: hidden;">
+      <img src="./imagenes/vaquitamarina.avif" class="card-img-top" alt="..." style="transition: transform 0.3s ease; transform: scale(1); width: 100%; height: 100%; object-fit: cover;" 
+       onmouseover="this.style.transform='scale(1.1)'" 
+       onmouseout="this.style.transform='scale(1)'">
       <div class="card-body">
         <h5 class="card-title">La vaquita marina</h5>
       
@@ -518,8 +529,10 @@ session_start();
     </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4">
         <div class="">
-    <div class="card shadow" style="width: 18rem;">
-      <img src="./imagenes/rinoceronte.avif" class="card-img-top" alt="...">
+    <div class="card shadow" style="width: 18rem; overflow: hidden;">
+      <img src="./imagenes/rinoceronte.avif" class="card-img-top" alt="..." style="transition: transform 0.3s ease; transform: scale(1); width: 100%; height: 100%; object-fit: cover;" 
+       onmouseover="this.style.transform='scale(1.1)'" 
+       onmouseout="this.style.transform='scale(1)'">
       <div class="card-body">
         <h5 class="card-title">El rinoceronte de Sumatra</h5>
         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModalcinco">
