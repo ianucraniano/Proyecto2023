@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-11-2024 a las 01:17:37
+-- Tiempo de generación: 30-05-2024 a las 22:33:22
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 7.4.29
 
@@ -48,7 +48,6 @@ CREATE TABLE `botanica` (
   `clasificacion` varchar(255) NOT NULL,
   `reino` varchar(255) NOT NULL,
   `division` varchar(255) NOT NULL,
-  `phylum` varchar(45) DEFAULT NULL,
   `clase` varchar(255) NOT NULL,
   `orden` varchar(255) NOT NULL,
   `familia` varchar(255) NOT NULL,
@@ -67,7 +66,7 @@ CREATE TABLE `botanica` (
 CREATE TABLE `donante` (
   `idDonante` int(11) NOT NULL,
   `nombreyape` varchar(255) NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `fecha` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -75,13 +74,13 @@ CREATE TABLE `donante` (
 --
 
 INSERT INTO `donante` (`idDonante`, `nombreyape`, `fecha`) VALUES
-(11, 'dario perez', '0000-00-00 00:00:00'),
-(22, 'Diego Ramírez', '2024-10-14 20:58:32'),
-(23, 'Camila Vargas', '2024-10-14 21:04:21'),
-(24, 'Daniela Rojas', '2024-10-14 21:07:51'),
-(26, 'nerea paez', '2024-10-16 21:24:45'),
-(27, 'nerea paez', '2024-10-16 21:25:20'),
-(28, 'Nicolás Castillo', '2024-10-16 21:27:20');
+(1, 'Carlos', '2024-03-12'),
+(2, 'Bar', '2024-02-08'),
+(3, 'dario perez', '0000-00-00'),
+(4, 'dario perez', '0000-00-00'),
+(5, 'dario perez', '0000-00-00'),
+(6, 'dario', '0000-00-00'),
+(7, '', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -182,12 +181,10 @@ CREATE TABLE `piezas` (
 --
 
 INSERT INTO `piezas` (`idPiezas`, `numeroInventario`, `especie`, `estadoConservacion`, `fechaIngreso`, `Cantidad_piezas`, `clasificacion`, `observacion`, `usuarios_idusuarios`, `Donante_idDonante1`) VALUES
-(109, 'INV021', 'Rosa rugosa', 'bueno', '2024-10-03', 4, 'botanica', ' ', 6, 22),
-(110, 'INV022', 'Aloe Vera', 'malo', '2024-10-03', 2, 'botanica', ' ', 6, 23),
-(111, 'INV031', 'Ceramica Maya', 'bueno', '2024-09-12', 1, 'arqueologia', ' ', 6, 24),
-(113, 'INV051', 'Granito', 'bueno', '2024-10-10', 4, 'geologia', ' ', 6, 26),
-(114, 'INV052', 'Caliza', 'malo', '2024-10-03', 4, 'geologia', ' ', 6, 27),
-(115, 'INV061', 'Huevo de Águila', 'bueno', '2024-09-11', 2, 'oologia', ' ', 6, 28);
+(2, '1', 'Tiranosaurio rex', 'Lorem ipsum', '2024-04-09', 12, 'Palenteologia', 'Lorem ipsum', 1, 1),
+(3, 'abc', 'mamifero', 'bueno', '2024-05-20', 5, 'zoologia', NULL, 1, 1),
+(4, '5', 'Pingüino emperador', 'casi amenazado', '2024-05-17', 12, 'oologia', ' ', 3, 6),
+(7, '6', 'Era mesozoica', 'bien', '2024-05-11', 4, 'paleontologia', ' ', 3, 7);
 
 -- --------------------------------------------------------
 
@@ -215,7 +212,7 @@ INSERT INTO `usuarios` (`idusuarios`, `nombre`, `apellido`, `telefono`, `dni`, `
 (1, 'jesica', 'perez', '34086745673', '41652357', '2024-04-26', 'jesicA@gmail.com', '$2y$10$ot4aoV90PLzuCXY/F7yPVOG1wTvNl.sP.45tqF2bROLr/ikN', 'administrador'),
 (3, 'maria', 'espindola', '3408674512', '43234068', '2024-04-11', 'maria@gmail.com', '$2y$10$fKumtnDyuakeY0.ByosyR.ha0eKh55dsmIFCZgoKKJA5x1DQ7VWuK', 'administrador'),
 (6, 'nail', 'rak', '3408671209', '43234069', '2024-05-02', 'nail@gmail.com', '$2y$10$4x0ls5LmjlF4WVmskbseoO4Ko3vQLZkHsxi13ES1tdbrEgXKXXnJu', 'administrador'),
-(31, 'Laura', ' Fernández', '3408674544', '41942796', '2024-10-02', 'lau@gmail.com', '$2y$10$SEmK0fN6.ha4JwgeLJk8PeULfuhyv/u2J1MTh52LJUJnUiCSuAub6', 'gerente');
+(7, 'manuel', 'paz', '3408674523', '41652356', '2024-05-16', 'manuel@gmail.com', '$2y$10$6GtTPZN.7nq36nlS.u1HYOXqwsqtYqrNOQfb1xbUpqwbK.6SjFpf.', 'gerente');
 
 -- --------------------------------------------------------
 
@@ -229,8 +226,8 @@ CREATE TABLE `zoologia` (
   `reino` varchar(255) NOT NULL,
   `division` varchar(255) NOT NULL,
   `phylum` varchar(255) NOT NULL,
-  `clase` varchar(255) NOT NULL,
-  `orden` varchar(255) NOT NULL,
+  `Clase` varchar(255) NOT NULL,
+  `Orden` varchar(255) NOT NULL,
   `familia` varchar(255) NOT NULL,
   `especie` varchar(255) NOT NULL,
   `observacion` longtext DEFAULT NULL,
@@ -302,8 +299,6 @@ ALTER TABLE `palenteologia`
 --
 ALTER TABLE `piezas`
   ADD PRIMARY KEY (`idPiezas`),
-  ADD UNIQUE KEY `numeroInventario` (`numeroInventario`),
-  ADD UNIQUE KEY `numeroInventario_2` (`numeroInventario`),
   ADD KEY `fk_Piezas_usuarios1_idx` (`usuarios_idusuarios`),
   ADD KEY `fk_Piezas_Donante1_idx` (`Donante_idDonante1`);
 
@@ -311,8 +306,7 @@ ALTER TABLE `piezas`
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`idusuarios`),
-  ADD UNIQUE KEY `dni` (`dni`);
+  ADD PRIMARY KEY (`idusuarios`);
 
 --
 -- Indices de la tabla `zoologia`
@@ -329,67 +323,67 @@ ALTER TABLE `zoologia`
 -- AUTO_INCREMENT de la tabla `arqueologia`
 --
 ALTER TABLE `arqueologia`
-  MODIFY `idArqueologia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idArqueologia` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `botanica`
 --
 ALTER TABLE `botanica`
-  MODIFY `idBotanica` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idBotanica` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `donante`
 --
 ALTER TABLE `donante`
-  MODIFY `idDonante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `idDonante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `geologia`
 --
 ALTER TABLE `geologia`
-  MODIFY `idGeologia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idGeologia` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `icteologia`
 --
 ALTER TABLE `icteologia`
-  MODIFY `idIcteologia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idIcteologia` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `oologia`
 --
 ALTER TABLE `oologia`
-  MODIFY `idOologia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idOologia` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `osteologia`
 --
 ALTER TABLE `osteologia`
-  MODIFY `idOsteologia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idOsteologia` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `palenteologia`
 --
 ALTER TABLE `palenteologia`
-  MODIFY `idPalenteologia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idPalenteologia` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `piezas`
 --
 ALTER TABLE `piezas`
-  MODIFY `idPiezas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
+  MODIFY `idPiezas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idusuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `idusuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `zoologia`
 --
 ALTER TABLE `zoologia`
-  MODIFY `idZoologia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `idZoologia` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
@@ -405,37 +399,37 @@ ALTER TABLE `arqueologia`
 -- Filtros para la tabla `botanica`
 --
 ALTER TABLE `botanica`
-  ADD CONSTRAINT `fk_botanica_Piezas1` FOREIGN KEY (`Piezas_idPiezas`) REFERENCES `piezas` (`idPiezas`) ON DELETE CASCADE;
+  ADD CONSTRAINT `fk_Botanica_Piezas1` FOREIGN KEY (`Piezas_idPiezas`) REFERENCES `piezas` (`idPiezas`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `geologia`
 --
 ALTER TABLE `geologia`
-  ADD CONSTRAINT `fk_geologia_Piezas1` FOREIGN KEY (`Piezas_idPiezas`) REFERENCES `piezas` (`idPiezas`) ON DELETE CASCADE;
+  ADD CONSTRAINT `fk_Geologia_Piezas1` FOREIGN KEY (`Piezas_idPiezas`) REFERENCES `piezas` (`idPiezas`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `icteologia`
 --
 ALTER TABLE `icteologia`
-  ADD CONSTRAINT `fk_icteologia_Piezas1` FOREIGN KEY (`Piezas_idPiezas`) REFERENCES `piezas` (`idPiezas`) ON DELETE CASCADE;
+  ADD CONSTRAINT `fk_Icteologia_Piezas1` FOREIGN KEY (`Piezas_idPiezas`) REFERENCES `piezas` (`idPiezas`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `oologia`
 --
 ALTER TABLE `oologia`
-  ADD CONSTRAINT `fk_Oologia_Piezas1` FOREIGN KEY (`Piezas_idPiezas`) REFERENCES `piezas` (`idPiezas`) ON DELETE CASCADE;
+  ADD CONSTRAINT `fk_Oologia_Piezas1` FOREIGN KEY (`Piezas_idPiezas`) REFERENCES `piezas` (`idPiezas`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `osteologia`
 --
 ALTER TABLE `osteologia`
-  ADD CONSTRAINT `fk_osteologia_Piezas1` FOREIGN KEY (`Piezas_idPiezas`) REFERENCES `piezas` (`idPiezas`) ON DELETE CASCADE;
+  ADD CONSTRAINT `fk_Osteologia_Piezas1` FOREIGN KEY (`Piezas_idPiezas`) REFERENCES `piezas` (`idPiezas`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `palenteologia`
 --
 ALTER TABLE `palenteologia`
-  ADD CONSTRAINT `fk_palenteologia_Piezas1` FOREIGN KEY (`Piezas_idPiezas`) REFERENCES `piezas` (`idPiezas`) ON DELETE CASCADE;
+  ADD CONSTRAINT `fk_Palenteologia_Piezas1` FOREIGN KEY (`Piezas_idPiezas`) REFERENCES `piezas` (`idPiezas`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `piezas`
@@ -448,7 +442,7 @@ ALTER TABLE `piezas`
 -- Filtros para la tabla `zoologia`
 --
 ALTER TABLE `zoologia`
-  ADD CONSTRAINT `fk_Zoologia_Piezas1` FOREIGN KEY (`Piezas_idPiezas`) REFERENCES `piezas` (`idPiezas`) ON DELETE CASCADE;
+  ADD CONSTRAINT `fk_Zoologia_Piezas1` FOREIGN KEY (`Piezas_idPiezas`) REFERENCES `piezas` (`idPiezas`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

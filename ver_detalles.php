@@ -11,6 +11,10 @@ function mostrarDetalles($conex, $id, $table) {
         $result = $stmt->get_result();
         $details = $result->fetch_assoc();
 
+
+      
+
+
         if ($details) {
             echo "<h3>Detalles de $table</h3>";
             foreach ($details as $key => $value) {
@@ -65,5 +69,6 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 }
 
 $conex->close();
+
 
 ?>
