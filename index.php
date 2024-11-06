@@ -669,7 +669,7 @@ session_start();
 <br>
 
 
-<hr>
+
 <?php include ("footer.php"); ?>
 
 
