@@ -1,65 +1,49 @@
 <?php
-// Conexión a la base de datos
-require 'conexion.php'; // Incluye el archivo con la conexión a la base de datos
+session_start();
+require_once "conexion.php"; // Asegúrate de incluir la conexión a la BD
 
-session_start(); // Asume que manejas la sesión para obtener el usuario logueado
-$id=$_POST['idusuarios'];
-
-// Crea una variable de sesión llamada ids para guardar el id del socio recibido 
-
-$_SESSION['ids']=$id;
-// Verificar si el formulario fue enviado
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Obtener los datos del formulario
-    $telefono = $_POST['userPhone'];
-    $email = $_POST['userEmail'];
-    $currentPassword = $_POST['current-password'];
-    $newPassword = $_POST['new-password'];
-    $confirmPassword = $_POST['confirm-password'];
-
-    // Validar que la nueva contraseña y la confirmación coincidan
-    if ($newPassword !== $confirmPassword) {
-        echo "Las nuevas contraseñas no coinciden.";
-        exit();
-    }
-
-    // Asegurar que la nueva contraseña cumple con los requisitos mínimos (ejemplo: al menos 8 caracteres)
-    if (strlen($newPassword) < 8) {
-        echo "La nueva contraseña debe tener al menos 8 caracteres.";
-        exit();
-    }
-
-    // Obtener el ID del usuario de la sesión (asumiendo que lo tienes almacenado)
-    $userId = $_SESSION['idusuario']; // Asegúrate de que el ID esté en la sesión
-
-    // Consulta para obtener la contraseña actual del usuario
-    $query = "SELECT clave FROM usuarios WHERE idusuarios = ?";
-    $stmt = $db->prepare($query);
-    $stmt->bind_param("i", $userId);
-    $stmt->execute();
-    $stmt->store_result();
-    $stmt->bind_result($storedPasswordHash);
-    $stmt->fetch();
-
-    // Verificar si la contraseña actual es correcta
-    if (!password_verify($currentPassword, $storedPasswordHash)) {
-        echo "La contraseña actual es incorrecta.";
-        exit();
-    }
-
-    // Si la contraseña actual es correcta, procedemos a actualizar con la nueva
-    $newPasswordHash = password_hash($newPassword, PASSWORD_DEFAULT);
-
-    // Actualización de la contraseña en la base de datos
-    $updateQuery = "UPDATE usuarios SET clave = ? WHERE idusuarios = ?";
-    $updateStmt = $db->prepare($updateQuery);
-    $updateStmt->bind_param("si", $newPasswordHash, $userId);
-
-    // Ejecutar la actualización y verificar el resultado
-    if ($updateStmt->execute()) {
-        echo "Contraseña actualizada exitosamente.";
-    } else {
-        echo "Error al actualizar la contraseña.";
-    }
+// Verificar si el usuario está logueado
+if (!isset($_SESSION['idusuario'])) {
+    echo json_encode(["success" => false, "message" => "Debes iniciar sesión."]);
+    exit();
 }
+
+$idUsuario = $_SESSION['idusuario'];
+$clave_actual = $_POST['clave_actual'];
+$nueva_clave = $_POST['nueva_clave'];
+$confirmar_clave = $_POST['confirmar_clave'];
+
+// Validar que la nueva contraseña coincide
+if ($nueva_clave !== $confirmar_clave) {
+    echo json_encode(["success" => false, "message" => "Las contraseñas no coinciden."]);
+    exit();
+}
+
+// Consultar la contraseña actual
+$sql = "SELECT clave FROM usuarios WHERE idusuarios = ?";
+$stmt = $conex->prepare($sql);
+$stmt->bind_param("i", $idUsuario);
+$stmt->execute();
+$stmt->bind_result($clave_hash);
+$stmt->fetch();
+$stmt->close();
+
+// Verificar la contraseña actual
+if (!password_verify($clave_actual, $clave_hash)) {
+    header("Location: informacion_user.php?error=Contraseña actual incorrecta");
+    exit();
+}
+
+// Encriptar la nueva contraseña
+$nueva_clave_hash = password_hash($nueva_clave, PASSWORD_BCRYPT);
+
+// Actualizar la contraseña en la base de datos
+$sql_update = "UPDATE usuarios SET clave = ? WHERE idusuarios = ?";
+$stmt_update = $conex->prepare($sql_update);
+$stmt_update->bind_param("si", $nueva_clave_hash, $idUsuario);
+
+echo json_encode(["success" => true, "message" => "Contraseña actualizada correctamente."]);
+$stmt_update->close();
+$conex->close();
+
 ?>

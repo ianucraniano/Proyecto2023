@@ -56,7 +56,7 @@ if(!empty(trim($_POST['nombre'])) && !empty(trim($_POST['apellido'])) &&
 				
 				
 				// Redirige con el mensaje de error
-				header("Location: listadoadm.php?mensaje=Error al agregar usuario&tipo=error" . urlencode($error));
+				header("Location: form_agregar.php?mensaje=Error al agregar usuario&tipo=error" . urlencode($error));
 				exit;
 			}
 			
@@ -65,7 +65,7 @@ if(!empty(trim($_POST['nombre'])) && !empty(trim($_POST['apellido'])) &&
 			
 			} else {
 				$error = "";
-				header("Location: listadoadm.php?mensaje=Error en la validación de datos&tipo=error" . urlencode($error));
+				header("Location: form_agregar.php?mensaje=Error en la validación de datos&tipo=error" . urlencode($error));
 				exit;
 			}
 			

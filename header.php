@@ -18,8 +18,7 @@
  
 
 nav  {
-  background: rgb(47,162,163);
-background: linear-gradient(0deg, rgba(47,162,163,1) 0%, rgba(14,190,55,1) 72%);
+  background-color: #22BA0E;
   position: fixed;
   font-family: "Cabin", sans-serif;
   font-optical-sizing: auto;
@@ -65,8 +64,8 @@ background: linear-gradient(0deg, rgba(47,162,163,1) 0%, rgba(14,190,55,1) 72%);
 
 <nav class="navbar navbar-expand-lg bg-success border-bottom border-body" >
   <div class="container-fluid">
-<img src="./imagenes/museo-britanico.png" alt="Bootstrap" width="30" height="24">
-    <a class="navbar-brand  text-light" href="index.php" href="https://www.flaticon.es/iconos-gratis/museo" title="museo iconos">&nbsp;  MuseoSancris</a>
+
+    <a class="navbar-brand  " href="index.php" href="https://www.flaticon.es/iconos-gratis/museo" title="museo iconos">&nbsp;<img src="./imagenes/logomuseo.png" alt="Bootstrap" width="200" height="90">  </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -138,8 +137,12 @@ background: linear-gradient(0deg, rgba(47,162,163,1) 0%, rgba(14,190,55,1) 72%);
             </a>
 
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="informacion_user.php">Datos personales</a></li>
-              <li> <a class="dropdown-item text-info" href="salir.php"> Salir</a></li>
+              <li><a class="dropdown-item" href="informacion_user.php">
+              <i class="fas fa-user me-2 text-primary"></i>Datos personales
+              
+              </a></li>
+              <li> <a class="dropdown-item text-danger" href="salir.php">
+              <i class="fas fa-sign-out-alt me-2"></i> Salir</a></li>
             </ul>
           </div>
        
@@ -149,29 +152,39 @@ background: linear-gradient(0deg, rgba(47,162,163,1) 0%, rgba(14,190,55,1) 72%);
 
         }elseif(isset($_SESSION["dnigerente"])){
           ?>
-          <ul class="navbar-nav ms-auto ">
-            
-            <li class="nav-item navbar-links">
-            <a class="nav-link text-light" href="pagGerente.php">Inicio</a>
-          </li>
-          <li class="nav-item navbar-links">
+         <ul class="navbar-nav ms-auto space-between">
+    <li class="nav-item navbar-links">
+        <a class="nav-link text-light" href="pagGerente.php">Inicio</a>
+    </li>
+    <li class="nav-item navbar-links">
         <a class="nav-link text-light" href="menupiezas.php">Piezas</a>
-        </li>
-          <li class="nav-item navbar-links">
-          <a class="nav-link text-light" href="salir.php">Salir</a>
-        </li>
-          <li class="nav-item navbar-links">
-          <a class="nav-link text-light" href="informacion_user.php">Datos personales</a>
-        </li>
-        <li class="nav-item">
-        
-            <a class="btn btn-success " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <strong class="text-warning"><?php echo $_SESSION['nombregerente'] ." ".$_SESSION['apellidogerente'] ?></strong>
-            </a>
+    </li>
 
-           
-               </li>
-            </ul>
+    <!-- Dropdown de usuario -->
+    <li class="nav-item dropdown">
+        <a class="btn btn-success dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <strong class="text-warning">
+                <?php echo $_SESSION['nombregerente'] . " " . $_SESSION['apellidogerente']; ?>
+            </strong>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end shadow-lg" aria-labelledby="userDropdown">
+            <li>
+                <a class="dropdown-item d-flex align-items-center" href="informacion_user.php">
+                    <i class="fas fa-user me-2 text-primary"></i> Datos Personales
+                </a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+                <a class="dropdown-item d-flex align-items-center text-danger" href="salir.php">
+                    <i class="fas fa-sign-out-alt me-2"></i> Salir
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+
+
           </div>
         
       </li>
@@ -185,7 +198,8 @@ background: linear-gradient(0deg, rgba(47,162,163,1) 0%, rgba(14,190,55,1) 72%);
 </nav>
     
 </header>
-
+<!-- Agregar FontAwesome para los iconos -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> 
     <script src="./js/navbar.js"></script>
 </body>

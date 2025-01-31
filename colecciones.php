@@ -7,13 +7,13 @@
     <title>Colecciones</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap" rel="stylesheet">
-<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">  -->
 <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anta&family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" href="./CSS/coleciones.css">
 </head>
+<!--Quiero que me diseñes la seccion de noticias y articulos, modifica todo bien completo e inventa cualquier noticia para hacerlo mas completo. luego quiero la seccion de testimonios o historias de impacto, tambien modificalas para que se vean bien completas y con diseños bonitos para el usuario.  -->
 <body>
 <?php
 
@@ -21,376 +21,179 @@ include("header.php");
 
 ?> 
 <style>
-
-   h3{ 
-    font-family: 'Merriweather', serif;
-    padding: 40px;
-    display: flex;
-    justify-content: center;
-
-   }
-   .content h5{
-    display: flex;
-    justify-content: center;
-    
-
-   }
-   .card{
-    height: 20em;
-    border-radius: 5px;
-    background-size: cover;
-    overflow: hidden;
-
-   }
-   .content{
-    background-color: #82E0AA;
-    display: flex;
-    aling-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    opacity: 0;
-    transition: .5s;
-   }
-   .content h5 p{
-    color: #fff;
-   }
-   .card:hover .content{
-        opacity: 1;
-
-   }
-   .btn{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    background-color: rgb(210, 255, 200);
-    text-decoration: none;
-    color: black;
-    transition: .5s ease;
-    font-family: "Anta", sans-serif;
-  font-weight: 400;
-  font-style: normal;
   
-}
-   
 
-   .btn:hover{
-    background-color: #62F06E;
-
-   }
-
-   .button-85 {
-  display: flex;
-  justify-content: center;
-  padding: 0.3em 1em; 
-  border: none;
-  outline: none;
-  color: #000; 
-  background: #fff; 
-  cursor: pointer;
-  position: relative;
-  z-index: 0;
-  border-radius: 10px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: 200px;
-  margin: 0 auto;
-  text-decoration:none;
-}
-
-.button-85:before {
-  content: "";
-  background: linear-gradient(
-    45deg,
-    #ff0000,
-    #ff7300,
-    #fffb00,
-    #48ff00,
-    #00ffd5,
-    #002bff,
-    #7a00ff,
-    #ff00c8,
-    #ff0000
-  );
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  background-size: 400%;
-  z-index: -1;
-  filter: blur(5px);
-  -webkit-filter: blur(5px);
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  animation: glowing-button-85 20s linear infinite;
-  transition: opacity 0.3s ease-in-out;
-  border-radius: 10px;
-}
-
-@keyframes glowing-button-85 {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 400% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
-
-.button-85:after {
-  z-index: -1;
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  left: 0;
-  top: 0;
-  border-radius: 10px;
-}
+  
 
 </style>
 
-    <h3>Colección ¿que vamos a ver?</h3>
+<section class="hero-section text-center  text-dark py-5">
+    <h1>Explora el Conocimiento</h1>
+    <p>Sumérgete en las maravillas de la arqueología, zoología, paleontología y más.</p>
+    
+</section>
     
     <a class="button-85 " href="listado.php">
     Listado de especies
     </a>   
 <br>
      <!--col-12 col-sm-6 col-md-4 col-lg-4 mb-4-->
-<section>
-  <div class="container">
-    <div class="row p-3">
-      <!-- Zoología -->
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-        <div class="card mb-3 shadow p-3 mb-5 bg-white rounded" style="width: 14rem;">
-          <img src="./imagenes/zoologia.jpg" class="card-img-top" alt="Zoología">
-          <div class="content">
-            <h5 class="card-title">Zoología</h5>
-          </div>
-          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Más información</button>
-        </div>
-      </div>
-      <!-- Modal Zoología -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">¿Qué es?</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla perferendis, nihil culpa, odio vero eos hic quis, ad excepturi minus a accusamus harum doloremque quisquam autem error maiores ipsa dolore.
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-          </div>
-        </div>
-      </div>
+     <div class="d-flex justify-content-center">
 
-      <!-- Botánica -->
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-        <div class="card mb-3 shadow p-3 mb-5 bg-white rounded" style="width: 14rem;">
-          <img src="./imagenes/botanica.jpg" class="card-img-top" alt="Botánica">
-          <div class="content">
-            <h5 class="card-title">Botánica</h5>
-          </div>
-          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal1">Más información</button>
-        </div>
-      </div>
-      <!-- Modal Botánica -->
-      <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel1">¿Qué es?</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae tenetur esse quam? Maiores, quidem vero vel magni quam, et delectus, temporibus ut dolorum ab modi dolor minima veritatis officiis deleniti.
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-          </div>
-        </div>
-      </div>
+    
 
-      <!-- Paleontología -->
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-        <div class="card mb-3 shadow p-3 mb-5 bg-white rounded" style="width: 14rem;">
-          <img src="./imagenes/paleontologia.jpg" class="card-img-top" alt="Paleontología">
-          <div class="content">
-            <h5 class="card-title">Paleontología</h5>
-          </div>
-          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal2">Más información</button>
-        </div>
-      </div>
-      <!-- Modal Paleontología -->
-      <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel2">¿Qué es?</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam dolorem ad, consequatur a quis eaque nobis quos enim nulla at ducimus. Dolor illum est nesciunt qui fuga vero! Tempora, voluptatum?
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Arqueología -->
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-        <div class="card mb-3 shadow p-3 mb-5 bg-white rounded" style="width: 14rem;">
-          <img src="./imagenes/arqueologia.webp" class="card-img-top" alt="Arqueología">
-          <div class="content">
-            <h5 class="card-title">Arqueología</h5>
-          </div>
-          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal3">Más información</button>
+     <section class="card-section text-center ">
+        <div class="card-container">
+            <div class="card">
+                <img src="./imagenes/arqueologiams.jpg" alt="Card Image 1">
+                <div class="card-content">
+                    <h3>Arqueologia</h3>
+                    <button>Ver más</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./imagenes/palenteologiams.jpg" alt="Card Image 2">
+                <div class="card-content">
+                    <h3>Palenteologia</h3>
+                    <button>Ver más</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./imagenes/icteologiams.jpg" alt="Card Image 3">
+                <div class="card-content">
+                    <h3>Icteologia</h3>
+                    <button>Ver más</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./imagenes/geologiams.jpg" alt="Card Image 4">
+                <div class="card-content">
+                    <h3>Geologia</h3>
+                    <button>Ver más</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./imagenes/botanicams.jpg" alt="Card Image 5">
+                <div class="card-content">
+                    <h3>Botanica</h3>
+                    <button>Ver más</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./imagenes/zoologiams.jpg" alt="Card Image 6">
+                <div class="card-content">
+                    <h3>Zoologia</h3>
+                    <button>Ver más</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./imagenes/oologiams.jpg" alt="Card Image 7">
+                <div class="card-content">
+                    <h3>Oologia</h3>
+                    <button>Ver más</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./imagenes/osteologiams.jpg" alt="Card Image 8">
+                <div class="card-content">
+                    <h3>Osteologia</h3>
+                    <button>Ver más</button>
+                </div>
+            </div>
         </div>
-      </div>
-      <!-- Modal Arqueología -->
-      <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel3">¿Qué es?</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro fugit qui quisquam recusandae magni iure eligendi praesentium, asperiores facere esse id sequi inventore! Impedit, dolorum vitae? Ex minus similique qui.
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Osteología -->
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-        <div class="card mb-3 shadow p-3 mb-5 bg-white rounded" style="width: 14rem;">
-          <img src="./imagenes/osteologia.jpg" class="card-img-top" alt="Osteología">
-          <div class="content">
-            <h5 class="card-title">Osteología</h5>
-          </div>
-          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal4">Más información</button>
-        </div>
-      </div>
-      <!-- Modal Osteología -->
-      <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel4">¿Qué es?</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam eos quos provident inventore, iste laboriosam neque sint cumque, vero, iure blanditiis! Eius odio tempora necessitatibus maxime architecto beatae optio eveniet!
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Geología -->
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-        <div class="card mb-3 shadow p-3 mb-5 bg-white rounded" style="width: 14rem;">
-          <img src="./imagenes/geologia.jpg" class="card-img-top" alt="Geología">
-          <div class="content">
-            <h5 class="card-title">Geología</h5>
-          </div>
-          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal5">Más información</button>
-        </div>
-      </div>
-      <!-- Modal Geología -->
-      <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel5" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel5">¿Qué es?</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus, quis accusantium. Culpa, temporibus error. Sequi rem vel esse non, beatae, rerum aliquid molestias cupiditate minima ducimus, quos reiciendis voluptate repellendus.
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Ictiología -->
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-        <div class="card mb-3 shadow p-3 mb-5 bg-white rounded" style="width: 14rem;">
-          <img src="./imagenes/ictiologia.jpg" class="card-img-top" alt="Ictiología">
-          <div class="content">
-            <h5 class="card-title">Ictiología</h5>
-          </div>
-          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal6">Más información</button>
-        </div>
-      </div>
-      <!-- Modal Ictiología -->
-      <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel6" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel6">¿Qué es?</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea nostrum voluptatum quae, eum nobis voluptate facilis exercitationem unde voluptates, eius, inventore cupiditate! Aliquid ipsam dolorum quo molestiae deleniti, quis sit!
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Oología -->
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-        <div class="card mb-3 shadow p-3 mb-5 bg-white rounded" style="width: 14rem;">
-          <img src="./imagenes/oologia.jpg" class="card-img-top" alt="Oología">
-          <div class="content">
-            <h5 class="card-title">Oología</h5>
-          </div>
-          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal7">Más información</button>
-        </div>
-      </div>
-      <!-- Modal Oología -->
-      <div class="modal fade" id="exampleModal7" tabindex="-1" aria-labelledby="exampleModalLabel7" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel7">¿Qué es?</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus atque sequi reprehenderit quis deleniti consectetur natus dolorem maxime, illo dolore nulla possimus debitis molestiae eligendi voluptatibus, vel explicabo inventore commodi.
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-          </div>
-        </div>
-      </div>
+    </section>
 
     </div>
-  </div>
+      <!-- Noticias Destacadas -->
+      <section id="highlighted-news" class="py-5 bg-dark text-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Noticias Destacadas</h2>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="highlight-card" style="background-image: url('https://via.placeholder.com/800x400');">
+                        <h4>Descubrimiento de fósiles milenarios</h4>
+                        <p>Un hallazgo impresionante en Sudamérica marca un hito en paleontología.</p>
+                        <a href="#" class="text-warning">Leer más...</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="highlight-card" style="background-image: url('https://via.placeholder.com/800x400');">
+                        <h4>Ruinas Mayas Descubiertas</h4>
+                        <p>Exploradores hallan ruinas mayas en medio de la selva, ofreciendo nuevas perspectivas.</p>
+                        <a href="#" class="text-warning">Leer más...</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="highlight-card" style="background-image: url('https://via.placeholder.com/800x400');">
+                        <h4>El Misterio del Lago Azul</h4>
+                        <p>Científicos estudian las propiedades únicas de un lago inexplorado en Asia.</p>
+                        <a href="#" class="text-warning">Leer más...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!-- Paginador -->
+   <nav>
+       <ul class="pagination mt-4">
+           <li class="page-item" id="prev-page">
+               <button class="page-link">Anterior</button>
+           </li>
+           <li class="page-item" id="next-page">
+               <button class="page-link">Siguiente</button>
+           </li>
+       </ul>
+   </nav>
+
+   <!-- Noticias con Paginador -->
+   <section id="news-blog" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Últimas Noticias</h2>
+
+            <!-- Filtros por Tema -->
+            <div class="text-center mb-4">
+                <button class="btn btn-outline-primary filter-btn" data-category="all">Todos</button>
+                <button class="btn btn-outline-primary filter-btn" data-category="arqueologia">Arqueología</button>
+                <button class="btn btn-outline-primary filter-btn" data-category="zoologia">Zoología</button>
+                <button class="btn btn-outline-primary filter-btn" data-category="botanica">Botánica</button>
+                <button class="btn btn-outline-primary filter-btn" data-category="paleontologia">Paleontología</button>
+                <button class="btn btn-outline-primary filter-btn" data-category="osteologia">Osteología</button>
+                <button class="btn btn-outline-primary filter-btn" data-category="oologia">Oología</button>
+                <button class="btn btn-outline-primary filter-btn" data-category="geologia">Geología</button>
+                <button class="btn btn-outline-primary filter-btn" data-category="ictiologia">Ictiología</button>
+            </div>
+
+        </div>
+    </section>
+    <!-- Noticias con Paginador -->
+<section id="news-blog" class="py-5 bg-light">
+<div class="container">
+   <h2 class="text-center mb-4">Últimas Noticias</h2>
+
+   <!-- Lista de Noticias -->
+   <div class="row g-4" id="news-list">
+       <!-- Noticias generadas dinámicamente -->
+   </div>
+
+  
+</div>
 </section>
 
 
+
+   
+
+<section id="subscribe" class="subscribe-section py-5 bg-success text-white">
+    <div class="container text-center">
+        <h3 class="text-white">Suscríbete a nuestro boletín</h3>
+        <p class="mb-4">Recibe las últimas noticias, eventos y contenido exclusivo directamente en tu bandeja de entrada.</p>
+        <form class="d-flex justify-content-center">
+            <input type="email" class="form-control me-2" placeholder="Ingresa tu correo electrónico" required>
+            <button type="submit" class="btn btn-dark">Suscribirme</button>
+        </form>
+    </div>
+</section>
 
 
 
@@ -402,5 +205,75 @@ include("footer.php");
 ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+   
+    // Filtrado de Noticias
+    document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.getAttribute('data-category');
+                document.querySelectorAll('.news-card').forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        const newsData = [
+            { title: 'Hallazgos en la Cueva del León', category: 'arqueologia', summary: 'Nuevos artefactos encontrados en una cueva en Europa.' },
+            { title: 'El Águila Real y su Retorno', category: 'zoologia', summary: 'Un estudio revela el crecimiento de la población de águilas reales.' },
+            { title: 'Plantas Extintas Resurgiendo', category: 'botanica', summary: 'Científicos reviven especies de plantas antiguas.' },
+            { title: 'El Fósil Más Antiguo', category: 'paleontologia', summary: 'Un fósil hallado redefine la evolución temprana de los vertebrados.' },
+            { title: 'El Impacto de los Huesos Antiguos', category: 'osteologia', summary: 'Un estudio analiza huesos de mamíferos gigantes.' },
+            { title: 'Huevos de Dinosaurio en Asia', category: 'oologia', summary: 'Un hallazgo sorprendente en un desierto remoto.' },
+            { title: 'Cristales de Gran Tamaño', category: 'geologia', summary: 'Nuevos cristales gigantes descubiertos en una mina.' },
+            { title: 'Peces del Abismo', category: 'ictiologia', summary: 'Fotografías muestran un ecosistema único bajo el océano.' },
+        ];
+
+        const newsList = document.getElementById('news-list');
+        const itemsPerPage = 4;
+        let currentPage = 1;
+
+        function renderNews(page = 1) {
+            newsList.innerHTML = '';
+            const startIndex = (page - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            newsData.slice(startIndex, endIndex).forEach(news => {
+                const newsHTML = `
+                    <div class="col-md-6 news-card" data-category="${news.category}">
+                        <div class="d-flex bg-white shadow-sm rounded p-3">
+                            <img src="https://via.placeholder.com/150" alt="${news.title}" class="rounded me-3">
+                            <div>
+                                <h5>${news.title}</h5>
+                                <p>${news.summary}</p>
+                                <a href="#" class="text-primary">Leer más...</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                newsList.innerHTML += newsHTML;
+            });
+
+            document.getElementById('prev-page').parentElement.classList.toggle('disabled', page === 1);
+            document.getElementById('next-page').parentElement.classList.toggle('disabled', endIndex >= newsData.length);
+        }
+
+        document.getElementById('prev-page').addEventListener('click', () => {
+            if (currentPage > 1) {
+                renderNews(--currentPage);
+            }
+        });
+
+        document.getElementById('next-page').addEventListener('click', () => {
+            if ((currentPage * itemsPerPage) < newsData.length) {
+                renderNews(++currentPage);
+            }
+        });
+
+        renderNews();
+</script>
+
 </body>
 </html>

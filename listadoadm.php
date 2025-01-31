@@ -65,20 +65,26 @@ include("header.php");
 <section>
     
 
-        <div class="text-center mt-5 mb-3"><h3>Listado de usuarios</h3></div>
+<div class="p-4 text-center bg-gradient bg-success text-white rounded shadow">
+        <h3>Gestión de Usuarios</h3>
+    </div>
        
-  <div class="container-fluid col-4 p-4">
-    <form class="d-flex" role="buscar" action="listadoadm.php" method="post">
-      <input class="form-control me-2" type="search" placeholder="Buscar..." name="dniusu" id="dniusu" aria-label="Search">
-      <button class="btn btn-outline-success"  type="submit">Buscar</button>
-    </form>
-  </div>
-  <div role="alert" class="alert p-4 mt-3 text-center"></div>
-        <table class="table table-striped table-hover shadow">
+ <!-- Formulario de búsqueda -->
+ <div class="container col-md-6 my-3">
+        <form class="input-group" action="listadoadm.php" method="post">
+        <input class="form-control me-2" type="search" placeholder="Buscar..." name="dniusu" id="dniusu" aria-label="Search" oninput="realTimeSearch()">
 
-        <div class="text-center mt-5 mb-3"><h1>Listado de usuarios</h1>
+            <button class="btn btn-success" type="submit">
+                <i class="bi bi-search"></i> Buscar
+            </button>
+        </form>
+    </div>
+  <div role="alert" class="alert p-4 mt-3 text-center"></div>
         
-        <table class="table table-striped table-hover container shadow">
+
+<div class="text-center mt-5 mb-3"><h1>Listado de usuarios</h1>
+        
+    <table id="tabla-usuarios" class="table table-striped table-hover container shadow">
 
        <thead>
         <tr >
@@ -115,10 +121,10 @@ include("header.php");
 
         
         
-                <tr>
+            <tr>
                     
                     
-                    <th scope="row"><?php echo $fila["dni"]; ?>
+                <th scope="row"><?php echo $fila["dni"]; ?>
                     </th>
                         <td><?php echo $fila["nombre"]; ?></td>
                         <td><?php echo $fila["apellido"]; ?></td>
@@ -128,19 +134,16 @@ include("header.php");
 
                      
 
-                        <td><a class="me-1 btn btn-outline-success btn-lg " title="Editar" href="form_editar.php?idusuarios=<?php echo $fila ['idusuarios'];?>"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-</svg></a>
-                        <a class="me-1 btn btn-outline-danger btn-lg" title="Eliminar" href="form_eliminar.php?idusuarios=<?php echo $fila ['idusuarios'];?>"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-  <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5"/>
-</svg></a>
-                      
-
+                        <td>
+                            <a class="me-1 btn btn-outline-success btn-lg " title="Editar" href="form_editar.php?idusuarios=<?php echo $fila ['idusuarios'];?>"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                            </svg></a>
+                                                    <a class="me-1 btn btn-outline-danger btn-lg" title="Eliminar" href="form_eliminar.php?idusuarios=<?php echo $fila ['idusuarios'];?>"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                            <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5"/>
+                            </svg></a>
                   
-                  
-                  
-                    </td>
+                         </td>
 
                 </tr>
                 
@@ -156,17 +159,18 @@ include("header.php");
     </table>
 </div>
 
-
+ <!-- Paginación -->
+ 
 
 </section>
 
 
-
+<?php include 'footer.php'; ?>
 <?php
 	     }else{
 
           echo "</table></div>";
-          echo "<div class='container text-center lead my-3 py-3'><div class='alert alert-danger my-5 py-4'><p><em>No existen usuarios! </em><a href='index.php' class='text-primary lead ms-2'>Volver</a></p></div></div>";
+          echo "<div class='container text-center lead my-3 py-3'><div class='alert alert-danger my-5 py-4'><p><em>No existen usuarios! </em><a href='' class='text-primary lead ms-2'>Volver</a></p></div></div>";
          }
 	   ?>  
 
@@ -194,6 +198,25 @@ include("header.php");
                 showAlert(mensaje, tipo);
             }
         });
+
+        function realTimeSearch() {
+        const query = document.getElementById('dniusu').value;
+
+        // Usar Fetch API para enviar la solicitud al servidor
+        fetch('buscar_usuario.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: 'query=' + encodeURIComponent(query)
+        })
+        .then(response => response.text())
+        .then(data => {
+            // Actualizar la tabla con los resultados obtenidos
+            document.getElementById('tabla-usuarios').innerHTML = data;
+        })
+        .catch(error => console.error('Error:', error));
+    }
 </script>   
 </body>
 </html>

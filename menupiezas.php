@@ -65,20 +65,37 @@ if(!empty($_POST["num"])){
         
         
               </div>
-            <div class="container col-3 p-1">
-                <form class="d-flex" role="buscar" action="menupiezas.php" method="post">
-                  <input class="form-control me-2" type="search" placeholder="Buscar..." name="num" id="num" aria-label="Search">
-                 <div class="col-6">
+<div class="container col-md-6 p-2">
+    <!-- Barra de búsqueda con funcionalidad en tiempo real -->
+    <form class="d-flex align-items-center shadow-sm rounded p-3 bg-light" action="menupiezas.php" method="post" onsubmit="return false;" style="border: 1px solid #ccc;">
+        <input 
+            class="form-control me-2 search-bar border-0" 
+            type="search" 
+            placeholder="🔍 Buscar por número de inventario..." 
+            name="num" 
+            id="num" 
+            style="font-size: 1rem; padding: 0.8rem;"
+            oninput="searchInventory(this.value)"
+        >
+        <button 
+            class="btn btn-success px-4 py-2" 
+            type="button" 
+            style="font-size: 1rem; font-weight: 500;"
+        >
+            Buscar
+        </button>
+    </form>
+    <!-- Contenedor para los resultados -->
+    <div id="search-results" class="mt-3"></div>
+</div>
 
-                     <button class="btn btn-outline-primary m-2"  type="submit">Buscar</button>
-                 </div>
-                </form>
-              
-              </div>
+
         
         
         <div class="text-center p-3">
-            <a class="btn btn-primary btn-sm mb-2" href="form_agregarp.php" role="button">Agregar</a>
+        <div class="text-center mb-3">
+                <a class="btn btn-success btn-sm" href="form_agregarp.php" role="button">Agregar nueva pieza</a>
+            </div>
             
       
     
@@ -238,6 +255,28 @@ if(!empty($_POST["num"])){
                 showAlert(mensaje, tipo);
             }
         });
+        function searchInventory(query) {
+        const resultsContainer = document.getElementById('search-results');
+
+        if (query.trim() === "") {
+            resultsContainer.innerHTML = ""; // Limpia los resultados si no hay texto
+            return;
+        }
+
+        // Realiza la solicitud AJAX
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "busquedaPiezas.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                resultsContainer.innerHTML = xhr.responseText; // Inserta los resultados
+            }
+        };
+
+        // Envía el texto de búsqueda
+        xhr.send(`num=${encodeURIComponent(query)}`);
+    }
     </script>
       
 </body>

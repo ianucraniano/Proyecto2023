@@ -1,25 +1,50 @@
 <?php
 session_start();
 
-// Conexión a la base de datos
-require_once "conexion.php"; // Incluye el archivo con la conexión a la base de datos
-// Verificar si el usuario está logueado (si existe 'idusuarios' en la sesión)
-if (!isset($_SESSION['dniadmin'])&&!isset($_SESSION['dnigerente'])) {
-    echo "No estás logueado. Por favor, inicia sesión.";
-    exit; // Detener la ejecución si no está logueado
+// Verificar si el usuario está logueado
+if (!isset($_SESSION['dniadmin']) && !isset($_SESSION['dnigerente'])) {
+    header("Location: index.php?denegado=1");
+    exit();
 }
 
+// Conectar a la base de datos
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "bdmuseosancris";
 
-// Obtener el id del usuario desde la sesión
-$id = $_SESSION['idusuarios'];
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-// SQL para obtener los datos del usuario con el id correspondiente
-$sql = "SELECT idusuarios, dni, email, telefono, clave FROM usuarios WHERE idusuarios = $id";
-$result = mysqli_query($conex, $sql);
+// Verificar conexión
+if ($conn->connect_error) {
+    die("Error de conexión: " . $conn->connect_error);
+}
 
-$fila = mysqli_fetch_assoc($result);
-// Verificar si la consulta fue exitosa
+// Verificar si el ID del usuario está en la sesión
+if (!isset($_SESSION['idusuario']) || !filter_var($_SESSION['idusuario'], FILTER_VALIDATE_INT)) {
+    header("Location: error.php?error=ID_no_valido");
+}
 
+// Obtener el ID del usuario de la sesión
+$idUsuario = $_SESSION['idusuario'];
+
+// Consulta segura para obtener los datos del usuario
+$sql = $conn->prepare("SELECT idusuarios, nombre, email, telefono, dni FROM usuarios WHERE idusuarios = ?");
+$sql->bind_param("i", $idUsuario);
+$sql->execute();
+$result = $sql->get_result();
+
+// Verificar si el usuario existe
+if ($result->num_rows > 0) {
+    $usuario = $result->fetch_assoc();
+} else {
+    header("Location: error.php?error=usuario_no_encontrado");
+    exit();
+}
+
+// Cerrar conexión
+$sql->close();
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -27,61 +52,101 @@ $fila = mysqli_fetch_assoc($result);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f8f9fa;
-        }
-        .user-info {
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin: 30px;
-        }
-        
-    </style>
-    <title>Información del Usuario</title>
+    <title>Perfil del Usuario</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-<?php
+    <?php include 'header.php'; ?>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Datos Personales del Usuario</h2>
+        <div class="card shadow-lg p-4">
+            <h4 class="text-primary">Información del Usuario</h4>
+            <ul class="list-group list-group-flush mt-3">
+                <li class="list-group-item"><strong>Nombre:</strong> <?= htmlspecialchars($usuario['nombre']) ?></li>
+                <li class="list-group-item"><strong>Email:</strong> <?= htmlspecialchars($usuario['email']) ?></li>
+                <li class="list-group-item"><strong>Teléfono:</strong> <?= htmlspecialchars($usuario['telefono']) ?></li>
+                <li class="list-group-item"><strong>DNI:</strong> <?= htmlspecialchars($usuario['dni']) ?></li>
+            </ul>
+            <?php if (isset($_SESSION['dniadmin'])) { ?>
+                <div class="mt-3 text-center">
+                    <a href="pagAdmin.php" class="btn btn-info">Volver</a>
+                </div>
+            <?php } elseif (isset($_SESSION['dnigerente'])) { ?>
+                <div class="mt-3 text-center">
+                    <a href="pagGerente.php" class="btn btn-info">Volver</a>
+                </div>
+            <?php } ?>
 
-include("header.php");
-?>
-    <div class="container">
-        <div class="user-info">
-            <form action="change_password.php" method="post">
-            <h2 class="mb-4">Información del Usuario</h2>
-            <input type="hidden" class="form-control" name="idusuarios" id="idusuarios" placeholder="" value="<?php echo $fila['idusuarios']; ?>" required>
-            <div class="form-group">
-                <label for="userPhone">Teléfono:</label>
-                <input type="text" class="form-control" id="userPhone" value="<?php echo $fila['telefono']; ?>" readonly>
+            <!-- Botón para abrir el modal de cambio de contraseña -->
+            <div class="mt-3 text-center">
+                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#cambiarClaveModal">Cambiar contraseña</button>
             </div>
-            <div class="form-group">
-                <label for="userEmail">Email:</label>
-                <input type="email" class="form-control" id="userEmail" value="<?php echo $fila['email']; ?>" readonly>
-            </div>
-            <div class="form-group">
-                <label for="userPassword">Contraseña:</label>
-                <input type="password" class="form-control" id="userPassword" value="<?php echo $fila['clave']; ?>" readonly>
-            </div>
-            <a href="modificar_info.php" class="btn btn-info" id="modifyButton">Modificar Datos</a>
-            </form>
         </div>
     </div>
-    <?php
 
-include("footer.php");
-?>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> 
+    <!-- MODAL PARA CAMBIO DE CONTRASEÑA -->
+    <div class="modal fade" id="cambiarClaveModal" tabindex="-1" aria-labelledby="cambiarClaveModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cambiarClaveModalLabel">Cambiar Contraseña</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="cambiarClaveForm">
+                        <div class="mb-3">
+                            <label for="clave_actual" class="form-label">Contraseña Actual:</label>
+                            <input type="password" class="form-control" id="clave_actual" name="clave_actual" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="nueva_clave" class="form-label">Nueva Contraseña:</label>
+                            <input type="password" class="form-control" id="nueva_clave" name="nueva_clave" required minlength="6">
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmar_clave" class="form-label">Confirmar Nueva Contraseña:</label>
+                            <input type="password" class="form-control" id="confirmar_clave" name="confirmar_clave" required minlength="6">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Actualizar Contraseña</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap y SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.getElementById('modifyButton').addEventListener('click', function() {
-            // Aquí puedes agregar la lógica para permitir la edición de los datos
-            document.getElementById('userPhone').removeAttribute('readonly');
-            document.getElementById('userEmail').removeAttribute('readonly');
-            document.getElementById('userPassword').removeAttribute('readonly');
+        document.getElementById('cambiarClaveForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var formData = new FormData(this);
+
+            fetch('change_password.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Contraseña actualizada',
+                        text: data.message,
+                        confirmButtonText: 'OK'
+                    }).then(() => {
+                        window.location.reload();
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: data.message,
+                        confirmButtonText: 'OK'
+                    });
+                }
+            })
+            .catch(error => console.error('Error:', error));
         });
     </script>
 </body>

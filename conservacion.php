@@ -4,215 +4,124 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">  -->
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
-    <title>Museo San Cristobal-Conservacion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&family=Dosis:wght@300..800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/conservacion.css">
+    <title>Museo San Cristobal - Conservación</title>
+    <style>
+   
+    </style>
 </head>
-
 <body>
-<?php
+    <?php include("header.php"); ?>
+   <!-- Hero Section -->
+<section class="hero-section">
+    <h1>Conservaciones del Museo</h1>
+    <p>Preservando nuestra historia para el futuro</p>
+</section>
 
-include("header.php");
+<div class="container my-5">
+    <!-- Introduction -->
+    <section>
+        <h2 class="text-center mb-4">¿Qué hacemos en conservación?</h2>
+        <p class="text-center">Nuestro equipo trabaja incansablemente para preservar y restaurar piezas históricas y culturales. Descubre cómo transformamos y protegemos estas joyas para las generaciones venideras.</p>
+    </section>
 
-?>    
-<style>
-.titulo1{
-    font-family: 'Merriweather', serif;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-}
-.titulo2{
-    background-color: #a4be7b;
-    padding: 25px;
-    display: flex;
-    justify-content: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    <!-- Highlighted Projects -->
+    <section>
+        <h3 class="mt-5 mb-4">Proyectos Destacados</h3>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./imagenes/pintura.jpg" class="card-img-top" alt="Proyecto 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Restauración de Pinturas Antiguas</h5>
+                        <p class="card-text">Una obra del siglo XVIII recuperada para su exposición.</p>
+                        <a href="#" class="btn btn-primary">Ver Más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./imagenes/textiles.jpg" class="card-img-top" alt="Proyecto 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Conservación de Textiles</h5>
+                        <p class="card-text">Preservamos tejidos antiguos con técnicas avanzadas.</p>
+                        <a href="#" class="btn btn-primary">Ver Más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./imagenes/artefactos.jpg" class="card-img-top" alt="Proyecto 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Recuperación de Artefactos Arqueológicos</h5>
+                        <p class="card-text">Objetos únicos restaurados para su estudio y exhibición.</p>
+                        <a href="#" class="btn btn-primary">Ver Más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    
-}
-.imagen{
-  background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./imagenes/museo.webp);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-cover: cover;
-  background-attachment: fixed;
-  height: 400px;
-  
-}
-p{
-  font-family: "Dosis", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
-.texto{
-  display: flex;
-  justify-content: center;
-  text-align: center;
+    <!-- Timeline -->
+    <section class="mt-5">
+        <h3 class="mb-4">Proceso de Conservación</h3>
+        <div class="timeline">
+            <div class="timeline-step">
+                <div class="timeline-content left">
+                    <h5>Recepción</h5>
+                    <p>Evaluamos el estado del objeto para identificar necesidades de conservación.</p>
+                </div>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-content right">
+                    <h5>Diagnóstico</h5>
+                    <p>Analizamos los daños utilizando técnicas modernas y tradicionales.</p>
+                </div>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-content left">
+                    <h5>Plan de Intervención</h5>
+                    <p>Diseñamos una estrategia personalizada para restaurar cada pieza.</p>
+                </div>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-content right">
+                    <h5>Restauración</h5>
+                    <p>Aplicamos técnicas precisas para devolverle su esplendor original.</p>
+                </div>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-content left">
+                    <h5>Documentación</h5>
+                    <p>Registramos cada paso para garantizar transparencia y aprendizaje.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-position: relative;
-top: 100px;
-}
-.texto h1{
-  color: white;
-}
+    <!-- Highlight Section -->
+    <section class="highlight-section mt-5">
+        <h5>¿Sabías que?</h5>
+        <ul>
+            <li>Usamos rayos X para analizar objetos sin dañarlos.</li>
+            <li>El proceso más largo de restauración duró más de 2 años.</li>
+            <li>Colaboramos con expertos internacionales en conservación.</li>
+        </ul>
+    </section>
 
-.center{
-  margin: 0;
-  height: 100vhv;
-  display: grid;
-  place-items:center;
-}
-
-</style>
-
-<div class="imagen">
-<div class="texto">
-  <h1>Conservacion de todas las especies</h1>
-</div>
-</div>
-
-<!--<img src="./imagenes/museo.webp" class="imagen" alt="...">-->
-
-<h2 class="titulo1">Especies amenazadas</h2>
-<h3 class="titulo2">Conservación de especies amenazadas</h3>
-<div class="text-center ">
-
-  <p>Compartimos con ustedes actividades que realizamos en el marco de distintos proyectos relacionados a la fauna amenazada de extinción.</p>
-  <p>
-  El museo también es parte de la delegación santafesina del Programa de Conservación de los Murciélagos de Argentina.</p>
-
-
-<div class="card mb-3 " style="max-width: 800px;">
-<div class="card mb-3  " style="max-width: 800px;">
-  <div class="row g-0 ">
-    <div class="col-md-4 ">
-      <img src="./imagenes/aguilas.webp" class="img-fluid rounded-start" alt="...">
-    
-    </div>
-    <div class="col-md-8">
-      <div class="card-body ">
-        <h5 class="card-title">
-
-        LAS ÁGUILAS CORONADAS ESTÁN DECLINANDO EN SANTA FE
-​</h5>
-        <p class="card-text">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur facilis dicta, aliquam esse eligendi libero iste officia voluptates, consequatur totam ab earum minus, aspernatur dolorum corrupti amet placeat. Quibusdam, officiis! </p>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="card mb-3" style="max-width: 1000px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="./imagenes/serpiente.webp" class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">POSTERS: SERPIENTES DE SANTA FE</h5>
-        <p class="card-text">
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt necessitatibus recusandae ex voluptatum doloribus. Accusamus dolores minima repellat! Nesciunt molestiae voluptatibus eos tempora nobis dolorem, commodi culpa aut magnam. Obcaecati! </p>
-        
-      </div>
-    </div>
-  </div>
+    <!-- Call to Action -->
+    <section class="text-center mt-5">
+        <h4>Colabora con Nosotros</h4>
+        <p>¿Quieres apoyar nuestros proyectos? Haz una donación o conviértete en voluntario.</p>
+        <a href="#" class="btn btn-success">Haz una Donación</a>
+        <a href="#" class="btn btn-info">Sé Voluntario</a>
+    </section>
 </div>
 
-<div class="card mb-3" style="max-width: 1000px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="./imagenes/ave.webp" class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">INVENTARIO DE AVES EN ÁREAS PROTEGIDAS</h5>
-        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est aspernatur adipisci autem voluptates sequi assumenda repellendus delectus saepe sit dolorum consectetur nemo reprehenderit dicta distinctio quaerat itaque, modi voluptatem nostrum.</p>
-     
-      </div>
-    </div>
-  </div>
-</div>
-<div class="card mb-3" style="max-width: 1000px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="./imagenes/img4.webp" class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">
-LA DELICADA SITUACIÓN DE LOS MONUMENTOS NATURALES DE SANTA FE</h5>
-        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae inventore praesentium sequi sapiente in consectetur nisi, cupiditate delectus. Soluta quod aspernatur dolor neque obcaecati ex expedita, impedit praesentium aut pariatur.</p>
-       
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="card mb-3" style="max-width: 1000px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="./imagenes/aguara.webp" class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">
-CONSERVACIÓN DEL AGUARÁ GUAZÚ</h5>
-        <p class="card-text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem assumenda esse quod eveniet modi, vitae ipsa quia iste, earum, optio iusto tenetur accusantium dolores laudantium illum quidem suscipit similique sint.</p>
-        
-      </div>
-    </div>
-  </div>
-</div>
-<div class="card mb-3" style="max-width: 1000px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="./imagenes/murcielago.jpg" class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">
-        NUEVA EDICIÓN DE "BICHOS CON MALA FAMA: MURCIÉLAGOS DE SANTA FE”</h5>
-        <p class="card-text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui sed in harum sunt saepe neque nemo dolores facilis vitae officiis similique sapiente non impedit quia, eum praesentium doloremque veniam ea!</p>
-        
-      </div>
-    </div>
-  </div>
-</div>
-<div class="card mb-3" style="max-width: 1000px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="./imagenes/nuevomurcielago.webp" class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">
-        
-SE REGISTRA UNA NUEVA ESPECIE DE MURCIÉLAGO EN ENTRE RÍOS</h5>
-        <p class="card-text">
-       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur maxime sed molestias, incidunt nisi facilis porro cum quisquam accusantium id rem distinctio totam beatae tenetur nobis nemo magni fugit praesentium? </p>
-        
-      </div>
-    </div>
-  </div>
-</div>
-</div>      
-
-
-<?php
-
-include("footer.php");
-
-?>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <?php include("footer.php"); ?>
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

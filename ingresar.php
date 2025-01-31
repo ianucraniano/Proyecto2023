@@ -1,6 +1,6 @@
 <?php
 session_start();
-// Conexion a la Base de Datos Biblioteca 
+// 
 
  require_once "conexion.php";
 
